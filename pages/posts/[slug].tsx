@@ -1,5 +1,8 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
+import { useWindowScroll } from "@mantine/hooks"
+import { Affix, Button, Container, Text, Transition } from "@mantine/core"
+import { IconArrowUp } from "@tabler/icons"
 import { getPostBySlug, getAllPosts } from "../../lib/api"
 import Head from "next/head"
 import markdownToHtml from "../../lib/markdownToHtml"
@@ -13,7 +16,9 @@ type Props = {
 }
 
 const Post = ({ post, morePosts, preview }: Props) => {
+  const [scroll, scrollTo] = useWindowScroll()
   const router = useRouter()
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   } else {
@@ -21,21 +26,32 @@ const Post = ({ post, morePosts, preview }: Props) => {
       <h1>Loading…</h1>
     ) : (
       <>
-        <article>
-          <Head>
-            <title>{post.title}</title>
-            <meta property="og:image" content={post.ogImage.url} />
-            {/* Math rendering */}
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
-            {/* Code higlighting */}
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css"
-            ></link>
-          </Head>
-          <h1>{post.title}</h1>
-          <PostBody content={post.content} />
-        </article>
+        <Container>
+          <article>
+            <Head>
+              <title>{post.title}</title>
+              {/* Math rendering */}
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
+              {/* Code higlighting */}
+              <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css"
+              ></link>
+            </Head>
+            <h1>{post.title}</h1>
+            <PostBody content={post.content} />
+          </article>
+        </Container>
+
+        <Affix position={{ bottom: 20, right: 20 }}>
+          <Transition transition="slide-up" mounted={scroll.y > 0}>
+            {(transitionStyles) => (
+              <Button leftIcon={<IconArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
+                Scroll to top
+              </Button>
+            )}
+          </Transition>
+        </Affix>
       </>
     )
   }
@@ -50,7 +66,7 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "ogImage", "coverImage"])
+  const post = getPostBySlug(params.slug, ["title", "date", "slug", "content"])
   const content = await markdownToHtml(post.content || "")
 
   return {

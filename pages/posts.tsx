@@ -1,6 +1,7 @@
 import { getAllPosts } from "../lib/api"
 import Post from "../types/post"
 import PostPreview from "../components/post-preview"
+import { TypographyStylesProvider } from "@mantine/core"
 
 type Props = {
   posts: Post[]
@@ -8,11 +9,11 @@ type Props = {
 
 const Posts = ({ posts }: Props) => {
   return (
-    <div>
+    <TypographyStylesProvider>
       {posts.map((p, i) => (
         <PostPreview key={i} title={p.title} date={p.date} excerpt={p.excerpt} slug={p.slug} />
-      ))}{" "}
-    </div>
+      ))}
+    </TypographyStylesProvider>
   )
 }
 

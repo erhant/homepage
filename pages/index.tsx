@@ -1,6 +1,8 @@
 import Head from "next/head"
 import Link from "next/link"
-import { AppShell, Navbar, Header, Footer, Stack, ThemeIcon, Group, Anchor, Container } from "@mantine/core"
+import { AppShell, Navbar, Stack, ThemeIcon, Group, Anchor, Container } from "@mantine/core"
+import Header from "../components/header"
+import Footer from "../components/footer"
 // import styles from "../styles/index.scss"
 
 // icons for navbar
@@ -39,17 +41,8 @@ const Index = () => {
             </Stack>
           </Navbar>
         }
-        header={
-          <Header height={60} p="xs">
-            <p>This is my header.</p>
-          </Header>
-        }
-        footer={
-          <Footer height={30} p="xs">
-            &copy; Erhan Tezcan {new Date().getFullYear()} &nbsp;&nbsp; (
-            <a href="https://github.com/erhant/blog-static">GitHub</a>)
-          </Footer>
-        }
+        header={<Header />}
+        footer={<Footer />}
       >
         <Container>
           <h1>Welcome to my homepage!</h1>
