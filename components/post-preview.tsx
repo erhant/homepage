@@ -11,17 +11,17 @@ type Props = {
 
 const PostPreview = ({ title, date, excerpt, slug }: Props) => {
   return (
-    <>
-      <Title order={1} mb="lg">
+    <Box sx={{ borderLeft: "0.2em outset", paddingLeft: "2em" }}>
+      <Title order={1}>
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           {title}
         </Link>
       </Title>
-      <Title order={3}>
+      <Title order={5}>
         <DateFormatter dateString={date} />
       </Title>
       <Text>{excerpt}</Text>
-    </>
+    </Box>
   )
 }
 

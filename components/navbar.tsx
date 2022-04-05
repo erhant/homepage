@@ -13,8 +13,6 @@ const NavbarItemsList: [ReactElement, string, string][] = [
 ]
 
 const Navbar = () => {
-  const theme = useMantineTheme()
-
   return (
     <_Navbar width={{ base: 200 }} ml="lg">
       <Stack align="stretch" px="xs" py="md">

@@ -3,9 +3,9 @@ import ErrorPage from "next/error"
 import { useWindowScroll } from "@mantine/hooks"
 import { Affix, Button, Container, Text, Transition } from "@mantine/core"
 import { ArrowUp } from "tabler-icons-react"
-import { getPostBySlug, getAllPosts } from "../../lib/api"
+import { getPostBySlug, getAllPosts } from "../../lib/posts"
 import Head from "next/head"
-import markdownToHtml from "../../lib/markdownToHtml"
+import toHTML from "../../lib/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
 
@@ -67,7 +67,7 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post = await getPostBySlug(params.slug, ["title", "date", "slug", "content"])
-  const content = await markdownToHtml(post.content || "")
+  const content = await toHTML(post.content || "")
 
   return {
     props: {
