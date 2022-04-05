@@ -20,8 +20,11 @@ const Navbar = () => {
           return (
             <_Navbar.Section key={i} component={Group}>
               <ThemeIcon
-                sx={{
-                  backgroundColor: "transparent",
+                sx={(theme) => {
+                  return {
+                    backgroundColor: "transparent",
+                    color: theme.colors.icons[theme.colorScheme === "dark" ? 4 : 8],
+                  }
                 }}
               >
                 {item[0]}

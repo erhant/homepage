@@ -8,9 +8,13 @@ const Footer = () => {
         <Text>&copy; Erhan Tezcan {new Date().getFullYear()} &nbsp; </Text>
         <Anchor href="https://github.com/erhant/blog-static">
           <ThemeIcon
-            sx={{
-              backgroundColor: "transparent",
+            sx={(theme) => {
+              return {
+                backgroundColor: "transparent",
+                color: theme.colors.icons[theme.colorScheme === "dark" ? 4 : 8],
+              }
             }}
+            size="xl"
           >
             <BrandGithub />
           </ThemeIcon>

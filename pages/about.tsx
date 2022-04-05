@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Title } from "@mantine/core"
+import { Text, Title, Box } from "@mantine/core"
 
 const Index = () => {
   return (
@@ -9,10 +9,10 @@ const Index = () => {
         <title>Who is Erhan?</title>
       </Head>
       <Layout>
-        <>
-          <Title>Who is Erhan?</Title>
+        <Box>
+          <Title order={1}>Who is Erhan?</Title>
           <Text>I am currently working at Macerita.</Text>
-        </>
+        </Box>
       </Layout>
     </>
   )

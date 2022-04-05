@@ -8,6 +8,7 @@ import Head from "next/head"
 import toHTML from "../../lib/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
+import { MantineProvider } from "@mantine/core"
 
 type Props = {
   post: PostType

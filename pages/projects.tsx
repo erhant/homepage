@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>My projects.</title>
+        <title>Projects</title>
       </Head>
       <Layout>
         <Grid>

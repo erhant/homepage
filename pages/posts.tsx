@@ -13,7 +13,7 @@ const Posts = ({ posts }: Props) => {
   return (
     <>
       <Head>
-        <title>My posts.</title>
+        <title>Posts</title>
       </Head>
 
       <Layout>

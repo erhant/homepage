@@ -4,7 +4,7 @@ This is my homepage + blog, made with NextJS + TypeScript + SASS + Unified (Rema
 
 For icons, I use <https://tabler-icons.io/>.
 
-For styling, see <https://omatsuri.app/page-dividers>
+For styling, see <https://omatsuri.app/page-dividers> and <https://smart-swatch.netlify.app/#fcfcfc>
 
 ## Blog Posts
 
