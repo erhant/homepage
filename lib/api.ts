@@ -1,47 +1,58 @@
-import fs from 'fs'
-import { join } from 'path'
-import matter from 'gray-matter'
+import fs from "fs"
+import { join } from "path"
+import matter from "gray-matter"
+import glob from "glob"
 
-const postsDirectory = join(process.cwd(), '_posts')
-
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+const postsDirectoryName = "_posts"
+const postsDirectory = join(process.cwd(), postsDirectoryName)
+const uniqueSluggifier = "___"
+function pathToSlug(path: string): string {
+  return path.slice(postsDirectoryName.length + 1).replaceAll("/", uniqueSluggifier)
+}
+function slugToPath(slug: string): string {
+  return slug.replaceAll(uniqueSluggifier, "/")
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+function getPostPaths(): Promise<string[]> {
+  return new Promise((resolve, reject) => {
+    glob("_posts/**/*.md", (err, files) => {
+      if (err) reject(err)
+      else resolve(files.map((f: string) => f))
+    })
+  })
+}
 
-  type Items = {
+export async function getPostBySlug(slug: string, fields: string[] = []) {
+  return await getPostByPath(join(postsDirectory, slugToPath(slug)), fields)
+}
+export async function getPostByPath(path: string, fields: string[] = []) {
+  const { data, content } = matter(fs.readFileSync(path, "utf8"))
+  const items: {
     [key: string]: string
-  }
+  } = {}
 
-  const items: Items = {}
-
-  // Ensure only the minimal needed data is exposed
+  // ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
+    if (field === "slug") {
+      items[field] = pathToSlug(path)
     }
-    if (field === 'content') {
+    if (field === "content") {
       items[field] = content
     }
-
-    if (typeof data[field] !== 'undefined') {
+    if (typeof data[field] !== "undefined") {
       items[field] = data[field]
     }
   })
-
   return items
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+export async function getAllPosts(fields: string[] = []) {
+  const paths = await getPostPaths()
+  console.log(paths)
+  // read posts
+  const posts = []
+  for (let i = 0; i < paths.length; ++i) posts.push(await getPostByPath(paths[i], fields))
+  // sort them
+  posts.sort((p, q) => (p.date > q.date ? -1 : 1))
   return posts
 }

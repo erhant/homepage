@@ -1,22 +1,10 @@
 .markdown {
-  font-weight: 200;
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  font-weight: 500;
-}
-
-.markdown h1 {
-  color: red;
-}
-
-.markdown h2 {
-  color: red;
-}
-
-.markdown h3 {
-  color: blue;
+  font-weight: inherit;
 }

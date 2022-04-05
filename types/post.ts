@@ -1,9 +1,10 @@
 type PostType = {
-  slug: string
+  slug: string // slug to access this post via URL
+  path: string // path at which this post is located at
   title: string
-  date: string
-  excerpt: string
-  content: string
+  date: string // a date
+  excerpt: string // a preview of the post
+  content: string // HTML content, parsed by unified
 }
 
 export default PostType

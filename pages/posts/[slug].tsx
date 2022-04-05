@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import ErrorPage from "next/error"
 import { useWindowScroll } from "@mantine/hooks"
 import { Affix, Button, Container, Text, Transition } from "@mantine/core"
-import { IconArrowUp } from "@tabler/icons"
+import { ArrowUp } from "tabler-icons-react"
 import { getPostBySlug, getAllPosts } from "../../lib/api"
 import Head from "next/head"
 import markdownToHtml from "../../lib/markdownToHtml"
@@ -46,7 +46,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
         <Affix position={{ bottom: 20, right: 20 }}>
           <Transition transition="slide-up" mounted={scroll.y > 0}>
             {(transitionStyles) => (
-              <Button leftIcon={<IconArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
+              <Button leftIcon={<ArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
                 Scroll to top
               </Button>
             )}
@@ -66,7 +66,7 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, ["title", "date", "slug", "content"])
+  const post = await getPostBySlug(params.slug, ["title", "date", "slug", "content"])
   const content = await markdownToHtml(post.content || "")
 
   return {
@@ -80,13 +80,14 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"])
+  const posts = await getAllPosts(["slug"])
 
   return {
     paths: posts.map((post) => {
       return {
         params: {
           slug: post.slug,
+          path: post.path,
         },
       }
     }),

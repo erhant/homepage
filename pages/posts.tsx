@@ -1,7 +1,8 @@
 import { getAllPosts } from "../lib/api"
 import Post from "../types/post"
 import PostPreview from "../components/post-preview"
-import { TypographyStylesProvider } from "@mantine/core"
+import Layout from "../components/layout"
+import { List, TypographyStylesProvider } from "@mantine/core"
 
 type Props = {
   posts: Post[]
@@ -9,18 +10,25 @@ type Props = {
 
 const Posts = ({ posts }: Props) => {
   return (
-    <TypographyStylesProvider>
-      {posts.map((p, i) => (
-        <PostPreview key={i} title={p.title} date={p.date} excerpt={p.excerpt} slug={p.slug} />
-      ))}
-    </TypographyStylesProvider>
+    <Layout>
+      {/* posts set inner HTML, so we need this provider to apply our styles to them */}
+      <TypographyStylesProvider>
+        <List spacing="lg" size="lg" icon={<></>}>
+          {posts.map((p, i) => (
+            <List.Item>
+              <PostPreview key={i} title={p.title} date={p.date} excerpt={p.excerpt} slug={p.slug} />
+            </List.Item>
+          ))}
+        </List>
+      </TypographyStylesProvider>
+    </Layout>
   )
 }
 
 export default Posts
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts(["title", "date", "slug", "author", "coverImage", "excerpt"])
+  const posts = await getAllPosts(["title", "date", "slug", "excerpt"])
 
   return {
     props: { posts },

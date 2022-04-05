@@ -1,34 +1,29 @@
 // the layout is simply header - footer - side navbar - content
+import { AppShell, Container } from "@mantine/core"
+import { ReactChild, ReactElement } from "react"
+import Header from "./header"
+import Footer from "./footer"
+import Navbar from "./navbar"
 
-const Layout = () => {
+type Props = {
+  header?: ReactElement
+  footer?: ReactElement
+  navbar?: ReactElement
+  children: ReactChild
+}
+
+const Layout = ({ header, footer, navbar, children }: Props) => {
   return (
-    <AppShell
-      padding="md"
-      navbar={
-        <Navbar width={{ base: 200 }}>
-          <Stack align="stretch" px="xs" py="md">
-            {NavbarItemsList.map((item, i) => {
-              return (
-                <Navbar.Section key={i} component={Group}>
-                  <ThemeIcon>{item[0]}</ThemeIcon>
-                  <Link href={item[1]} passHref>
-                    <Anchor component="a" color={"orange"} weight="bolder" size="lg">
-                      {item[2]}
-                    </Anchor>
-                  </Link>
-                </Navbar.Section>
-              )
-            })}
-          </Stack>
-        </Navbar>
-      }
-      header={<Header />}
-      footer={<Footer />}
-    >
-      <Container>
-        <h1>Welcome to my homepage!</h1>
-      </Container>
-    </AppShell>
+    <>
+      <AppShell
+        padding="md"
+        navbar={navbar ? navbar : <Navbar />}
+        header={header ? header : <Header />}
+        footer={footer ? footer : <Footer />}
+      >
+        <Container>{children}</Container>
+      </AppShell>
+    </>
   )
 }
 

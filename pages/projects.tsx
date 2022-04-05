@@ -1,5 +1,6 @@
 import Project from "../components/project"
 import { Grid } from "@mantine/core"
+import Layout from "../components/layout"
 
 const projects = [
   {
@@ -10,15 +11,17 @@ const projects = [
 
 const Projects = () => {
   return (
-    <Grid>
-      {projects.map((p, i) => {
-        return (
-          <Grid.Col xs={12} md={6} lg={3}>
-            <Project title={p.title} description={p.description} />
-          </Grid.Col>
-        )
-      })}
-    </Grid>
+    <Layout>
+      <Grid>
+        {projects.map((p, i) => {
+          return (
+            <Grid.Col xs={12} md={6} lg={3} key={i}>
+              <Project title={p.title} description={p.description} />
+            </Grid.Col>
+          )
+        })}
+      </Grid>
+    </Layout>
   )
 }
 

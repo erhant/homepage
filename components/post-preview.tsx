@@ -1,5 +1,6 @@
 import DateFormatter from "./date-formatter"
 import Link from "next/link"
+import { Title, Text, Box } from "@mantine/core"
 
 type Props = {
   title: string
@@ -10,17 +11,17 @@ type Props = {
 
 const PostPreview = ({ title, date, excerpt, slug }: Props) => {
   return (
-    <div>
-      <h3>
+    <>
+      <Title order={1} mb="lg">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a>{title}</a>
+          {title}
         </Link>
-      </h3>
-      <div>
+      </Title>
+      <Title order={3}>
         <DateFormatter dateString={date} />
-      </div>
-      <p>{excerpt}</p>
-    </div>
+      </Title>
+      <Text>{excerpt}</Text>
+    </>
   )
 }
 

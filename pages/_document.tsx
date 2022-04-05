@@ -7,6 +7,7 @@ const getInitialProps = createGetInitialProps()
 export default class MyDocument extends Document {
   static getInitialProps = getInitialProps
 
+  /*
   render() {
     return (
       <Html lang="en">
@@ -18,4 +19,5 @@ export default class MyDocument extends Document {
       </Html>
     )
   }
+  */
 }
