@@ -17,6 +17,8 @@ const lmap: { [key: string]: string } = {
   next: "devicon-nextjs-plain",
   bash: "devicon-bash-plain",
   react: "devicon-react-plain",
+  node: "devicon-nodejs-plain",
+  express: "devicon-express-original",
 }
 
 type Props = {

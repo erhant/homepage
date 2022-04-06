@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
 import { useWindowScroll } from "@mantine/hooks"
-import { Affix, Button, Container, Text, Transition } from "@mantine/core"
+import { Affix, Button, Container, Text, Transition, useMantineTheme } from "@mantine/core"
 import { ArrowUp } from "tabler-icons-react"
 import { getPostBySlug, getAllPosts } from "../../api/posts"
 import Head from "next/head"
@@ -17,6 +17,7 @@ type Props = {
 }
 
 const Post = ({ post, morePosts, preview }: Props) => {
+  const theme = useMantineTheme()
   const [scroll, scrollTo] = useWindowScroll()
   const router = useRouter()
 
@@ -27,32 +28,41 @@ const Post = ({ post, morePosts, preview }: Props) => {
       <h1>Loading…</h1>
     ) : (
       <Layout>
-        <Container>
-          <article>
-            <Head>
-              <title>{post.title}</title>
-              {/* Math rendering */}
-              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
-              {/* Code higlighting */}
-              <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css"
-              ></link>
-            </Head>
-            <h1>{post.title}</h1>
-            <PostBody content={post.content} />
-          </article>
-        </Container>
+        <>
+          <Container>
+            <article>
+              <Head>
+                <title>{post.title}</title>
+                {/* Math rendering */}
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
+                {/* Code higlighting */}
+                {theme.colorScheme === "dark" ? (
+                  <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+                  ></link>
+                ) : (
+                  <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css"
+                  ></link>
+                )}
+              </Head>
+              <h1>{post.title}</h1>
+              <PostBody content={post.content} />
+            </article>
+          </Container>
 
-        <Affix position={{ bottom: 20, right: 20 }}>
-          <Transition transition="slide-up" mounted={scroll.y > 0}>
-            {(transitionStyles) => (
-              <Button leftIcon={<ArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
-                Scroll to top
-              </Button>
-            )}
-          </Transition>
-        </Affix>
+          <Affix position={{ bottom: 20, right: 20 }}>
+            <Transition transition="slide-up" mounted={scroll.y > 0}>
+              {(transitionStyles) => (
+                <Button leftIcon={<ArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
+                  Scroll to top
+                </Button>
+              )}
+            </Transition>
+          </Affix>
+        </>
       </Layout>
     )
   }

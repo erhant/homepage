@@ -2,7 +2,7 @@ import { getAllPosts } from "../api/posts"
 import Post from "../types/post"
 import PostPreview from "../components/post-preview"
 import Layout from "../components/layout"
-import { List, TypographyStylesProvider } from "@mantine/core"
+import { TypographyStylesProvider } from "@mantine/core"
 import Head from "next/head"
 
 type Props = {

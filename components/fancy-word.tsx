@@ -1,21 +1,17 @@
-import { Highlight } from "@mantine/core"
+import { Text, useMantineTheme } from "@mantine/core"
 type Props = {
   word: string
 }
 const FancyWord = ({ word }: Props) => {
+  const theme = useMantineTheme()
   return (
-    <Highlight
-      sx={{ display: "inline" }}
-      highlight={[word]}
-      highlightStyles={(theme) => ({
-        backgroundImage: theme.fn.linearGradient(90, theme.colors.blues[3], theme.colors.oranges[3]),
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        fontWeight: "bolder",
-      })}
+    <Text
+      component="span"
+      variant="gradient"
+      gradient={{ from: theme.colors.blues[3], to: theme.colors.oranges[3], deg: 90 }}
     >
       {word}
-    </Highlight>
+    </Text>
   )
 }
 

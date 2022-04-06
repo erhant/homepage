@@ -11,7 +11,6 @@ import {
   Popover,
   Text,
   Anchor,
-  Highlight,
   Container,
 } from "@mantine/core"
 import { useState } from "react"
@@ -60,17 +59,14 @@ const Header = ({ title }: Props) => {
 
           <Space w="xl" />
           <Switch
-            sx={{ backgroundColor: "transparent" }}
             label={
               {
                 light: (
                   <ThemeIcon
                     size="xl"
-                    sx={(theme) => {
-                      return {
-                        backgroundColor: "transparent",
-                        color: "goldenrod",
-                      }
+                    sx={{
+                      backgroundColor: "transparent",
+                      color: "goldenrod",
                     }}
                   >
                     <Bulb />
@@ -79,11 +75,9 @@ const Header = ({ title }: Props) => {
                 dark: (
                   <ThemeIcon
                     size="xl"
-                    sx={(theme) => {
-                      return {
-                        backgroundColor: "transparent",
-                        color: "darkgray",
-                      }
+                    sx={{
+                      backgroundColor: "transparent",
+                      color: "darkgray",
                     }}
                   >
                     <BulbOff />
