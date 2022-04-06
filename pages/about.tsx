@@ -1,9 +1,11 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Title, Group, Anchor, Divider, Space, List, Badge, Tooltip } from "@mantine/core"
+import { Text, Title, Blockquote, Group, Anchor, Divider, Space, List, Badge, Tooltip } from "@mantine/core"
 import { useState } from "react"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/dev-stacks"
+import Icon from "../components/icon"
+import { Message } from "tabler-icons-react"
 
 const Index = () => {
   const [opened, setOpen] = useState(false)
@@ -15,9 +17,16 @@ const Index = () => {
       </Head>
       <Layout>
         <>
-          <Title order={5}>
-            <FancyWord word="Hello!" /> I am Erhan, a 96' born full-stack developer from Istanbul, Turkey 🇹🇷
-          </Title>
+          <Blockquote
+            cite=""
+            icon={<Message />}
+            styles={{
+              inner: { fontSize: "1.2em" },
+            }}
+          >
+            Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;
+            driven by a thirst for knowledge and with respect to style, standards, security and scalability.
+          </Blockquote>
           <Divider my="xl" label="Programming" labelPosition="center" />
           <DevStacks />
           <Text>

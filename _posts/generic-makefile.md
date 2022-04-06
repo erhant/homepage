@@ -1,5 +1,5 @@
 ---
-title: "Makefile"
+title: "Generic Makefile"
 excerpt: "hello"
 date: "2020-03-16T05:35:07.322Z"
 ---

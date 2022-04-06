@@ -6,6 +6,7 @@ import { ReactChild, ReactElement } from "react"
 import Icon from "./icon"
 // icons for navbar
 import { User, Notebook, Code, Home, Icon as TablerIcon } from "tabler-icons-react"
+
 const NavbarItemsList: [TablerIcon, string, string][] = [
   [Home, "/", "Home"],
   [User, "/about", "About"],
@@ -23,7 +24,6 @@ const Navbar = () => {
               <Icon I={item[0]} />
               <Link href={item[1]} passHref>
                 <Anchor
-                  component="a"
                   size="lg"
                   sx={(theme) => {
                     return {

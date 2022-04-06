@@ -20,9 +20,9 @@ const DevStacks = () => {
         </Stack>
         <Stack>
           <Divider label="Academic" labelPosition="center" />
-          <Language l="tex" />
-          <Language l="py" />
           <Language l="c" />
+          <Language l="py" />
+          <Language l="tex" />
         </Stack>
         <Stack>
           <Divider label="Hobby" labelPosition="center" />
