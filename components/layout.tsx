@@ -20,6 +20,11 @@ const Layout = ({ header, footer, navbar, children }: Props) => {
         navbar={navbar ? navbar : <Navbar />}
         header={header ? header : <Header />}
         footer={footer ? footer : <Footer />}
+        styles={(theme) => ({
+          root: { borderStyle: "hidden" },
+          main: { borderStyle: "hidden" },
+          body: { borderStyle: "hidden" },
+        })}
       >
         <Container>{children}</Container>
       </AppShell>

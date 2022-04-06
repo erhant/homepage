@@ -3,12 +3,12 @@ import ErrorPage from "next/error"
 import { useWindowScroll } from "@mantine/hooks"
 import { Affix, Button, Container, Text, Transition } from "@mantine/core"
 import { ArrowUp } from "tabler-icons-react"
-import { getPostBySlug, getAllPosts } from "../../lib/posts"
+import { getPostBySlug, getAllPosts } from "../../api/posts"
 import Head from "next/head"
-import toHTML from "../../lib/markdown"
+import toHTML from "../../api/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
-import { MantineProvider } from "@mantine/core"
+import Layout from "../../components/layout"
 
 type Props = {
   post: PostType
@@ -26,7 +26,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
     return router.isFallback ? (
       <h1>Loading…</h1>
     ) : (
-      <>
+      <Layout>
         <Container>
           <article>
             <Head>
@@ -53,7 +53,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
             )}
           </Transition>
         </Affix>
-      </>
+      </Layout>
     )
   }
 }

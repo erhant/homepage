@@ -1,14 +1,13 @@
 import Project from "../components/project"
-import { Grid } from "@mantine/core"
+import { Grid, Tabs } from "@mantine/core"
 import Layout from "../components/layout"
 import Head from "next/head"
+import sideProjects from "../content/projects/side"
+import schoolProjects from "../content/projects/school"
+import thesisProjects from "../content/projects/thesis"
 
-const projects = [
-  {
-    title: "Test",
-    description: "something something fkdsjhkjdhgkjsh",
-  },
-]
+const dividerMargin = "md"
+const horizontalSpacing = "lg"
 
 const Projects = () => {
   return (
@@ -17,15 +16,37 @@ const Projects = () => {
         <title>Projects</title>
       </Head>
       <Layout>
-        <Grid>
-          {projects.map((p, i) => {
-            return (
-              <Grid.Col xs={12} md={6} lg={3} key={i}>
-                <Project title={p.title} description={p.description} />
-              </Grid.Col>
-            )
-          })}
-        </Grid>
+        <Tabs>
+          <Tabs.Tab label="Side Projects">
+            <Grid>
+              {sideProjects.map((p, i) => (
+                <Grid.Col xs={12} md={6} key={i}>
+                  <Project project={p} />
+                </Grid.Col>
+              ))}
+            </Grid>
+          </Tabs.Tab>
+
+          <Tabs.Tab label="School Projects">
+            <Grid>
+              {schoolProjects.map((p, i) => (
+                <Grid.Col xs={12} md={6} key={i}>
+                  <Project project={p} />
+                </Grid.Col>
+              ))}
+            </Grid>
+          </Tabs.Tab>
+
+          <Tabs.Tab label="Thesis Projects">
+            <Grid>
+              {thesisProjects.map((p, i) => (
+                <Grid.Col xs={12} key={i}>
+                  <Project project={p} />
+                </Grid.Col>
+              ))}
+            </Grid>
+          </Tabs.Tab>
+        </Tabs>
       </Layout>
     </>
   )

@@ -1,0 +1,3 @@
+type LanguageType = "js" | "ts" | "c" | "py" | "cpp" | "hs" | "go" | "tex" | "sass" | "sol" | "next" | "bash" | "react"
+
+export default LanguageType

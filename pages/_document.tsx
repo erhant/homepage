@@ -7,11 +7,12 @@ const getInitialProps = createGetInitialProps()
 export default class MyDocument extends Document {
   static getInitialProps = getInitialProps
 
-  /*
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -19,5 +20,4 @@ export default class MyDocument extends Document {
       </Html>
     )
   }
-  */
 }
