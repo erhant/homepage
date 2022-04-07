@@ -17,7 +17,10 @@ type Props = {
 }
 const Navbar = ({ isNavbarOpen }: Props) => {
   return (
-    <Paper shadow="xs" sx={{ position: "absolute", marginTop: "1.5em", marginLeft: "1.5em" }}>
+    <Paper
+      shadow="xs"
+      sx={{ position: "absolute", marginTop: "1.5em", marginLeft: "1.5em", zIndex: "5", minWidth: "10em" }}
+    >
       <Collapse in={isNavbarOpen} transitionTimingFunction="ease-in">
         <Stack align="stretch" px="xs" py="md">
           {NavbarItemsList.map((item, i) => {

@@ -21,7 +21,7 @@ const Index = () => {
               orientation="vertical"
               styles={{
                 separator: {
-                  minHeight: "100px",
+                  minHeight: "85px",
                 },
                 stepLabel: {
                   fontSize: "2em",

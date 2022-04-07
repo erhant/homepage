@@ -38,8 +38,6 @@ const Header = ({ title, isNavbarOpen, setIsNavbarOpen }: Props) => {
               setIsNavbarOpen(!isNavbarOpen)
             }}
           />
-          <Avatar src="/assets/me.JPG" alt="it is I, Erhan" radius="xl" />
-          <Title order={2}>{title ? title : "Erhan's Homepage"}</Title>
 
           {/* empty space in between left and right*/}
           <Box sx={{ flexGrow: 1 }} />
@@ -98,6 +96,11 @@ const Header = ({ title, isNavbarOpen, setIsNavbarOpen }: Props) => {
               }[colorScheme]
             }
             onChange={() => toggleColorScheme()}
+            styles={{
+              label: {
+                marginLeft: "-1em",
+              },
+            }}
           />
         </Group>
       </Container>

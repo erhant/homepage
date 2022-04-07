@@ -19,7 +19,15 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider theme={{ ...DefaultMantineTheme, colorScheme }} withGlobalStyles withNormalizeCSS>
+      <MantineProvider
+        theme={{
+          ...DefaultMantineTheme,
+          colorScheme,
+          primaryColor: colorScheme === "dark" ? "blues" : "blues", // todo: do we want different colors for schemes?
+        }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
         <Component {...pageProps} />
       </MantineProvider>
     </ColorSchemeProvider>

@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Blockquote, Group, Anchor, Divider, List, Badge, Tooltip, Space, Title } from "@mantine/core"
+import { Text, Blockquote, Group, Anchor, Divider, List, Badge, Tooltip, Space, Title, Avatar } from "@mantine/core"
 import { useState } from "react"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
@@ -21,9 +21,10 @@ const Index = () => {
 
           <Blockquote
             cite=""
-            icon={<Message />}
+            icon={<Avatar src="/assets/me.JPG" alt="it is I, Erhan" size={100} radius={100} />}
             styles={{
               inner: { fontSize: "1.2em" },
+              icon: { marginRight: "4.2em", marginLeft: "-0.5em" },
             }}
           >
             Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;

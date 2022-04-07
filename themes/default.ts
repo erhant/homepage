@@ -2,21 +2,20 @@ import { MantineThemeOverride } from "@mantine/core"
 
 type TenColors = [string, string, string, string, string, string, string, string, string, string]
 
-// Portal Orange: #EE7F1B
-const portalOranges: TenColors = [
-  "#ffecdc",
-  "#fdcfb3",
-  "#f7b486",
-  "#f49d58",
-  "#ef8729",
-  "#d66110",
-  "#a7400a",
-  "#782606",
-  "#491100",
-  "#1e0001",
+const myOranges: TenColors = [
+  "#fff0de",
+  "#f7dcb6",
+  "#f0ca8d",
+  "#e8b961",
+  "#e2ab37",
+  "#c8971d",
+  "#9c6d15",
+  "#6f470c",
+  "#442503",
+  "#190a00",
 ]
-// Portal Blue: #D5DBEB
-const portalBlues: TenColors = [
+
+const myBlues: TenColors = [
   "#eceffc",
   "#cbd3e6",
   "#aab2d3",
@@ -43,12 +42,11 @@ const grayscale: TenColors = [
 const DefaultMantineTheme: MantineThemeOverride = {
   fontFamily: "Avenir, Verdana, sans-serif",
   colors: {
-    blues: portalBlues,
-    oranges: portalOranges,
+    blues: myBlues,
+    oranges: myOranges,
     grays: grayscale,
-    icons: portalBlues,
+    icons: myBlues,
   },
-  primaryColor: "blues",
 }
 
 export default DefaultMantineTheme
