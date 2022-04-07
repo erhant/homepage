@@ -1,14 +1,13 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
-import { useWindowScroll } from "@mantine/hooks"
-import { Affix, Button, Container, Text, Transition, useMantineTheme } from "@mantine/core"
-import { ArrowUp } from "tabler-icons-react"
+import { Container, useMantineTheme } from "@mantine/core"
 import { getPostBySlug, getAllPosts } from "../../api/posts"
 import Head from "next/head"
 import toHTML from "../../api/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
 import Layout from "../../components/layout"
+import ScrollToTopAffix from "../../components/scroll-to-top-affix"
 
 type Props = {
   post: PostType
@@ -18,7 +17,6 @@ type Props = {
 
 const Post = ({ post, morePosts, preview }: Props) => {
   const theme = useMantineTheme()
-  const [scroll, scrollTo] = useWindowScroll()
   const router = useRouter()
 
   if (!router.isFallback && !post?.slug) {
@@ -53,15 +51,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
             </article>
           </Container>
 
-          <Affix position={{ bottom: 20, right: 20 }}>
-            <Transition transition="slide-up" mounted={scroll.y > 0}>
-              {(transitionStyles) => (
-                <Button leftIcon={<ArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
-                  Scroll to top
-                </Button>
-              )}
-            </Transition>
-          </Affix>
+          <ScrollToTopAffix />
         </>
       </Layout>
     )

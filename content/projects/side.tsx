@@ -78,10 +78,11 @@ const sideProjects: ProjectType[] = [
     langs: ["py"],
     content: (
       <Text>
-        Burning Castle is the name I gave to a simple mathematical function with a beautiful plot. I submitted the
-        integer sequence to <Anchor href="https://oeis.org/">Online Encyclopedia of Integer Sequences</Anchor>, but it
-        later got removed for being too artificial. Nevertheless, I submitted a related sequence (A343275), which is
-        simply <Code>{"a(n) = |2*n - 10^length(n)|"}</Code>. The repo has both of them.
+        Burning Castle is the name I gave to a simple mathematical integer sequence I had found, which has a spectacular
+        plot. I submitted the integer sequence to{" "}
+        <Anchor href="https://oeis.org/">Online Encyclopedia of Integer Sequences</Anchor>, but it later got removed for
+        being too artificial. Nevertheless, I submitted a related sequence (A343275), which is simply{" "}
+        <Code>{"a(n) = |2*n - 10^length(n)|"}</Code>. The repo has both of them.
       </Text>
     ),
   },

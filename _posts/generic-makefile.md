@@ -1,6 +1,6 @@
 ---
 title: "Generic Makefile"
-excerpt: "hello"
+excerpt: "My generic Makefiles for C, C++, CUDA and Haskell to be used in small projects."
 date: "2020-03-16T05:35:07.322Z"
 ---
 

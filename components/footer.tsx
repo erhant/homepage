@@ -4,7 +4,7 @@ import Icon from "./icon"
 
 const Footer = () => {
   return (
-    <_Footer height={50} py="md">
+    <_Footer height={0} py="md">
       <Group position="center">
         <Text>&copy; Erhan Tezcan {new Date().getFullYear()} &nbsp; </Text>
         <Anchor href="https://github.com/erhant/blog-static">

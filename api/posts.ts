@@ -48,7 +48,8 @@ export async function getPostByPath(path: string, fields: string[] = []) {
 
 export async function getAllPosts(fields: string[] = []) {
   const paths = await getPostPaths()
-  console.log(paths)
+  //console.log(paths)
+
   // read posts
   const posts = []
   for (let i = 0; i < paths.length; ++i) posts.push(await getPostByPath(paths[i], fields))

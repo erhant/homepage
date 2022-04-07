@@ -1,15 +1,14 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Title, Blockquote, Group, Anchor, Divider, Space, List, Badge, Tooltip } from "@mantine/core"
+import { Text, Blockquote, Group, Anchor, Divider, List, Badge, Tooltip, Space, Title } from "@mantine/core"
 import { useState } from "react"
 import FancyWord from "../components/fancy-word"
-import DevStacks from "../components/dev-stacks"
+import DevStacks from "../components/about/dev-stacks"
 import Icon from "../components/icon"
-import { Message } from "tabler-icons-react"
+import { Message, School } from "tabler-icons-react"
+import Education from "../components/about/education"
 
 const Index = () => {
-  const [opened, setOpen] = useState(false)
-
   return (
     <>
       <Head>
@@ -17,6 +16,9 @@ const Index = () => {
       </Head>
       <Layout>
         <>
+          <Title order={1}>About me</Title>
+          <Space h="xl" />
+
           <Blockquote
             cite=""
             icon={<Message />}
@@ -27,25 +29,32 @@ const Index = () => {
             Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;
             driven by a thirst for knowledge and with respect to style, standards, security and scalability.
           </Blockquote>
-          <Divider my="xl" label="Programming" labelPosition="center" />
+
+          <Space h="lg" />
+          <Text>
+            My stack is Typescript-oriented, mostly on server-side programming and web. I have experience with MongoDB
+            and PostgreSQL, though the usage depends on the needs. Other than that, I use Python for many small
+            side-projects.
+          </Text>
           <DevStacks />
           <Text>
             My first ever-so-slightly-related programming experience was when I used the Doom 3 console to spawn zombies
             and props and such; around middle school I guess? After that, not much. My first actual program is my
             freshman year first homework, which was a CandyCrush-like game but with numbers instead of candies, in
             console, with <Anchor href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</Anchor>{" "}
-            (yeah, indeed).
-          </Text>
-          <Space h="md" />
-          <Text>
-            Overall, I mostly work with backend-oriented Typescript, but later got into front-end too. As of 2022, I am
-            hopping on to the Web3.0 train.{" "}
+            (yeah, indeed). As of 2022, I am hopping on to the Web3.0 train.{" "}
             <Tooltip label="We are all gonna make it 🚀" position="bottom">
               <FancyWord word="#WAGMI" />
             </Tooltip>
           </Text>
 
+          <Divider my="xl" label="Education" labelPosition="center" />
+          <Education />
+
           <Divider my="xl" label="Publications" labelPosition="center" />
+          <Text>
+            You can follow me on <Anchor href="https://www.researchgate.net/profile/Erhan-Tezcan">ResearchGate</Anchor>.
+          </Text>
           <List>
             <List.Item>
               Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat. “ComScribe: Identifying Intra-node
@@ -88,11 +97,6 @@ const Index = () => {
               <Badge>⏳🪕🧉</Badge>
             </Anchor>
           </Group>
-          <Divider my="xl" label="Mathematics" labelPosition="center" />
-          <Text>
-            I have great interest in mathematics; number theory and cryptography in particular. I will be writing stuff
-            about them in this blog too! Check my projects for some math projects.
-          </Text>
         </>
       </Layout>
     </>

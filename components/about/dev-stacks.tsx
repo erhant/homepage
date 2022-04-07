@@ -1,5 +1,5 @@
 import { Text, Title, Box, Anchor, Collapse, Accordion, SimpleGrid, Stack, Center, Divider } from "@mantine/core"
-import Language from "./language"
+import Language from "../language"
 
 const DevStacks = () => {
   return (

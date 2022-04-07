@@ -17,9 +17,10 @@ const PostPreview = ({ title, date, excerpt, slug }: Props) => {
           {title}
         </Link>
       </Title>
-      <Title order={5}>
+
+      <Text color="dimmed" size="lg">
         <DateFormatter dateString={date} />
-      </Title>
+      </Text>
       <Text>{excerpt}</Text>
     </Box>
   )

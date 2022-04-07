@@ -9,18 +9,22 @@ import {
   useMantineColorScheme,
   Space,
   Popover,
+  Burger,
   Text,
   Anchor,
   Container,
 } from "@mantine/core"
-import { useState } from "react"
+import { Dispatch, SetStateAction, useState } from "react"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum } from "tabler-icons-react"
 import Icon from "./icon"
 import FancyWord from "./fancy-word"
+
 type Props = {
   title?: string
+  isNavbarOpen: boolean
+  setIsNavbarOpen: Dispatch<SetStateAction<boolean>>
 }
-const Header = ({ title }: Props) => {
+const Header = ({ title, isNavbarOpen, setIsNavbarOpen }: Props) => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
   const [ethOpened, setEthOpened] = useState(false)
 
@@ -28,6 +32,12 @@ const Header = ({ title }: Props) => {
     <_Header height={60} px="lg" mt="lg">
       <Container>
         <Group>
+          <Burger
+            opened={isNavbarOpen}
+            onClick={() => {
+              setIsNavbarOpen(!isNavbarOpen)
+            }}
+          />
           <Avatar src="/assets/me.JPG" alt="it is I, Erhan" radius="xl" />
           <Title order={2}>{title ? title : "Erhan's Homepage"}</Title>
 
@@ -45,7 +55,7 @@ const Header = ({ title }: Props) => {
           <Popover
             opened={ethOpened}
             onClose={() => setEthOpened(false)}
-            target={<Icon I={CurrencyEthereum} onClick={() => setEthOpened((o) => !o)} />}
+            target={<Icon I={CurrencyEthereum} onClick={() => setEthOpened((o) => !o)} sx={{ cursor: "pointer" }} />}
             width={300}
             position="bottom"
           >
@@ -53,7 +63,9 @@ const Header = ({ title }: Props) => {
               <Text>
                 My <Anchor href="https://unstoppabledomains.com/">Unstoppable Domain</Anchor>:
               </Text>
-              <FancyWord word="erhantezcan.wallet" />
+              <Anchor href="https://ud.me/erhantezcan.wallet">
+                <FancyWord word="erhantezcan.wallet" />
+              </Anchor>
             </Box>
           </Popover>
 
