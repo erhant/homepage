@@ -6,22 +6,41 @@ import glob from "glob"
 const postsDirectoryName = "_posts"
 const postsDirectory = join(process.cwd(), postsDirectoryName)
 const uniqueSluggifier = "___"
+
+/**
+ * Generate the slug from path of a file.
+ * @param {string} path
+ */
 function pathToSlug(path: string): string {
   return path.slice(postsDirectoryName.length + 1).replaceAll("/", uniqueSluggifier)
 }
+
+/**
+ * Convert a slug to path under posts directory.
+ * @param {string} slug
+ */
 function slugToPath(slug: string): string {
   return slug.replaceAll(uniqueSluggifier, "/")
 }
 
+/**
+ * Get paths of all files under posts directory.
+ */
 function getPostPaths(): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    glob("_posts/**/*.md", (err, files) => {
+    glob(postsDirectoryName + "/**/*.md", (err, files) => {
       if (err) reject(err)
       else resolve(files.map((f: string) => f))
     })
   })
 }
 
+/**
+ * Get a post by its slug. Converts the slug to path, and then finds the post by path.
+ * @see getPostByPath
+ * @param {string} slug
+ * @param {string[]} fields
+ */
 export async function getPostBySlug(slug: string, fields: string[] = []) {
   return await getPostByPath(join(postsDirectory, slugToPath(slug)), fields)
 }

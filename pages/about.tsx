@@ -40,10 +40,10 @@ const Index = () => {
           <DevStacks />
           <Text>
             My first ever-so-slightly-related programming experience was when I used the Doom 3 console to spawn zombies
-            and props and such; around middle school I guess? After that, not much. My first actual program is my
-            freshman year first homework, which was a CandyCrush-like game but with numbers instead of candies, in
-            console, with <Anchor href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</Anchor>{" "}
-            (yeah, indeed). As of 2022, I am hopping on to the Web3.0 train.{" "}
+            and props and such; around middle school... My first program is my freshman year first homework, which was a
+            CandyCrush-like game but with numbers instead of candies, in console, with{" "}
+            <Anchor href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</Anchor> (yeah, indeed).
+            As of 2022, I am hopping on to the Web3.0 train.{" "}
             <Tooltip label="We are all gonna make it 🚀" position="bottom">
               <FancyWord word="#WAGMI" />
             </Tooltip>

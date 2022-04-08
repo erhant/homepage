@@ -1,3 +1,4 @@
+// languages supported by devicon
 type LanguageType =
   | "js"
   | "ts"

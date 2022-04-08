@@ -40,7 +40,7 @@ const Index = () => {
                     <Title>About me</Title>
                   </Anchor>
                 }
-                description="First, you might want to find out who am I, what do I do & all that. Nice to meet you already 🥂"
+                description="First, you might want to find out who am I, what do I do & all that. Nice to meet you already :)"
                 icon={<User />}
               />
               <Stepper.Step
@@ -49,7 +49,7 @@ const Index = () => {
                     <Title>My projects</Title>
                   </Anchor>
                 }
-                description="Then feel free to check out my projects! Most of them are on my GitHub, but I have some other stuff mentioned here too."
+                description="Then feel free to check out my projects. Most of them are on my GitHub, but I have some other stuff mentioned here too."
                 icon={<Code />}
               />
               <Stepper.Step
@@ -58,7 +58,7 @@ const Index = () => {
                     <Title>My blog</Title>
                   </Anchor>
                 }
-                description="Knowledge exists to be conveyed, and thus shall I convey them here. In doing so, shall be it entertaining."
+                description="I will write stuff about maths, music or programming every now and then. Keep your eye out if you enjoy them!"
                 icon={<Notebook />}
               />
               <Stepper.Step
