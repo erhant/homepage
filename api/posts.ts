@@ -12,7 +12,7 @@ const uniqueSluggifier = "___"
  * @param {string} path
  */
 function pathToSlug(path: string): string {
-  return path.slice(postsDirectoryName.length + 1).replaceAll("/", uniqueSluggifier)
+  return path.slice(postsDirectoryName.length + 1).replace(new RegExp("/", "g"), uniqueSluggifier)
 }
 
 /**
@@ -20,7 +20,7 @@ function pathToSlug(path: string): string {
  * @param {string} slug
  */
 function slugToPath(slug: string): string {
-  return slug.replaceAll(uniqueSluggifier, "/")
+  return slug.replace(new RegExp(uniqueSluggifier, "g"), "/")
 }
 
 /**

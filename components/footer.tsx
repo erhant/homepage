@@ -11,8 +11,8 @@ const Footer = () => {
     <_Footer height={0} py="md">
       <Group position="center">
         <Text>&copy; Erhan Tezcan {new Date().getFullYear()} &nbsp; </Text>
-        <Tooltip label="Star this on GitHub!">
-          <Anchor href="https://github.com/erhant/blog-static">
+        <Tooltip label="Star on GitHub!">
+          <Anchor href="https://github.com/erhant/homepage">
             <Icon I={BrandGithub} />
           </Anchor>
         </Tooltip>
