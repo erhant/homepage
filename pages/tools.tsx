@@ -9,6 +9,7 @@ const Tools = () => {
     <>
       <Head>
         <title>Tools</title>
+        <meta name="description" content="All kinds of lightweight online tools by Erhan Tezcan." key="desc" />
       </Head>
 
       <Layout>

@@ -59,6 +59,7 @@ const ImpermanentLoss = () => {
     <>
       <Head>
         <title>Impermanent Loss Calculator</title>
+        <meta name="description" content="An impermanent loss calculator." key="desc" />
       </Head>
 
       <Layout>

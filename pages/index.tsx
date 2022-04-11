@@ -8,6 +8,7 @@ const Index = () => {
     <>
       <Head>
         <title>Hey! 🥂</title>
+        <meta name="description" content="Homepage of Erhan Tezcan." key="desc" />
       </Head>
       <Layout>
         <>

@@ -32,6 +32,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
             <article>
               <Head>
                 <title>{post.title}</title>
+                <meta name="description" content={post.excerpt} key="desc" />
                 {/* Math rendering */}
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
                 {/* Code higlighting */}

@@ -14,6 +14,7 @@ const Projects = () => {
     <>
       <Head>
         <title>Projects</title>
+        <meta name="description" content="Projects of Erhan Tezcan." key="desc" />
       </Head>
       <Layout>
         <>

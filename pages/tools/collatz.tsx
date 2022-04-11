@@ -27,6 +27,7 @@ const Collatz = () => {
     <>
       <Head>
         <title>Collatz Sequence</title>
+        <meta name="description" content="Collatz Sequence finder tool." key="desc" />
       </Head>
 
       <Layout>

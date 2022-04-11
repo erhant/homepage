@@ -4,8 +4,7 @@ import { Text, Anchor, Code } from "@mantine/core"
 const sideProjects: ProjectType[] = [
   {
     title: "SpotiStuff",
-    githubURL: "https://github.com/erhant/lighthouse-problem",
-    demoURL: "https://erhant.github.io/lighthouse-problem/",
+    githubURL: "https://github.com/erhant/spoti-stuff",
     langs: ["ts", "react", "sass"],
     content: (
       <Text>

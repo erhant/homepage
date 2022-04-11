@@ -14,6 +14,7 @@ const Posts = ({ posts }: Props) => {
     <>
       <Head>
         <title>Posts</title>
+        <meta name="description" content="Blog posts of Erhan Tezcan." key="desc" />
       </Head>
 
       <Layout>

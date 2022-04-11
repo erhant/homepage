@@ -29,6 +29,7 @@ const About = () => {
     <>
       <Head>
         <title>About</title>
+        <meta name="description" content="About Erhan." key="desc" />
       </Head>
       <Layout>
         <>
@@ -38,7 +39,7 @@ const About = () => {
 
           <Blockquote
             cite=""
-            icon={<Avatar src="/assets/me.JPG" alt="it is I, Erhan" size={100} radius={100} />}
+            icon={<Avatar src="/assets/me.webp" alt="it is I, Erhan" size={100} radius={100} />}
             styles={{
               inner: { fontSize: "1.2em" },
               icon: { marginRight: "4.2em", marginLeft: "-0.5em" },
