@@ -6,7 +6,7 @@ date: "2022-04-11"
 
 # Hello World
 
-I have finally made my own homepage! It was a beautiful experience to learn front-end, and most of the credit here goes to the awesome design of Mantine UI and <https://web.dev/learn/css/>.
+I have finally made my own homepage 🚀! It was a beautiful experience to learn front-end, and most of the credit here goes to the awesome design of Mantine UI and <https://web.dev/learn/css/>.
 
 The site is made with NextJS, and has a markdown parser for blog post generation. In doing so, it can highlight code:
 
@@ -25,6 +25,4 @@ f(x) = \begin{cases}
 \end{cases}
 $$
 
-I also have a tools section, which will have some lightweight tools of any kind (mostly done for my own entertainment or educational purposes).
-
-Keep an eye out on this blog! I plan on writing math - programming - music related stuff here in the times to come.
+I also have a tools section, which will have some lightweight tools of any kind (mostly done for my own entertainment or educational purposes). You should keep an eye out on this blog, I plan on writing math - programming - music related stuff here in the times to come!
