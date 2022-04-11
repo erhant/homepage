@@ -1,26 +1,59 @@
 // Collatz sequence tool
 import Layout from "../../components/layout"
-import { Title, Text, NumberInput, Stack, Group, Space, Center } from "@mantine/core"
+import { Title, Text, NumberInput, Stack, Group } from "@mantine/core"
 import Head from "next/head"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CurrencyDollar } from "tabler-icons-react"
 
-type TokenValsType = {
+type ResultType = {
+  totalQuantity: number
+  quantityA: number
+  quantityB: number
+}
+type PoolType = {
   spotA: number
   spotB: number
   futureA: number
   futureB: number
   quantity: number
 }
-const defaultTokenVals: TokenValsType = {
+const defaultTokenVals: PoolType = {
   spotA: 0.05,
   spotB: 0.05,
   futureA: 0.05,
   futureB: 0.05,
   quantity: 500,
 }
+function getResults(t: PoolType): ResultType {
+  // how many Token A are there in this pool
+  const quantityA = t.quantity / t.spotA
+  // how many Token B are there in this pool
+  const quantityB = t.quantity / t.spotB
+  // constant product market
+  const productConstant = quantityA * quantityB
+
+  return {
+    totalQuantity: t.quantity * 2,
+    quantityA: t.quantity / t.spotA,
+    quantityB: t.quantity / t.spotB,
+  }
+}
+function calcImpermanentLoss(baseQty: number, tokenQty: number, futurePriceRatio: number): number {
+  const productConstant = baseQty * tokenQty
+  const hodlStrategy = tokenQty * futurePriceRatio + baseQty
+  const lpStrategy =
+    Math.sqrt(productConstant / futurePriceRatio) * futurePriceRatio + Math.sqrt(productConstant * futurePriceRatio)
+  const impermanentLoss = ((hodlStrategy - lpStrategy) / hodlStrategy) * 100
+  return impermanentLoss
+}
+
 const ImpermanentLoss = () => {
-  const [tokenVals, setTokenVals] = useState<TokenValsType>(defaultTokenVals)
+  const [tokenVals, setTokenVals] = useState<PoolType>(defaultTokenVals)
+  const [ans, setAns] = useState<ResultType>(getResults(defaultTokenVals))
+
+  useEffect(() => {
+    setAns(getResults(tokenVals))
+  }, [tokenVals])
 
   return (
     <>
@@ -98,15 +131,21 @@ const ImpermanentLoss = () => {
           </Stack>
 
           <Title order={4} mt="md">
-            Holder
+            Initially
           </Title>
           <Text>
             Suppose you had {2 * tokenVals.quantity}$ with {tokenVals.quantity}$ worth of Token A, and{" "}
             {tokenVals.quantity}$ worth of Token B at the spot price; which means you had{" "}
-            {tokenVals.quantity / tokenVals.spotA} Token A, and {tokenVals.quantity / tokenVals.spotB} Token B. If you
-            had kept on to these tokens, you would have {(tokenVals.quantity / tokenVals.spotA) * tokenVals.futureA}$
-            worth of Token A, and {(tokenVals.quantity / tokenVals.spotB) * tokenVals.futureB}$ worth of Token B, at a
-            total of{" "}
+            {tokenVals.quantity / tokenVals.spotA} Token A, and {tokenVals.quantity / tokenVals.spotB} Token B.
+          </Text>
+
+          <Title order={4} mt="md">
+            Holder
+          </Title>
+          <Text>
+            If you had kept on to these tokens, you would have{" "}
+            {(tokenVals.quantity / tokenVals.spotA) * tokenVals.futureA}$ worth of Token A, and{" "}
+            {(tokenVals.quantity / tokenVals.spotB) * tokenVals.futureB}$ worth of Token B, at a total of{" "}
             {(tokenVals.quantity / tokenVals.spotA) * tokenVals.futureA +
               (tokenVals.quantity / tokenVals.spotB) * tokenVals.futureB}
             $.

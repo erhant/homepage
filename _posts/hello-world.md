@@ -1,33 +1,30 @@
 ---
 title: "Hello World"
-excerpt: "It begins."
-date: "2020-03-16T05:35:07.322Z"
+excerpt: "My homemade homepage is now live!"
+date: "2022-04-11"
 ---
 
-# Header 1 first
+# Hello World
 
-foo
+I have finally made my own homepage! It was a beautiful experience to learn front-end, and most of the credit here goes to the awesome design of Mantine UI and <https://web.dev/learn/css/>.
 
-# Header 1 second
-
-bar
-
-## H2
-
-lel
-
-### H3
-
-fds
+The site is made with NextJS, and has a markdown parser for blog post generation. In doing so, it can highlight code:
 
 ```c
 int main() {
-  return 0;
+  printf("Sounds good, right?");
 }
 ```
 
-Which is $1 + 1$:
+as well as render maths:
 
 $$
-2 - 1 + 3 - 2
+f(x) = \begin{cases}
+3x+1 & x \text{ odd} \\
+\frac{x}{2} & x \text{ even}
+\end{cases}
 $$
+
+I also have a tools section, which will have some lightweight tools of any kind (mostly done for my own entertainment or educational purposes).
+
+Keep an eye out on this blog! I plan on writing math - programming - music related stuff here in the times to come.

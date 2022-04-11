@@ -37,9 +37,9 @@ const sideProjects: ProjectType[] = [
     langs: ["py", "ts", "hs", "cpp"],
     content: (
       <Text>
-        As a form of <i>recreational mathematics</i>, I have been working on the Collatz Conjecture since late
-        highschool. I did some small findings, mostly focusing on algebraic tools to study trajectories of numbers. I
-        have one manuscript about it, see{" "}
+        As a form of recreational mathematics, I have been working on the Collatz Conjecture since late highschool. I
+        did some small findings, mostly focusing on algebraic tools to study trajectories of numbers. I have one
+        manuscript about it, see{" "}
         <Anchor href="https://arxiv.org/abs/1902.07312">On Collatz Conjecture - Erhan Tezcan (arXiv, 2019)</Anchor>.
         Another one coming soon, details ommitted though :)
       </Text>

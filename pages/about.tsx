@@ -1,14 +1,30 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Blockquote, Group, Anchor, Divider, List, Badge, Tooltip, Space, Title, Avatar } from "@mantine/core"
-import { useState } from "react"
+import {
+  Text,
+  Blockquote,
+  Group,
+  Anchor,
+  Divider,
+  List,
+  Badge,
+  Tooltip,
+  Space,
+  Title,
+  Avatar,
+  useMantineTheme,
+  Grid,
+} from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
-import Icon from "../components/icon"
-import { Message, School } from "tabler-icons-react"
 import Education from "../components/about/education"
+import Experience from "../components/about/experience"
 
-const Index = () => {
+const About = () => {
+  const theme = useMantineTheme()
+  const matches = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`)
+
   return (
     <>
       <Head>
@@ -16,8 +32,9 @@ const Index = () => {
       </Head>
       <Layout>
         <>
-          <Title order={1}>About me</Title>
-          <Space h="xl" />
+          <Title order={1} mb="md">
+            About me
+          </Title>
 
           <Blockquote
             cite=""
@@ -33,8 +50,7 @@ const Index = () => {
 
           <Space h="lg" />
           <Text>
-            My stack is Typescript-oriented, mostly on server-side programming and web. I have experience with MongoDB
-            and PostgreSQL, though the usage depends on the needs. Other than that, I use Python for many small
+            My stack is Typescript-oriented, mostly on server-side programming and web. I use Python for many small
             side-projects.
           </Text>
           <DevStacks />
@@ -49,8 +65,16 @@ const Index = () => {
             </Tooltip>
           </Text>
 
-          <Divider my="xl" label="Education" labelPosition="center" />
-          <Education />
+          <Grid justify="space-between">
+            <Grid.Col sm={5.5}>
+              <Divider my="xl" label="Education" labelPosition={matches ? "left" : "center"} />
+              <Education />
+            </Grid.Col>
+            <Grid.Col sm={5.5}>
+              <Divider my="xl" label="Experience" labelPosition={matches ? "left" : "center"} />
+              <Experience />
+            </Grid.Col>
+          </Grid>
 
           <Divider my="xl" label="Publications" labelPosition="center" />
           <Text>
@@ -104,4 +128,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default About

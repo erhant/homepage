@@ -6,6 +6,7 @@ type ToolType = {
   href: string
   description: ReactNode
   icon: TablerIcon
+  wip?: boolean // work in progress?
 }
 
 export default ToolType

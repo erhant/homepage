@@ -1,5 +1,5 @@
 import Project from "../components/project"
-import { Grid, Tabs, Space, Title } from "@mantine/core"
+import { Grid, Tabs, Title } from "@mantine/core"
 import Layout from "../components/layout"
 import Head from "next/head"
 import sideProjects from "../content/projects/side"
@@ -17,8 +17,9 @@ const Projects = () => {
       </Head>
       <Layout>
         <>
-          <Title order={1}>Projects</Title>
-          <Space h="xl" />
+          <Title order={1} mb="md">
+            Projects
+          </Title>
 
           <Tabs>
             <Tabs.Tab label="Side Projects">

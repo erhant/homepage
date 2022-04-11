@@ -2,7 +2,7 @@ import { getAllPosts } from "../api/posts"
 import Post from "../types/post"
 import PostPreview from "../components/post-preview"
 import Layout from "../components/layout"
-import { TypographyStylesProvider, Title, Space } from "@mantine/core"
+import { TypographyStylesProvider, Title } from "@mantine/core"
 import Head from "next/head"
 
 type Props = {
@@ -18,8 +18,9 @@ const Posts = ({ posts }: Props) => {
 
       <Layout>
         <>
-          <Title order={1}>Blog Posts</Title>
-          <Space h="xl" />
+          <Title order={1} mb="md">
+            Posts
+          </Title>
 
           {/* posts set inner HTML, so we need this provider to apply our styles to them */}
           <TypographyStylesProvider>

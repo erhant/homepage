@@ -1,5 +1,5 @@
 import Layout from "../components/layout"
-import { List, SimpleGrid, Stack, Text, Title } from "@mantine/core"
+import { Stack, Text, Title } from "@mantine/core"
 import Head from "next/head"
 import Tool from "../components/tool"
 import tools from "../content/tools"
@@ -13,7 +13,9 @@ const Tools = () => {
 
       <Layout>
         <>
-          <Title order={1}>Tools</Title>
+          <Title order={1} mb="md">
+            Tools
+          </Title>
           <Text mb="lg">
             I might have some utility tools here for fun, or other purposes. These may range from math to crypto, or
             visualizations!

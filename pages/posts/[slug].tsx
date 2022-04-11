@@ -1,12 +1,13 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
-import { Container, useMantineTheme } from "@mantine/core"
+import { Container, Title, useMantineTheme, Text } from "@mantine/core"
 import { getPostBySlug, getAllPosts } from "../../api/posts"
 import Head from "next/head"
 import toHTML from "../../api/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
 import Layout from "../../components/layout"
+import DateFormatter from "../../components/date-formatter"
 import ScrollToTopAffix from "../../components/scroll-to-top-affix"
 
 type Props = {
@@ -46,7 +47,13 @@ const Post = ({ post, morePosts, preview }: Props) => {
                   ></link>
                 )}
               </Head>
-              <h1>{post.title}</h1>
+              <div style={{ textAlign: "center" }}>
+                <Title order={1}>{post.title}</Title>
+                <Text color="dimmed" size="lg">
+                  <DateFormatter dateString={post.date} />
+                </Text>
+              </div>
+
               <PostBody content={post.content} />
             </article>
           </Container>

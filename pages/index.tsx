@@ -1,4 +1,4 @@
-import { Card, Center, Space, Anchor, Title, Stepper } from "@mantine/core"
+import { Card, Center, Anchor, Title, Stepper } from "@mantine/core"
 import Head from "next/head"
 import Layout from "../components/layout"
 import { User, Notebook, Code, Tool } from "tabler-icons-react"
@@ -11,8 +11,9 @@ const Index = () => {
       </Head>
       <Layout>
         <>
-          <Title order={1}>Welcome, stanger.</Title>
-          <Space h="md" />
+          <Title order={1} mb="md">
+            Welcome, stanger.
+          </Title>
           <Center>
             <Stepper
               my="xl"
