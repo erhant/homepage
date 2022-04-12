@@ -19,11 +19,6 @@ const Layout = ({ children }: Props) => {
         navbar={<Navbar isNavbarOpen={isNavbarOpen} />}
         header={<Header isNavbarOpen={isNavbarOpen} setIsNavbarOpen={setIsNavbarOpen} />}
         footer={<Footer />}
-        styles={(theme) => ({
-          root: { borderStyle: "hidden" },
-          main: { borderStyle: "hidden" },
-          body: { borderStyle: "hidden" },
-        })}
       >
         <Container>{children}</Container>
       </AppShell>
