@@ -1,58 +1,66 @@
 // Collatz sequence tool
 import Layout from "../../components/layout"
-import { Title, Text, NumberInput, Stack, Group } from "@mantine/core"
+import { Title, Text, NumberInput, Stack, Group, Anchor, Blockquote, Divider, Code } from "@mantine/core"
 import Head from "next/head"
 import { useEffect, useState } from "react"
+import { Prism } from "@mantine/prism"
 import { CurrencyDollar } from "tabler-icons-react"
 
-type ResultType = {
-  totalQuantity: number
-  quantityA: number
-  quantityB: number
-}
-type PoolType = {
-  spotA: number
-  spotB: number
-  futureA: number
-  futureB: number
-  quantity: number
-}
-const defaultTokenVals: PoolType = {
-  spotA: 0.05,
-  spotB: 0.05,
-  futureA: 0.05,
-  futureB: 0.05,
-  quantity: 500,
-}
-function getResults(t: PoolType): ResultType {
-  // how many Token A are there in this pool
-  const quantityA = t.quantity / t.spotA
-  // how many Token B are there in this pool
-  const quantityB = t.quantity / t.spotB
-  // constant product market
-  const productConstant = quantityA * quantityB
+const MIN = 0.01
+const STEP = 0.05
+const PRECISION = 2
+const ICONSIZE = 18
 
-  return {
-    totalQuantity: t.quantity * 2,
-    quantityA: t.quantity / t.spotA,
-    quantityB: t.quantity / t.spotB,
-  }
+type PoolType = {
+  spotA: number // Spot price of Token A
+  qtyA: number // Quantity of Token A, w.r.t liq
+  spotB: number // Spot price of Token B
+  qtyB: number // Quantity of Token B, w.r.t liq
+  futureA: number // Future price of Token A
+  futureB: number // Future price of Token B
+  liq: number // Liquidity of one Token. Assumes we provide the same amount for both.
 }
-function calcImpermanentLoss(baseQty: number, tokenQty: number, futurePriceRatio: number): number {
-  const productConstant = baseQty * tokenQty
-  const hodlStrategy = tokenQty * futurePriceRatio + baseQty
-  const lpStrategy =
-    Math.sqrt(productConstant / futurePriceRatio) * futurePriceRatio + Math.sqrt(productConstant * futurePriceRatio)
-  const impermanentLoss = ((hodlStrategy - lpStrategy) / hodlStrategy) * 100
-  return impermanentLoss
+const INIT_PRICE = 0.5
+const INIT_LIQ = 500
+const defaultTokenVals: PoolType = {
+  spotA: INIT_PRICE,
+  qtyA: INIT_LIQ / INIT_PRICE,
+  spotB: INIT_PRICE,
+  qtyB: INIT_LIQ / INIT_PRICE,
+  futureA: INIT_PRICE,
+  futureB: INIT_PRICE,
+  liq: INIT_LIQ,
 }
 
 const ImpermanentLoss = () => {
   const [tokenVals, setTokenVals] = useState<PoolType>(defaultTokenVals)
-  const [ans, setAns] = useState<ResultType>(getResults(defaultTokenVals))
+  const [results, setResults] = useState({
+    qtyA_new: INIT_LIQ / INIT_PRICE,
+    qtyB_new: INIT_LIQ / INIT_PRICE,
+    hodl: 2 * INIT_LIQ,
+    lp: 2 * INIT_LIQ,
+    diff: 0,
+  })
 
   useEffect(() => {
-    setAns(getResults(tokenVals))
+    // calculate new prices
+
+    const spot_ratio = tokenVals.spotA / tokenVals.spotB
+    const future_ratio = tokenVals.futureA / tokenVals.futureB
+    const ratio_change = spot_ratio / future_ratio
+
+    const qtyA_new = tokenVals.qtyA * Math.sqrt(ratio_change)
+    const qtyB_new = tokenVals.qtyB / Math.sqrt(ratio_change)
+    const hodl = tokenVals.qtyA * tokenVals.futureA + tokenVals.qtyB * tokenVals.futureB
+    const lp = qtyA_new * tokenVals.futureA + qtyB_new * tokenVals.futureB
+
+    setResults({
+      qtyA_new: qtyA_new,
+      qtyB_new: qtyB_new,
+      hodl,
+      lp,
+      diff: hodl - lp,
+    })
   }, [tokenVals])
 
   return (
@@ -67,96 +75,181 @@ const ImpermanentLoss = () => {
           <Title order={1} my="md">
             Impermanent Loss Calculator
           </Title>
-          <Text my="md">Impermanent loss description...</Text>
+
           <Stack>
             <Group>
               <NumberInput
-                precision={4}
-                min={0.0001}
-                step={0.0005}
+                precision={PRECISION}
+                min={MIN}
+                step={STEP}
                 label="Token A - Spot Price"
                 placeholder={defaultTokenVals.spotA + ""}
                 onChange={(val: number) => {
-                  if (val) setTokenVals({ ...tokenVals, spotA: val })
+                  if (val) setTokenVals({ ...tokenVals, spotA: val, qtyA: tokenVals.liq / val })
                 }}
-                icon={<CurrencyDollar size={14} />}
+                value={tokenVals.spotA}
+                icon={<CurrencyDollar size={ICONSIZE} />}
               />
               <NumberInput
-                precision={4}
-                min={0.0001}
-                step={0.0005}
+                precision={PRECISION}
+                min={MIN}
+                step={STEP}
                 placeholder={defaultTokenVals.spotB + ""}
                 label="Token B - Spot Price"
                 onChange={(val: number) => {
-                  if (val) setTokenVals({ ...tokenVals, spotB: val })
+                  if (val) setTokenVals({ ...tokenVals, spotB: val, qtyB: tokenVals.liq / val })
                 }}
-                icon={<CurrencyDollar size={14} />}
+                value={tokenVals.spotB}
+                icon={<CurrencyDollar size={ICONSIZE} />}
               />
             </Group>
             <Group>
               <NumberInput
-                precision={4}
-                min={0.0001}
-                step={0.0005}
+                precision={PRECISION}
+                min={MIN}
+                step={STEP}
                 placeholder={defaultTokenVals.futureA + ""}
                 label="Token A - Future Price"
                 onChange={(val: number) => {
                   if (val) setTokenVals({ ...tokenVals, futureA: val })
                 }}
-                icon={<CurrencyDollar size={14} />}
+                value={tokenVals.futureA}
+                icon={<CurrencyDollar size={ICONSIZE} />}
               />
               <NumberInput
-                precision={4}
-                min={0.0001}
-                step={0.0005}
+                precision={PRECISION}
+                min={MIN}
+                step={STEP}
                 placeholder={defaultTokenVals.futureB + ""}
                 label="Token B - Future Price"
                 onChange={(val: number) => {
                   if (val) setTokenVals({ ...tokenVals, futureB: val })
                 }}
-                icon={<CurrencyDollar size={14} />}
+                value={tokenVals.futureB}
+                icon={<CurrencyDollar size={ICONSIZE} />}
               />
             </Group>
             <Group>
               <NumberInput
                 min={1}
                 step={1}
-                placeholder={defaultTokenVals.quantity + ""}
-                label="Liquidity of one token"
+                placeholder={defaultTokenVals.liq + ""}
+                label="Liquidity of each token"
+                description={"Total value in the pool: " + tokenVals.liq * 2}
                 onChange={(val: number) => {
-                  if (val) setTokenVals({ ...tokenVals, quantity: val })
+                  if (val) setTokenVals({ ...tokenVals, liq: val })
                 }}
-                icon={<CurrencyDollar size={14} />}
+                value={tokenVals.liq}
+                icon={<CurrencyDollar size={ICONSIZE} />}
               />
             </Group>
+            <Text color="dimmed">No fees are included in this calculator!</Text>
           </Stack>
 
           <Title order={4} mt="md">
-            Initially
+            Initial
           </Title>
           <Text>
-            Suppose you had {2 * tokenVals.quantity}$ with {tokenVals.quantity}$ worth of Token A, and{" "}
-            {tokenVals.quantity}$ worth of Token B at the spot price; which means you had{" "}
-            {tokenVals.quantity / tokenVals.spotA} Token A, and {tokenVals.quantity / tokenVals.spotB} Token B.
+            You had {tokenVals.liq * 2}$ worth of tokens at the spot price: <br />
+            <ul>
+              <li>
+                {tokenVals.liq}$ worth of Token A with {tokenVals.qtyA.toFixed(2)} tokens
+              </li>
+              <li>
+                {tokenVals.liq}$ worth of Token B with {tokenVals.qtyB.toFixed(2)} tokens
+              </li>
+            </ul>
           </Text>
 
           <Title order={4} mt="md">
-            Holder
+            HODLer
           </Title>
           <Text>
-            If you had kept on to these tokens, you would have{" "}
-            {(tokenVals.quantity / tokenVals.spotA) * tokenVals.futureA}$ worth of Token A, and{" "}
-            {(tokenVals.quantity / tokenVals.spotB) * tokenVals.futureB}$ worth of Token B, at a total of{" "}
-            {(tokenVals.quantity / tokenVals.spotA) * tokenVals.futureA +
-              (tokenVals.quantity / tokenVals.spotB) * tokenVals.futureB}
-            $.
+            If you had kept on to these tokens you would have:
+            <ul>
+              <li>
+                {(tokenVals.qtyA * tokenVals.futureA).toFixed(2)}$ worth of Token A with {tokenVals.qtyA.toFixed(2)}{" "}
+                tokens
+              </li>
+              <li>
+                {(tokenVals.qtyB * tokenVals.futureB).toFixed(2)}$ worth of Token B with {tokenVals.qtyB.toFixed(2)}{" "}
+                tokens
+              </li>
+            </ul>
+            at a total value of {results.hodl.toFixed(2)}$.
           </Text>
           <Title order={4} mt="md">
             Liquidity Provider
           </Title>
           <Text>
-            Suppose you provided a liquidity of {2 * tokenVals.quantity}$ which is made of {tokenVals.quantity}$ worth
-            of Token A, and {tokenVals.quantity}$ worth of Token B at the spot price.
+            If you had these assets in a pool, the pool constant would be {tokenVals.qtyA * tokenVals.qtyB}. At the spot
+            price, the ratio is 50:50 as it should be. When the prices change, arbitrage traders will buy the
+            outperforming one, and sell the underperforming one to balance the price. As a result, there will be:
+            <ul>
+              <li>
+                {(results.qtyA_new * tokenVals.futureA).toFixed(2)}$ worth of Token A with {results.qtyA_new.toFixed(2)}{" "}
+                tokens
+              </li>
+              <li>
+                {(results.qtyB_new * tokenVals.futureB).toFixed(2)}$ worth of Token B with {results.qtyB_new.toFixed(2)}{" "}
+                tokens
+              </li>
+            </ul>
+            at a total value of {results.lp.toFixed(2)}$.
+            <br />
+            <br />
+            Had you HODLed, you would have {results.diff.toFixed(2)}$ more.{" "}
+            <b>Your impermanent loss is {((100 * results.diff) / results.hodl).toFixed(2)}%.</b>
+          </Text>
+
+          <Divider my="md" label="What is impermanent loss?" labelPosition="center" />
+          <Text>
+            <Blockquote
+              cite={
+                <Anchor href="https://arxiv.org/pdf/2111.09192.pdf">
+                  - Loesch et al. &quot;Impermanent Loss in Uniswap v3&quot; (Nov 2021)
+                </Anchor>
+              }
+            >
+              Impermanent Loss is the difference between the value of the current fee adjusted liquidity position in an
+              Automated Market Maker (AMM), and the HODL value of the position that was originally contributed.
+            </Blockquote>
+            Traditional AMMs use constant product <code>k = m * n</code> where <code>k</code> is the pool constant,{" "}
+            <code>m</code> and <code>n</code> are the pool constituents, measured in quantities.
+          </Text>
+          <br />
+          <Text>
+            Assuming the AMM is arbitraged, the dollar value of two assets are always equal (i.e 50:50 ratio).
+            Consequently, an AMM will always sell the outperforming asset and buy the underperforming asset. This is the
+            source of impermanent loss, as a normal person would keep the outperforming asset (because it is increasing
+            in price) whereas the AMM will sell it. Same but vice versa for the underpeforming asset.
+          </Text>
+          <br />
+          <Text>
+            To calculate the new quantities, we do as follows:
+            <Prism
+              my="sm"
+              language="jsx"
+              withLineNumbers
+              copyLabel="Copy code to clipboard"
+              copiedLabel="Code copied to clipboard"
+            >
+              {`
+spot_ratio = spotA / spotB
+future_ratio = futureA / futureB
+ratio_change = spot_ratio / future_ratio
+
+qtyA_new = qtyA * sqrt(ratio_change)
+qtyB_new = qtyB / sqrt(ratio_change)
+            `}
+            </Prism>
+            With these new quantities, we calculate our gains with respect to the future prices, as if we are
+            withdrawing the assets from the pool. Then, we look at the difference between our gains from this and
+            HODLing, giving our impermanent loss.
+          </Text>
+          <Text color="dimmed" mt="md">
+            This tool was inspired from that of{" "}
+            <Anchor href="https://dailydefi.org/tools/impermanent-loss-calculator/">dailydefi.org's</Anchor>.
           </Text>
         </>
       </Layout>

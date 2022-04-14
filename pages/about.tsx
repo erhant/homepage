@@ -109,7 +109,6 @@ const About = () => {
             <Anchor href="https://open.spotify.com/playlist/4U6slifCwWBnRPvhmeherf?si=bea017e4d90b4035">
               <Badge>Rap &amp; Trap</Badge>
             </Anchor>
-            <Text>-</Text>
             <Anchor href="https://open.spotify.com/playlist/4GEXl9DjrgtOB020KpAUCm?si=fbeb307f988c419c">
               <Badge>🥁💓🎧</Badge>
             </Anchor>
