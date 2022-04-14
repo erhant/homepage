@@ -3,6 +3,7 @@ import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Stack, Group, Anchor, Blockquote, Divider, Code } from "@mantine/core"
 import Head from "next/head"
 import { useEffect, useState } from "react"
+import { Prism } from "@mantine/prism"
 import { CurrencyDollar } from "tabler-icons-react"
 
 const MIN = 0.01
@@ -211,7 +212,7 @@ const ImpermanentLoss = () => {
               }
             >
               Impermanent Loss is the difference between the value of the current fee adjusted liquidity position in an
-              Automated Market Maker (AMM), and the HODL value of the position that was originally contributed{" "}
+              Automated Market Maker (AMM), and the HODL value of the position that was originally contributed.
             </Blockquote>
             Traditional AMMs use constant product <code>k = m * n</code> where <code>k</code> is the pool constant,{" "}
             <code>m</code> and <code>n</code> are the pool constituents, measured in quantities.
@@ -226,7 +227,13 @@ const ImpermanentLoss = () => {
           <br />
           <Text>
             To calculate the new quantities, we do as follows:
-            <Code block>
+            <Prism
+              my="sm"
+              language="jsx"
+              withLineNumbers
+              copyLabel="Copy code to clipboard"
+              copiedLabel="Code copied to clipboard"
+            >
               {`
 spot_ratio = spotA / spotB
 future_ratio = futureA / futureB
@@ -235,7 +242,7 @@ ratio_change = spot_ratio / future_ratio
 qtyA_new = qtyA * sqrt(ratio_change)
 qtyB_new = qtyB / sqrt(ratio_change)
             `}
-            </Code>
+            </Prism>
             With these new quantities, we calculate our gains with respect to the future prices, as if we are
             withdrawing the assets from the pool. Then, we look at the difference between our gains from this and
             HODLing, giving our impermanent loss.

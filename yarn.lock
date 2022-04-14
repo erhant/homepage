@@ -362,26 +362,21 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mantine/core@^4.1.2", "@mantine/core@4.1.2":
-  "integrity" "sha512-7P3dhcTkA6zod7L9kSlIpEr4IcHX31LqFetbmoD/q8TqxBVBS2ckNYTwQaH5o446j2ORKrPZ0r28xBCI+lib8Q=="
-  "resolved" "https://registry.npmjs.org/@mantine/core/-/core-4.1.2.tgz"
-  "version" "4.1.2"
+"@mantine/core@^4.1.2", "@mantine/core@4.1.3":
+  "integrity" "sha512-uIJNWUdoT8dpFBYXDbllv3d2GRgWftFZ3rIV22dN3o1XnJZ44a4woX7aWO8vDmv0H62CTZDyz02jWriLFMmfLQ=="
+  "resolved" "https://registry.npmjs.org/@mantine/core/-/core-4.1.3.tgz"
+  "version" "4.1.3"
   dependencies:
-    "@mantine/styles" "4.1.2"
+    "@mantine/styles" "4.1.3"
     "@popperjs/core" "^2.9.3"
     "@radix-ui/react-scroll-area" "^0.1.1"
     "react-popper" "^2.2.5"
     "react-textarea-autosize" "^8.3.2"
 
-"@mantine/dates@^4.1.2":
-  "integrity" "sha512-Eb47531xlgZlhlkPsesyWGnfH+0mSYtKP5AylXdJAdi9rqC/9bxsEyIJHTUiJmVs+Cr5LvnVblubKBemapGWGg=="
-  "resolved" "https://registry.npmjs.org/@mantine/dates/-/dates-4.1.2.tgz"
-  "version" "4.1.2"
-
-"@mantine/hooks@^4.1.2", "@mantine/hooks@4.1.2":
-  "integrity" "sha512-ccTD4q7jViYisizjydRkCZdiMrtbC+uxEsZHHjyy/adcK8zOix178bag53OKn5TIFFMH6dXHZmto0IZsVCY1vw=="
-  "resolved" "https://registry.npmjs.org/@mantine/hooks/-/hooks-4.1.2.tgz"
-  "version" "4.1.2"
+"@mantine/hooks@^4.1.2", "@mantine/hooks@4.1.3":
+  "integrity" "sha512-sFDdpg8TjopSqFICNEX4OYUAbarAVn35FkRfE6vk4u2ecf8ySHO12XbBn/1zybTOD1dUACT8GJ0KI0WsYgT7Uw=="
+  "resolved" "https://registry.npmjs.org/@mantine/hooks/-/hooks-4.1.3.tgz"
+  "version" "4.1.3"
 
 "@mantine/next@^4.1.2":
   "integrity" "sha512-TJRPbn5kalhiDsYorPDtpRr9mhcxnBEb1L+4+ILxyfx481ioFydojpKA66rX2SyzGlumQxeyrumQb7dXe9G02g=="
@@ -389,6 +384,13 @@
   "version" "4.1.2"
   dependencies:
     "@mantine/ssr" "4.1.2"
+
+"@mantine/prism@^4.1.3":
+  "integrity" "sha512-9hMKNr/Hn12yfwFJ9jBqz2/hV6D4XGIIFZzqsq0vO97EYrfQM1dpIVAnqychrL3UH18smshuYAirGg5SSeD7kA=="
+  "resolved" "https://registry.npmjs.org/@mantine/prism/-/prism-4.1.3.tgz"
+  "version" "4.1.3"
+  dependencies:
+    "prism-react-renderer" "^1.2.1"
 
 "@mantine/ssr@4.1.2":
   "integrity" "sha512-bH2EAnKlZhrlxCn+W1lNfPBWbJJFCii5XgpLhOk7Fe8imlF6VL9dwHd1uMfBo/dl5tBgBH+AiFZ+BuTyfrpfxw=="
@@ -416,14 +418,26 @@
     "clsx" "^1.1.1"
     "csstype" "^3.0.9"
 
+"@mantine/styles@4.1.3":
+  "integrity" "sha512-wkyfwPlLs4QWa5q3FfpqS0xGbAvnPEapKhfRKSQta3EqpwejolfwlhZMyJCOoah0RiVp4eWjucWSBApwvDZjxQ=="
+  "resolved" "https://registry.npmjs.org/@mantine/styles/-/styles-4.1.3.tgz"
+  "version" "4.1.3"
+  dependencies:
+    "@emotion/cache" "^11.7.1"
+    "@emotion/react" "^11.7.1"
+    "@emotion/serialize" "^1.0.2"
+    "@emotion/utils" "^1.0.0"
+    "clsx" "^1.1.1"
+    "csstype" "^3.0.9"
+
 "@next/env@12.1.1":
   "integrity" "sha512-VmTRkfo/IXOQCATndjW3OjKb8zmAuB07eDdzO9XvuXZP87SyvnCYw3jrhUuFhOe/FVsKiloafa5LJfToUpvjUQ=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.1.tgz"
   "version" "12.1.1"
 
-"@next/swc-win32-x64-msvc@12.1.1":
-  "integrity" "sha512-nH5osn/uK9wsjT8Jh1YxMtRrkN5hoCNLQjsEdvfUfb+loQXeYiBd3n/0DUJkf6Scjfv6/htfUTPP3AEa7AbBxQ=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.1.tgz"
+"@next/swc-darwin-arm64@12.1.1":
+  "integrity" "sha512-bKKSNaTdnO3XPnfaR4NSpPcbs80fdbtOYC2lgtqLzA0bOMioupixMP5GrA/gfJHwh7GRH+A+sbgKQWsqSsYAqQ=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.1.1.tgz"
   "version" "12.1.1"
 
 "@popperjs/core@^2.0.0", "@popperjs/core@^2.9.3":
@@ -951,7 +965,7 @@
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.21.3.tgz"
   "version" "2.21.3"
 
-"dayjs@^1.10.5", "dayjs@^1.11.0":
+"dayjs@^1.11.0":
   "integrity" "sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug=="
   "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.0.tgz"
   "version" "1.11.0"
@@ -1255,6 +1269,11 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -2166,6 +2185,11 @@
     "ansi-styles" "^4.0.0"
     "react-is" "^17.0.1"
 
+"prism-react-renderer@^1.2.1":
+  "integrity" "sha512-xUeDMEz074d0zc5y6rxiMp/dlC7C+5IDDlaEUlcBOFE2wddz7hz5PNupb087mPwTt7T9BrFmewObfCBuf/LKwQ=="
+  "resolved" "https://registry.npmjs.org/prism-react-renderer/-/prism-react-renderer-1.3.1.tgz"
+  "version" "1.3.1"
+
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
@@ -2227,7 +2251,7 @@
     "use-composed-ref" "^1.0.0"
     "use-latest" "^1.0.0"
 
-"react@^16.8 || ^17.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18", "react@17.0.2":
+"react@^16.8 || ^17.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.9", "react@>=16.8", "react@>=16.8.0", "react@0.14 || 15 || 16 || 17 || 18", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
