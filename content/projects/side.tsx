@@ -5,6 +5,7 @@ const sideProjects: ProjectType[] = [
   {
     title: "SpotiStuff",
     githubURL: "https://github.com/erhant/spoti-stuff",
+    demoURL: "https://spoti-stuff.vercel.app/",
     langs: ["ts", "react", "sass"],
     content: (
       <Text>
