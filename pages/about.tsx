@@ -78,7 +78,7 @@ const About = () => {
           </Grid>
 
           <Divider my="xl" label="Publications" labelPosition="center" />
-          <Text>
+          <Text mb="sm">
             You can follow me on <Anchor href="https://www.researchgate.net/profile/Erhan-Tezcan">ResearchGate</Anchor>.
           </Text>
           <List>
@@ -110,10 +110,10 @@ const About = () => {
               <Badge>Rap &amp; Trap</Badge>
             </Anchor>
             <Anchor href="https://open.spotify.com/playlist/4GEXl9DjrgtOB020KpAUCm?si=fbeb307f988c419c">
-              <Badge>🥁💓🎧</Badge>
+              <Badge>🥁🎹🎧</Badge>
             </Anchor>
             <Anchor href="https://open.spotify.com/playlist/4QJzN1UIdMOLLjrddshg4Q?si=0e373d9fdbea4938">
-              <Badge>💨🌿🪨</Badge>
+              <Badge>💨🌿🍄</Badge>
             </Anchor>
             <Anchor href="https://open.spotify.com/playlist/5EcmBXibP9qc8vkHwQSsNS?si=7ba4eaae273d4273">
               <Badge>🍇❤️🍷</Badge>

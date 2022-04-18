@@ -5,13 +5,12 @@ const sideProjects: ProjectType[] = [
   {
     title: "SpotiStuff",
     githubURL: "https://github.com/erhant/spoti-stuff",
+    demoURL: "https://spoti-stuff.vercel.app/",
     langs: ["ts", "react", "sass"],
     content: (
       <Text>
         SpotiStuff is a collection of mini-applications I made using Spotify Web API. You can see audio features of your
-        currently playing track, compare you playlists with some other user's playlist to see if you both have the same
-        tracks, and find if you have added a track in your playlist. Used{" "}
-        <Anchor href="https://mui.com/">Material UI</Anchor> within.
+        currently playing track, compare playlists of two users, and find if a user has added a track in your playlist.
       </Text>
     ),
   },
