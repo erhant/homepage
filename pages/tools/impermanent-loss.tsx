@@ -222,7 +222,7 @@ const ImpermanentLoss = () => {
             Assuming the AMM is arbitraged, the dollar value of two assets are always equal (i.e 50:50 ratio).
             Consequently, an AMM will always sell the outperforming asset and buy the underperforming asset. This is the
             source of impermanent loss, as a normal person would keep the outperforming asset (because it is increasing
-            in price) whereas the AMM will sell it. Same but vice versa for the underpeforming asset.
+            in price) whereas the AMM will sell it. Same but vice versa for the underperforming asset.
           </Text>
           <br />
           <Text>
@@ -238,7 +238,6 @@ const ImpermanentLoss = () => {
 spot_ratio = spotA / spotB
 future_ratio = futureA / futureB
 ratio_change = spot_ratio / future_ratio
-
 qtyA_new = qtyA * sqrt(ratio_change)
 qtyB_new = qtyB / sqrt(ratio_change)
             `}
