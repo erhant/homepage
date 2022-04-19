@@ -16,6 +16,7 @@ const Footer = () => {
             <Icon I={BrandGithub} />
           </Anchor>
         </Tooltip>
+        {/* 
         <Popover
           opened={ethOpened}
           onClose={() => setEthOpened(false)}
@@ -32,6 +33,7 @@ const Footer = () => {
             </Anchor>
           </Box>
         </Popover>
+        */}
       </Group>
     </_Footer>
   )
