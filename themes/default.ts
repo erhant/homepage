@@ -40,7 +40,7 @@ const grayscale: TenColors = [
   "#0d0d0d",
 ]
 const DefaultMantineTheme: MantineThemeOverride = {
-  fontFamily: "Avenir, Verdana, sans-serif",
+  fontFamily: "Avenir, Helvetica Neue, Helvetica, Arial, sans-serif",
   colors: {
     blues: myBlues,
     oranges: myOranges,
