@@ -3,7 +3,7 @@ import { join } from "path"
 import matter from "gray-matter"
 import glob from "glob"
 
-const postsDirectoryName = "_posts"
+const postsDirectoryName = "content/posts"
 const postsDirectory = join(process.cwd(), postsDirectoryName)
 const uniqueSluggifier = "___"
 

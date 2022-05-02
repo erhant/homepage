@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { Navbar as _Navbar, Stack, Group, Anchor, Collapse, Paper } from "@mantine/core"
+import { Navbar as _Navbar, Stack, Group, Anchor, Collapse, Paper, Text } from "@mantine/core"
 import Icon from "./icon"
 // icons for navbar
-import { User, Notebook, Code, Home, Tool, Icon as TablerIcon } from "tabler-icons-react"
+import { User, Notebook, Code, Home, Tool, Music, School, Icon as TablerIcon } from "tabler-icons-react"
 
 const NavbarItemsList: [TablerIcon, string, string][] = [
   [Home, "/", "Home"],
@@ -10,6 +10,7 @@ const NavbarItemsList: [TablerIcon, string, string][] = [
   [Code, "/projects", "Projects"],
   [Notebook, "/posts", "Posts"],
   [Tool, "/tools", "Tools"],
+  [Music, "/music", "Music"],
 ]
 
 type Props = {
@@ -43,6 +44,23 @@ const Navbar = ({ isNavbarOpen }: Props) => {
               </_Navbar.Section>
             )
           })}
+          {/* CV download */}
+          <_Navbar.Section component={Group}>
+            <Icon I={School} />
+            <Anchor
+              href="/api/cv"
+              target="_blank"
+              size="lg"
+              sx={(theme) => {
+                return {
+                  color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],
+                  fontWeight: "bold",
+                }
+              }}
+            >
+              CV
+            </Anchor>
+          </_Navbar.Section>
         </Stack>
       </Collapse>
     </Paper>

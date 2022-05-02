@@ -3,14 +3,27 @@ import { Text, Anchor, Code } from "@mantine/core"
 
 const sideProjects: ProjectType[] = [
   {
+    title: "Blockchattin",
+    githubURL: "https://github.com/erhant/blockchattin",
+    demoURL: "https://blockchattin.vercel.app/",
+    langs: ["ts", "next", "react", "sol"],
+    content: (
+      <Text>
+        A decentralized chatting application using smart contracts. Users address each other by their wallet addresses,
+        but they can use aliases too. Each message is a transaction, which is logged as an EVM event to be queried by
+        clients.
+      </Text>
+    ),
+  },
+  {
     title: "SpotiStuff",
     githubURL: "https://github.com/erhant/spoti-stuff",
     demoURL: "https://spoti-stuff.vercel.app/",
-    langs: ["ts", "react", "sass"],
+    langs: ["ts", "next", "react"],
     content: (
       <Text>
-        SpotiStuff is a collection of mini-applications I made using Spotify Web API. You can see audio features of your
-        currently playing track, compare playlists of two users, and find if a user has added a track in your playlist.
+        A collection of mini-applications I made using Spotify Web API. You can see audio features of your currently
+        playing track, compare playlists of two users, and find if a user has added a track in some playlist.
       </Text>
     ),
   },
@@ -22,11 +35,8 @@ const sideProjects: ProjectType[] = [
     content: (
       <Text>
         During a 17-hour bus trip from Warsam to Talinn, I couldn't sleep in the bus so I thought of a problem to pass
-        time. I then couldn't solve this problem, and wrote a paper about it! This repository has codes about it. See
-        the paper:{" "}
-        <Anchor href="https://arxiv.org/abs/1903.09001">
-          A Lighthouse Illumination Problem - Erhan Tezcan (arXiv, 2019)
-        </Anchor>
+        time. I then couldn't solve this problem, and wrote a paper about it; which this repository is about.{" "}
+        <Anchor href="https://arxiv.org/abs/1903.09001">(paper)</Anchor>
       </Text>
     ),
   },
@@ -36,10 +46,8 @@ const sideProjects: ProjectType[] = [
     content: (
       <Text>
         As a form of recreational mathematics, I have been working on the Collatz Conjecture since late highschool. I
-        did some small findings, mostly focusing on algebraic tools to study trajectories of numbers. I have one
-        manuscript about it, see{" "}
-        <Anchor href="https://arxiv.org/abs/1902.07312">On Collatz Conjecture - Erhan Tezcan (arXiv, 2019)</Anchor>.
-        Another one coming soon, details ommitted though :)
+        made some small findings, mostly focusing on algebraic tools to study trajectories of numbers.{" "}
+        <Anchor href="https://arxiv.org/abs/1902.07312">(paper)</Anchor>
       </Text>
     ),
   },
@@ -76,11 +84,8 @@ const sideProjects: ProjectType[] = [
     langs: ["py"],
     content: (
       <Text>
-        Burning Castle is the name I gave to a simple mathematical integer sequence I had found, which has a spectacular
-        plot. I submitted the integer sequence to{" "}
-        <Anchor href="https://oeis.org/">Online Encyclopedia of Integer Sequences</Anchor>, but it later got removed for
-        being too artificial. Nevertheless, I submitted a related sequence (A343275), which is simply{" "}
-        <Code>{"a(n) = |2*n - 10^length(n)|"}</Code>. The repo has both of them.
+        My submissions to <Anchor href="https://oeis.org/">Online Encyclopedia of Integer Sequences</Anchor>. One
+        submission in particular has really cool plots which resemble a burning castle, hence the name.
       </Text>
     ),
   },
@@ -92,14 +97,14 @@ const sideProjects: ProjectType[] = [
       <Text>
         Using <Code>matplotlib</Code>, I have drawn a{" "}
         <Anchor href="https://en.wikipedia.org/wiki/Circle_of_fifths">Circle of Fifths</Anchor>, a fretboard, and a
-        piano keyboard; it also highlights certain notes based on the scale or chord. Reason: why not?
+        piano keyboard; with highlights on certain notes based on a scale or chord.
       </Text>
     ),
   },
   {
     title: "Homepage",
     githubURL: "https://github.com/erhant/lighthouse-problem",
-    langs: ["ts", "next", "sass"],
+    langs: ["ts", "next"],
     content: (
       <Text>
         Well, this page itself is literally a side-project. It is loosely-based on the NextJS blog starter template, but

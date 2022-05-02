@@ -1,6 +1,7 @@
-import { Text, Stepper, MediaQuery } from "@mantine/core"
+import { Text, Stepper } from "@mantine/core"
 import { Tie } from "tabler-icons-react"
 
+const ICON_SIZE = 20
 const Experience = () => {
   return (
     <Stepper
@@ -13,7 +14,7 @@ const Experience = () => {
       }}
     >
       <Stepper.Step
-        icon={<Tie size={18} />}
+        icon={<Tie size={ICON_SIZE} />}
         label="Full-stack Developer"
         allowStepSelect={false}
         description={
@@ -26,7 +27,7 @@ const Experience = () => {
         }
       ></Stepper.Step>
       <Stepper.Step
-        icon={<Tie size={18} />}
+        icon={<Tie size={ICON_SIZE} />}
         label="Graduate Research & Teaching Assistant"
         allowStepSelect={false}
         description={
@@ -39,7 +40,7 @@ const Experience = () => {
         }
       ></Stepper.Step>
       <Stepper.Step
-        icon={<Tie size={18} />}
+        icon={<Tie size={ICON_SIZE} />}
         label="Backend Developer"
         allowStepSelect={false}
         description={
@@ -52,7 +53,7 @@ const Experience = () => {
         }
       ></Stepper.Step>
       <Stepper.Step
-        icon={<Tie size={18} />}
+        icon={<Tie size={ICON_SIZE} />}
         label="Software Specialist"
         allowStepSelect={false}
         description={
