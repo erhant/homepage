@@ -1,6 +1,7 @@
 import { Text, Stepper } from "@mantine/core"
 import { School } from "tabler-icons-react"
 
+const ICON_SIZE = 20
 const Education = () => {
   return (
     <Stepper
@@ -13,7 +14,7 @@ const Education = () => {
       }}
     >
       <Stepper.Step
-        icon={<School size={14} />}
+        icon={<School size={ICON_SIZE} />}
         label="Master of Sciences"
         allowStepSelect={false}
         description={
@@ -29,7 +30,7 @@ const Education = () => {
         }
       ></Stepper.Step>
       <Stepper.Step
-        icon={<School size={14} />}
+        icon={<School size={ICON_SIZE} />}
         label="Erasmus+ Exchange Student"
         allowStepSelect={false}
         description={
@@ -42,7 +43,7 @@ const Education = () => {
         }
       ></Stepper.Step>
       <Stepper.Step
-        icon={<School size={14} />}
+        icon={<School size={ICON_SIZE} />}
         label="Bachelor of Sciences"
         allowStepSelect={false}
         description={

@@ -16,7 +16,7 @@ type Props = {
   preview?: boolean
 }
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post }: Props) => {
   const theme = useMantineTheme()
   const router = useRouter()
 

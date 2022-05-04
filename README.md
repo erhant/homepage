@@ -4,7 +4,7 @@ This is my homepage + blog, made with NextJS + TypeScript + Unified (Remark + Re
 
 ## Blog Rendering
 
-The blog posts are generated from the Markdown files under [posts directory](./_posts/). It supports subfolders, where `/` characters in the path are replaced with `___` to generate a slug. This is done for grouping purposes on my side. The markdown parser uses Unified with Remark and Rehype.
+The blog posts are generated from the Markdown files. It supports subfolders, where `/` characters in the path are replaced with `___` to generate a slug. This is done for grouping purposes on my side. The markdown parser uses Unified with Remark and Rehype.
 
 ## Favicon
 

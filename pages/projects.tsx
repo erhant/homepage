@@ -6,9 +6,6 @@ import sideProjects from "../content/projects/side"
 import schoolProjects from "../content/projects/school"
 import thesisProjects from "../content/projects/thesis"
 
-const dividerMargin = "md"
-const horizontalSpacing = "lg"
-
 const Projects = () => {
   return (
     <>
