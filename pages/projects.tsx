@@ -1,5 +1,5 @@
 import Project from "../components/project"
-import { Grid, Tabs, Title } from "@mantine/core"
+import { Grid, Stack, Tabs, Title } from "@mantine/core"
 import Layout from "../components/layout"
 import Head from "next/head"
 import sideProjects from "../content/projects/side"
@@ -41,13 +41,11 @@ const Projects = () => {
             </Tabs.Tab>
 
             <Tabs.Tab label="Thesis Projects">
-              <Grid>
+              <Stack>
                 {thesisProjects.map((p, i) => (
-                  <Grid.Col xs={12} key={i}>
-                    <Project project={p} />
-                  </Grid.Col>
+                  <Project project={p} key={i} />
                 ))}
-              </Grid>
+              </Stack>
             </Tabs.Tab>
           </Tabs>
         </>

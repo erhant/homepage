@@ -20,6 +20,7 @@ const DevStacks = () => {
             <Language l="ts" />
             <Language l="node" />
             <Language l="express" />
+            <Language l="sol" />
           </Stack>
         </Grid.Col>
         <Grid.Col xs={6} sm={3}>
@@ -32,9 +33,8 @@ const DevStacks = () => {
         </Grid.Col>
         <Grid.Col xs={6} sm={3}>
           <Stack>
-            <Divider label="Hobby" labelPosition="center" />
+            <Divider label="Curious" labelPosition="center" />
             <Language l="hs" />
-            <Language l="sol" />
           </Stack>
         </Grid.Col>
       </Grid>
