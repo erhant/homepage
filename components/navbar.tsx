@@ -48,7 +48,7 @@ const Navbar = ({ isNavbarOpen }: Props) => {
           <_Navbar.Section component={Group}>
             <Icon I={School} />
             <Anchor
-              href="/api/cv"
+              href="/cv.pdf"
               target="_blank"
               size="lg"
               sx={(theme) => {
