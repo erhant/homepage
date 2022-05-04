@@ -55,7 +55,19 @@ const About = () => {
             driven by a thirst for knowledge and with respect to style, standards, security and scalability.
           </Blockquote>
 
-          <Space h="lg" />
+          <Text mx="sm" my="md">
+            I obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University, and then I have
+            recently obtained my M.Sc. in Computer Science &amp; Engineering from Koç University. Most of my study has
+            been on the more theoretical computer science part, rather than development (e.g. mobile, devops). I really
+            enjoy cryptography and theory of computation in particular. I am currently working as a self-employed
+            full-stack developer in Macerita, a fresh startup! I plan on working more on the web3 side of things in
+            future; as in the end I believe{" "}
+            <Tooltip label="We are all gonna make it 🚀" position="bottom">
+              <FancyWord word="#WAGMI" />
+            </Tooltip>
+            .
+          </Text>
+
           <DevStacks />
           {/* <Text>
             My first ever-so-slightly-related programming experience was when I used the Doom 3 console to spawn zombies

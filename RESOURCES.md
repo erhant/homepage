@@ -2,7 +2,8 @@
 
 All kinds of resources that helped me on this development.
 
-- Some help from [here](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js) on formatting
-- [Tabler Icons](https://tabler-icons-react.vercel.app/) for icons.
-- Some helps from [Omatsuri](https://omatsuri.app/) and [Smart-Swatch](https://smart-swatch.netlify.app/#fcfcfc).
-- Could check out [this](https://www.cssfontstack.com/) and [this](https://csslayout.io/) for better fonts.
+- [Formatting](https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js)
+- [Tabler Icons](https://tabler-icons-react.vercel.app/) for icons
+- Good style utils: [Omatsuri](https://omatsuri.app/) and [Smart-Swatch](https://smart-swatch.netlify.app/#fcfcfc)
+- [CSS Fonts](https://www.cssfontstack.com/) and [CSS Layout](https://csslayout.io/)
+- [Framer Motion](https://www.framer.com/docs/examples/)
