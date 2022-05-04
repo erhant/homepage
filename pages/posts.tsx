@@ -13,14 +13,14 @@ const Posts = ({ posts }: Props) => {
   return (
     <>
       <Head>
-        <title>Posts</title>
+        <title>Blog</title>
         <meta name="description" content="Blog posts of Erhan Tezcan." key="desc" />
       </Head>
 
       <Layout>
         <>
           <Title order={1} mb="md">
-            Posts
+            Blog
           </Title>
 
           {/* posts set inner HTML, so we need this provider to apply our styles to them */}

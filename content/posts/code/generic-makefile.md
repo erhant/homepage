@@ -1,6 +1,6 @@
 ---
 title: "Generic Makefile"
-excerpt: "I spent some time making a generic Makefile for small projects"
+excerpt: "A generic Makefile for small projects."
 date: "2022-04-19"
 ---
 

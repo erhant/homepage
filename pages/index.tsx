@@ -1,4 +1,4 @@
-import { Card, Center, Anchor, Title, Stepper } from "@mantine/core"
+import { Card, Center, Anchor, Title, Stepper, Transition } from "@mantine/core"
 import Head from "next/head"
 import Layout from "../components/layout"
 import { User, Notebook, Code, Tool } from "tabler-icons-react"
