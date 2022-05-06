@@ -1,4 +1,5 @@
 import { Box, useMantineTheme } from "@mantine/core"
+import { FC } from "react"
 import LanguageType from "../types/language"
 
 // https://devicon.dev/
@@ -21,10 +22,9 @@ const lmap: { [key: string]: string } = {
   express: "devicon-express-original",
 }
 
-type Props = {
+const Language: FC<{
   l: LanguageType
-}
-const Language = ({ l }: Props) => {
+}> = ({ l }) => {
   const theme = useMantineTheme()
 
   return (

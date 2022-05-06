@@ -1,15 +1,14 @@
 import DateFormatter from "./date-formatter"
 import Link from "next/link"
 import { Title, Text, Box } from "@mantine/core"
+import { FC } from "react"
 
-type Props = {
+const PostPreview: FC<{
   title: string
   date: string
   excerpt: string
   slug: string
-}
-
-const PostPreview = ({ title, date, excerpt, slug }: Props) => {
+}> = ({ title, date, excerpt, slug }) => {
   return (
     <Box sx={{ borderLeft: "0.2em outset", paddingLeft: "2em" }}>
       <Title order={1}>

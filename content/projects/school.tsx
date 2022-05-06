@@ -25,16 +25,20 @@ const schoolProjects: ProjectType[] = [
     ),
     langs: ["py"],
   },
+
   {
-    title: "Enigma Machine",
-    githubURL: "https://github.com/erhant/security-and-cryptography/tree/main/cryptography/enigma-machine",
+    title: "Parallel Programming",
     content: (
-      <Text>
-        An Enigma Machine, with custom rotor settings, eavesdropping simulation and chatting! Shamefully, chatting is
-        done from console, not web.
-      </Text>
+      <>
+        <FancyWord word="Teaching Assistantship" />
+        <Text>
+          I was a teaching assistant for Parallel Programming, but more importantly I did my Master studies in
+          ParCoreLab, which is a research group focused on parallel programming. As such, I store some parallel programs
+          in this repo.
+        </Text>
+      </>
     ),
-    langs: ["ts"],
+    langs: ["c", "cpp"],
   },
   {
     title: "EOPL Scheme",
@@ -52,18 +56,15 @@ const schoolProjects: ProjectType[] = [
     langs: [],
   },
   {
-    title: "Parallel Programming",
+    title: "Enigma Machine",
+    githubURL: "https://github.com/erhant/security-and-cryptography/tree/main/cryptography/enigma-machine",
     content: (
-      <>
-        <FancyWord word="Teaching Assistantship" />
-        <Text>
-          I was a teaching assistant for Parallel Programming, but more importantly I did my Master studies in
-          ParCoreLab, which is a research group focused on parallel programming. As such, I store some parallel programs
-          in this repo.
-        </Text>
-      </>
+      <Text>
+        An Enigma Machine, with custom rotor settings, eavesdropping simulation and chatting! Shamefully, chatting is
+        done from console, not web.
+      </Text>
     ),
-    langs: ["c", "cpp"],
+    langs: ["ts"],
   },
 ]
 

@@ -16,7 +16,7 @@ type Props = {
   preview?: boolean
 }
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post }: Props) => {
   const theme = useMantineTheme()
   const router = useRouter()
 
@@ -56,6 +56,9 @@ const Post = ({ post, morePosts, preview }: Props) => {
               </div>
 
               <PostBody content={post.content} />
+              <Text my="lg">
+                <i>Got questions or comments? Contact me at erhany96 [at] gmail [dot] com</i>
+              </Text>
             </article>
           </Container>
 

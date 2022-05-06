@@ -1,30 +1,13 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import {
-  Text,
-  Blockquote,
-  Group,
-  Anchor,
-  Divider,
-  List,
-  Badge,
-  Tooltip,
-  Space,
-  Title,
-  Avatar,
-  useMantineTheme,
-  Grid,
-} from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
+import { Text, Divider, Tooltip, Space, Title, Avatar, Grid, Center } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
 import Experience from "../components/about/experience"
+import { NextPage } from "next"
 
-const About = () => {
-  const theme = useMantineTheme()
-  const matches = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`)
-
+const About: NextPage = () => {
   return (
     <>
       <Head>
@@ -37,91 +20,54 @@ const About = () => {
             About me
           </Title>
 
-          <Blockquote
-            cite=""
-            icon={<Avatar src="/assets/me.webp" alt="it is I, Erhan" size={100} radius={100} />}
-            styles={{
-              inner: { fontSize: "1.2em" },
-              icon: { marginRight: "4.2em", marginLeft: "-0.5em" },
-            }}
-          >
-            Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;
-            driven by a thirst for knowledge and with respect to style, standards, security and scalability.
-          </Blockquote>
+          <Grid grow gutter="md" justify="center" align="center">
+            <Grid.Col xs={12} sm={2}>
+              <Avatar src="/assets/me.webp" alt="it is I, Erhan" size={150} radius={100} sx={{ margin: "auto" }} />
+            </Grid.Col>
+            <Grid.Col xs={12} sm={9}>
+              <Text sx={{ fontSize: "1.2em" }} my="lg">
+                Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer
+                software; driven by a thirst for knowledge and with respect to style, standards, security and
+                scalability.
+              </Text>
+            </Grid.Col>
+          </Grid>
 
-          <Space h="lg" />
-          <Text>
-            My stack is Typescript-oriented, mostly on server-side programming and web. I use Python for many small
-            side-projects.
-          </Text>
-          <DevStacks />
-          <Text>
-            My first ever-so-slightly-related programming experience was when I used the Doom 3 console to spawn zombies
-            and props and such; around middle school... My first program is my freshman year first homework, which was a
-            CandyCrush-like game but with numbers instead of candies, in console, with{" "}
-            <Anchor href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</Anchor> (yeah, indeed).
-            As of 2022, I am hopping on to the Web3.0 train.{" "}
+          <Text mx="sm" my="md">
+            I have obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University on February
+            2019, and then I have recently obtained my M.Sc. in Computer Science &amp; Engineering from Koç University
+            on February 2022. Most of my study has been on the more theoretical computer science part; I really enjoy
+            cryptography and theory of computation in particular. I am currently working as a self-employed full-stack
+            developer in Macerita, a fresh startup! I plan on working more on the web3 side of things in future; as in
+            the end I believe{" "}
             <Tooltip label="We are all gonna make it 🚀" position="bottom">
               <FancyWord word="#WAGMI" />
             </Tooltip>
+            .
+          </Text>
+
+          <DevStacks />
+
+          <Text mx="sm" mt="md">
+            My tech-stack is TypeScript oriented, with NextJS for frontend and Node+Express for backend. As for Web3, I
+            use Solidity mostly with EVM-compatible chains. I make use of component libraries on frontend, mostly
+            MantineUI; though I may use SASS if need be. I enjoy following standards and clean-coding practices. I
+            believe it is more valuable that the code is simple, yet generic enough; rather than complex and
+            all-purpose.
           </Text>
 
           <Grid justify="space-between">
             <Grid.Col sm={5.5}>
-              <Divider my="xl" label="Education" labelPosition={matches ? "left" : "center"} />
+              <Divider my="xl" label="Education" labelPosition="center" />
               <Education />
             </Grid.Col>
             <Grid.Col sm={5.5}>
-              <Divider my="xl" label="Experience" labelPosition={matches ? "left" : "center"} />
+              <Divider my="xl" label="Experience" labelPosition="center" />
               <Experience />
             </Grid.Col>
           </Grid>
 
-          <Divider my="xl" label="Publications" labelPosition="center" />
-          <Text>
-            You can follow me on <Anchor href="https://www.researchgate.net/profile/Erhan-Tezcan">ResearchGate</Anchor>.
-          </Text>
-          <List>
-            <List.Item>
-              Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat. “ComScribe: Identifying Intra-node
-              GPU Communication“ BENCH'20 (November 2020)
-            </List.Item>
-            <List.Item>
-              Erhan Tezcan. “On Collatz Conjecture.” arXiv: General Mathematics (February 2019, preprint)
-            </List.Item>
-            <List.Item>
-              Erhan Tezcan. “A Lighthouse Illumination Problem.” arXiv: History and Overview (March 2019, preprint)
-            </List.Item>
-          </List>
-
-          <Divider my="xl" label="Music" labelPosition="center" />
-          <Text>I am an avid music-listener; consequently, I love making playlists. You might enjoy these:</Text>
-          <Group my="sm" position="center">
-            <Anchor href="https://open.spotify.com/playlist/1jOnw1TiUqDAxQd5SRPrLb?si=421fab6f5a294559">
-              <Badge>Rock &amp; Blues</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/29oizr6rN6Ct38A6nWxjTK?si=49914f3a98f84e37">
-              <Badge>Jazz &amp; Funk &amp; Soul</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/3v2LX32gUOGgqsGnBQbfri?si=83a171ee4e54420a">
-              <Badge>Classical</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/4U6slifCwWBnRPvhmeherf?si=bea017e4d90b4035">
-              <Badge>Rap &amp; Trap</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/4GEXl9DjrgtOB020KpAUCm?si=fbeb307f988c419c">
-              <Badge>🥁💓🎧</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/4QJzN1UIdMOLLjrddshg4Q?si=0e373d9fdbea4938">
-              <Badge>💨🌿🪨</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/5EcmBXibP9qc8vkHwQSsNS?si=7ba4eaae273d4273">
-              <Badge>🍇❤️🍷</Badge>
-            </Anchor>
-            <Anchor href="https://open.spotify.com/playlist/0uVfZA4Z5A9OxXzFFwX4Sq?si=32c3288144324d61">
-              <Badge>⏳🪕🧉</Badge>
-            </Anchor>
-          </Group>
+          <Space h="lg" />
         </>
       </Layout>
     </>

@@ -1,7 +1,8 @@
-import { Text, Title, Box, Anchor, Collapse, Accordion, Grid, Stack, Center, Divider } from "@mantine/core"
+import { Grid, Stack, Center, Divider } from "@mantine/core"
+import { FC } from "react"
 import Language from "../language"
 
-const DevStacks = () => {
+const DevStacks: FC = () => {
   return (
     <Center my="md">
       <Grid sx={{ textAlign: "center", width: "60%" }}>
@@ -20,6 +21,7 @@ const DevStacks = () => {
             <Language l="ts" />
             <Language l="node" />
             <Language l="express" />
+            <Language l="sol" />
           </Stack>
         </Grid.Col>
         <Grid.Col xs={6} sm={3}>
@@ -32,9 +34,8 @@ const DevStacks = () => {
         </Grid.Col>
         <Grid.Col xs={6} sm={3}>
           <Stack>
-            <Divider label="Hobby" labelPosition="center" />
+            <Divider label="Curious" labelPosition="center" />
             <Language l="hs" />
-            <Language l="sol" />
           </Stack>
         </Grid.Col>
       </Grid>

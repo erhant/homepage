@@ -1,15 +1,13 @@
 import { ThemeIcon, MantineNumberSize, Sx } from "@mantine/core"
-import { MouseEventHandler } from "react"
+import { FC, MouseEventHandler } from "react"
 import { Icon as TablerIcon } from "tabler-icons-react"
 
-type Props = {
+const Icon: FC<{
   I: TablerIcon
   onClick?: MouseEventHandler<HTMLDivElement>
   size?: MantineNumberSize
   sx?: Sx
-}
-
-const Icon = ({ I, onClick, size, sx }: Props) => {
+}> = ({ I, onClick, size, sx }) => {
   return (
     <ThemeIcon
       onClick={onClick ? onClick : undefined}

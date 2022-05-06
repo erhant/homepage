@@ -1,35 +1,28 @@
-import {
-  Header as _Header,
-  Group,
-  ThemeIcon,
-  Box,
-  useMantineColorScheme,
-  Burger,
-  Anchor,
-  Container,
-} from "@mantine/core"
-import { Dispatch, SetStateAction } from "react"
+import { Group, ThemeIcon, Box, useMantineColorScheme, Popover, Burger, Anchor, Container } from "@mantine/core"
+import { useState } from "react"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub } from "tabler-icons-react"
 import Icon from "./icon"
+import Navbar from "./navbar"
 
-type Props = {
-  title?: string
-  isNavbarOpen: boolean
-  setIsNavbarOpen: Dispatch<SetStateAction<boolean>>
-}
-const Header = ({ title, isNavbarOpen, setIsNavbarOpen }: Props) => {
+const Header = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
+  const [opened, setOpened] = useState(false)
 
   return (
-    <_Header height={60} px="lg" mt="lg">
+    <Box component="header" p="lg">
       <Container>
         <Group>
-          <Burger
-            opened={isNavbarOpen}
-            onClick={() => {
-              setIsNavbarOpen(!isNavbarOpen)
-            }}
-          />
+          <Popover
+            opened={opened}
+            onClose={() => setOpened(false)}
+            target={<Burger opened={opened} onClick={() => setOpened((o) => !o)} />}
+            width={200}
+            position="bottom"
+            withArrow={false}
+            withCloseButton={false}
+          >
+            <Navbar />
+          </Popover>
 
           {/* empty space in between left and right*/}
           <Box sx={{ flexGrow: 1 }} />
@@ -72,7 +65,7 @@ const Header = ({ title, isNavbarOpen, setIsNavbarOpen }: Props) => {
           </Box>
         </Group>
       </Container>
-    </_Header>
+    </Box>
   )
 }
 
