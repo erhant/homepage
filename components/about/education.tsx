@@ -1,8 +1,9 @@
 import { Text, Stepper } from "@mantine/core"
+import { FC } from "react"
 import { School } from "tabler-icons-react"
 
 const ICON_SIZE = 20
-const Education = () => {
+const Education: FC = () => {
   return (
     <Stepper
       orientation="vertical"

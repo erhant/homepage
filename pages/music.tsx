@@ -1,8 +1,9 @@
 import { Anchor, Badge, Text, Group, Title } from "@mantine/core"
 import Layout from "../components/layout"
 import Head from "next/head"
+import { NextPage } from "next"
 
-const Music = () => {
+const Music: NextPage = () => {
   return (
     <>
       <Head>

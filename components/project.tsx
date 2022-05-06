@@ -4,11 +4,11 @@ import { BrandGithub, World } from "tabler-icons-react"
 import Icon from "./icon"
 import Language from "./language"
 import { motion } from "framer-motion"
+import { FC } from "react"
 
-type Props = {
+const Project: FC<{
   project: ProjectType
-}
-const Project = ({ project }: Props) => {
+}> = ({ project }) => {
   return (
     <motion.div whileHover={{ scale: 1.1 }}>
       <Paper shadow="lg" radius="xl" p="lg" withBorder>
