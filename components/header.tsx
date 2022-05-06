@@ -1,14 +1,4 @@
-import {
-  Header as _Header,
-  Group,
-  ThemeIcon,
-  Box,
-  useMantineColorScheme,
-  Popover,
-  Burger,
-  Anchor,
-  Container,
-} from "@mantine/core"
+import { Group, ThemeIcon, Box, useMantineColorScheme, Popover, Burger, Anchor, Container } from "@mantine/core"
 import { useState } from "react"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub } from "tabler-icons-react"
 import Icon from "./icon"
@@ -19,7 +9,7 @@ const Header = () => {
   const [opened, setOpened] = useState(false)
 
   return (
-    <_Header height={60} px="lg" mt="lg">
+    <Box component="header" p="lg">
       <Container>
         <Group>
           <Popover
@@ -28,7 +18,7 @@ const Header = () => {
             target={<Burger opened={opened} onClick={() => setOpened((o) => !o)} />}
             width={200}
             position="bottom"
-            withArrow
+            withArrow={false}
             withCloseButton={false}
           >
             <Navbar />
@@ -75,7 +65,7 @@ const Header = () => {
           </Box>
         </Group>
       </Container>
-    </_Header>
+    </Box>
   )
 }
 

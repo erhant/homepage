@@ -8,7 +8,7 @@ import { CookieValueTypes } from "cookies-next/lib/types"
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme)
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("light")
 
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === "dark" ? "light" : "dark")

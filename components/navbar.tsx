@@ -16,7 +16,7 @@ const NavbarItemsList: [TablerIcon, string, string][] = [
 
 const Navbar: FC = () => {
   return (
-    <Stack align="stretch" px="xs" py="md">
+    <Stack align="stretch" spacing={4}>
       {NavbarItemsList.map((item, i) => {
         return (
           <_Navbar.Section key={i} component={Group}>

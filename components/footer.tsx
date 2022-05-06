@@ -1,11 +1,11 @@
-import { Anchor, Footer as _Footer, Group, Text, Tooltip } from "@mantine/core"
+import { Anchor, Box, Group, Text, Tooltip } from "@mantine/core"
 import { BrandGithub } from "tabler-icons-react"
 import { FC, useState } from "react"
 import Icon from "./icon"
 
 const Footer: FC = () => {
   return (
-    <_Footer height={0} py="md">
+    <Box component="footer" py="md">
       <Group position="center">
         <Text>&copy; Erhan Tezcan {new Date().getFullYear()} &nbsp; </Text>
         <Tooltip label="Star on GitHub!">
@@ -14,7 +14,7 @@ const Footer: FC = () => {
           </Anchor>
         </Tooltip>
       </Group>
-    </_Footer>
+    </Box>
   )
 }
 

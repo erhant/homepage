@@ -1,22 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import {
-  Text,
-  Blockquote,
-  Group,
-  Anchor,
-  Divider,
-  List,
-  Badge,
-  Tooltip,
-  Space,
-  Title,
-  Avatar,
-  useMantineTheme,
-  Grid,
-  Center,
-} from "@mantine/core"
-import { useMediaQuery } from "@mantine/hooks"
+import { Text, Divider, Tooltip, Space, Title, Avatar, Grid, Center } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
@@ -24,9 +8,6 @@ import Experience from "../components/about/experience"
 import { NextPage } from "next"
 
 const About: NextPage = () => {
-  const theme = useMantineTheme()
-  const greaterThanSM = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`)
-
   return (
     <>
       <Head>
@@ -39,37 +20,26 @@ const About: NextPage = () => {
             About me
           </Title>
 
-          {greaterThanSM ? (
-            <></>
-          ) : (
-            <Center>
-              <Avatar src="/assets/me.webp" alt="it is I, Erhan" size={200} radius={100} mx="md" />
-            </Center>
-          )}
-          <Text sx={{ fontSize: "1.2em" }} my="lg">
-            {greaterThanSM ? (
-              <Avatar
-                src="/assets/me.webp"
-                alt="it is I, Erhan"
-                size={100}
-                radius={100}
-                sx={{ float: "left" }}
-                mx="md"
-              />
-            ) : (
-              <></>
-            )}
-            Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;
-            driven by a thirst for knowledge and with respect to style, standards, security and scalability.
-          </Text>
+          <Grid grow gutter="md" justify="center" align="center">
+            <Grid.Col xs={12} sm={2}>
+              <Avatar src="/assets/me.webp" alt="it is I, Erhan" size={150} radius={100} sx={{ margin: "auto" }} />
+            </Grid.Col>
+            <Grid.Col xs={12} sm={9}>
+              <Text sx={{ fontSize: "1.2em" }} my="lg">
+                Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer
+                software; driven by a thirst for knowledge and with respect to style, standards, security and
+                scalability.
+              </Text>
+            </Grid.Col>
+          </Grid>
 
           <Text mx="sm" my="md">
-            I obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University, and then I have
-            recently obtained my M.Sc. in Computer Science &amp; Engineering from Koç University. Most of my study has
-            been on the more theoretical computer science part, rather than development (e.g. mobile, devops). I really
-            enjoy cryptography and theory of computation in particular. I am currently working as a self-employed
-            full-stack developer in Macerita, a fresh startup! I plan on working more on the web3 side of things in
-            future; as in the end I believe{" "}
+            I have obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University on February
+            2019, and then I have recently obtained my M.Sc. in Computer Science &amp; Engineering from Koç University
+            on February 2022. Most of my study has been on the more theoretical computer science part; I really enjoy
+            cryptography and theory of computation in particular. I am currently working as a self-employed full-stack
+            developer in Macerita, a fresh startup! I plan on working more on the web3 side of things in future; as in
+            the end I believe{" "}
             <Tooltip label="We are all gonna make it 🚀" position="bottom">
               <FancyWord word="#WAGMI" />
             </Tooltip>
@@ -77,16 +47,7 @@ const About: NextPage = () => {
           </Text>
 
           <DevStacks />
-          {/* <Text>
-            My first ever-so-slightly-related programming experience was when I used the Doom 3 console to spawn zombies
-            and props and such; around middle school... My first program is my freshman year first homework, which was a
-            CandyCrush-like game but with numbers instead of candies, in console, with{" "}
-            <Anchor href="https://en.wikipedia.org/wiki/Pascal_(programming_language)">Pascal</Anchor> (yeah, indeed).
-            As of 2022, I am hopping on to the Web3.0 train.{" "}
-            <Tooltip label="We are all gonna make it 🚀" position="bottom">
-              <FancyWord word="#WAGMI" />
-            </Tooltip>
-          </Text> */}
+
           <Text mx="sm" mt="md">
             My tech-stack is TypeScript oriented, with NextJS for frontend and Node+Express for backend. As for Web3, I
             use Solidity mostly with EVM-compatible chains. I make use of component libraries on frontend, mostly

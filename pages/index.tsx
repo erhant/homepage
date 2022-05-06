@@ -17,7 +17,7 @@ const Index: NextPage = () => {
           <Title order={1} mb="md">
             Welcome, stanger.
           </Title>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
             <Center>
               <Stepper
                 my="xl"
