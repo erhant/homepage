@@ -3,8 +3,9 @@ import Head from "next/head"
 import Layout from "../components/layout"
 import { motion } from "framer-motion"
 import { User, Notebook, Code, Tool } from "tabler-icons-react"
+import { NextPage } from "next"
 
-const Index = () => {
+const Index: NextPage = () => {
   return (
     <>
       <Head>

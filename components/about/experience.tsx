@@ -1,8 +1,9 @@
 import { Text, Stepper } from "@mantine/core"
+import { FC } from "react"
 import { Tie } from "tabler-icons-react"
 
 const ICON_SIZE = 20
-const Experience = () => {
+const Experience: FC = () => {
   return (
     <Stepper
       orientation="vertical"

@@ -1,7 +1,8 @@
-import { Text, Title, Box, Anchor, Collapse, Accordion, Grid, Stack, Center, Divider } from "@mantine/core"
+import { Grid, Stack, Center, Divider } from "@mantine/core"
+import { FC } from "react"
 import Language from "../language"
 
-const DevStacks = () => {
+const DevStacks: FC = () => {
   return (
     <Center my="md">
       <Grid sx={{ textAlign: "center", width: "60%" }}>

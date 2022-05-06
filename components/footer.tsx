@@ -1,9 +1,9 @@
 import { Anchor, Footer as _Footer, Group, Text, Tooltip } from "@mantine/core"
 import { BrandGithub } from "tabler-icons-react"
-import { useState } from "react"
+import { FC, useState } from "react"
 import Icon from "./icon"
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <_Footer height={0} py="md">
       <Group position="center">

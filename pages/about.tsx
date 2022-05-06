@@ -14,14 +14,16 @@ import {
   Avatar,
   useMantineTheme,
   Grid,
+  Center,
 } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
 import Experience from "../components/about/experience"
+import { NextPage } from "next"
 
-const About = () => {
+const About: NextPage = () => {
   const theme = useMantineTheme()
   const greaterThanSM = useMediaQuery(`(min-width: ${theme.breakpoints.sm}px)`)
 
@@ -37,23 +39,29 @@ const About = () => {
             About me
           </Title>
 
-          <Blockquote
-            cite=""
-            icon={greaterThanSM ? <Avatar src="/assets/me.webp" alt="it is I, Erhan" size={100} radius={100} /> : <></>}
-            styles={
-              greaterThanSM
-                ? {
-                    inner: { fontSize: "1.2em" },
-                    icon: { marginRight: "4.2em", marginLeft: "-0.5em" },
-                  }
-                : {
-                    inner: { fontSize: "1.2em" },
-                  }
-            }
-          >
+          {greaterThanSM ? (
+            <></>
+          ) : (
+            <Center>
+              <Avatar src="/assets/me.webp" alt="it is I, Erhan" size={200} radius={100} mx="md" />
+            </Center>
+          )}
+          <Text sx={{ fontSize: "1.2em" }} my="lg">
+            {greaterThanSM ? (
+              <Avatar
+                src="/assets/me.webp"
+                alt="it is I, Erhan"
+                size={100}
+                radius={100}
+                sx={{ float: "left" }}
+                mx="md"
+              />
+            ) : (
+              <></>
+            )}
             Hello! I am Erhan, a full-stack developer from Istanbul, Turkey. I build &amp; engineer computer software;
             driven by a thirst for knowledge and with respect to style, standards, security and scalability.
-          </Blockquote>
+          </Text>
 
           <Text mx="sm" my="md">
             I obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University, and then I have

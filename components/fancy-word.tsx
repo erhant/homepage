@@ -1,8 +1,9 @@
 import { Text, useMantineTheme } from "@mantine/core"
-type Props = {
+import { FC } from "react"
+
+const FancyWord: FC<{
   word: string
-}
-const FancyWord = ({ word }: Props) => {
+}> = ({ word }) => {
   const theme = useMantineTheme()
   return (
     <Text

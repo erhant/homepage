@@ -1,10 +1,10 @@
 import markdownStyles from "../styles/markdown.module.scss"
 import { Box } from "@mantine/core"
+import { FC } from "react"
 
-type Props = {
+const PostBody: FC<{
   content: string
-}
-const PostBody = ({ content }: Props) => {
+}> = ({ content }) => {
   return <Box className={markdownStyles["markdown"]} dangerouslySetInnerHTML={{ __html: content }} />
 }
 

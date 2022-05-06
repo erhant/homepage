@@ -1,8 +1,9 @@
 import { Affix, Button, Container, Text, Transition, useMantineTheme } from "@mantine/core"
 import { ArrowUp } from "tabler-icons-react"
 import { useWindowScroll } from "@mantine/hooks"
+import { FC } from "react"
 
-const ScrollToTopAffix = () => {
+const ScrollToTopAffix: FC = () => {
   const [scroll, scrollTo] = useWindowScroll()
 
   return (
