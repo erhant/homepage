@@ -15,5 +15,6 @@ type LanguageType =
   | "react"
   | "node"
   | "express"
+  | "rust"
 
 export default LanguageType

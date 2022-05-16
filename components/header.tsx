@@ -1,28 +1,31 @@
-import { Group, ThemeIcon, Box, useMantineColorScheme, Popover, Burger, Anchor, Container } from "@mantine/core"
-import { useState } from "react"
+import {
+  Group,
+  ThemeIcon,
+  Box,
+  useMantineColorScheme,
+  Popover,
+  Burger,
+  Anchor,
+  Container,
+  MediaQuery,
+} from "@mantine/core"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
 
 const Header = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
-  const [opened, setOpened] = useState(false)
 
   return (
     <Box component="header" p="lg">
       <Container>
         <Group>
-          <Popover
-            opened={opened}
-            onClose={() => setOpened(false)}
-            target={<Burger opened={opened} onClick={() => setOpened((o) => !o)} />}
-            width={200}
-            position="bottom"
-            withArrow={false}
-            withCloseButton={false}
-          >
-            <Navbar />
-          </Popover>
+          <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+            <Navbar isBurger={false} />
+          </MediaQuery>
+          <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+            <Navbar isBurger={true} />
+          </MediaQuery>
 
           {/* empty space in between left and right*/}
           <Box sx={{ flexGrow: 1 }} />

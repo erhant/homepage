@@ -20,6 +20,7 @@ const lmap: { [key: string]: string } = {
   react: "devicon-react-plain",
   node: "devicon-nodejs-plain",
   express: "devicon-express-original",
+  rust: "devicon-rust-plain",
 }
 
 const Language: FC<{
@@ -29,7 +30,7 @@ const Language: FC<{
 
   return (
     <Box sx={{ color: theme.colors.icons[theme.colorScheme === "dark" ? 3 : 8] }}>
-      <i className={lmap[l]} style={{ fontSize: "1.5em" }} />
+      <i className={lmap[l]} style={{ fontSize: "2.5em" }} />
     </Box>
   )
 }
