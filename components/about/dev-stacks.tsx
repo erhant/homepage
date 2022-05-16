@@ -36,6 +36,7 @@ const DevStacks: FC = () => {
           <Stack>
             <Divider label="Curious" labelPosition="center" />
             <Language l="hs" />
+            <Language l="rust" />
           </Stack>
         </Grid.Col>
       </Grid>

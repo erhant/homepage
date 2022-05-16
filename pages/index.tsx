@@ -14,8 +14,8 @@ const Index: NextPage = () => {
       </Head>
       <Layout>
         <>
-          <Title order={1} mb="md">
-            Welcome, stanger.
+          <Title order={1} my="md" sx={{ textAlign: "center" }}>
+            Welcome, stranger.
           </Title>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
             <Center>

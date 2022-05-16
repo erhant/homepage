@@ -135,7 +135,7 @@ That is it! The entire Makefile is just all of these code snippets added on top 
 ```makefile
 # Binary target
 TGTDIR  := bin
-TARGET  ?= collatz
+TARGET  ?= myapp
 TESTTGT  = test
 
 # Code extensions
@@ -198,7 +198,7 @@ clean:
 # Create a test binary
 tests:
 	@make clean
-	@make CCMACRO="-DCOLLATZ_TESTING=1" TARGET=$(TESTTGT)
+	@make CCMACRO="-DIS_TESTING=1" TARGET=$(TESTTGT)
 
 # Clean and make again
 again:
