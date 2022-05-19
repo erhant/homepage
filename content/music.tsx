@@ -12,6 +12,18 @@ const tracks: Readonly<string[]> = [
   "https://open.spotify.com/track/1IFhdXTjyMaZd4kwXbqVF9?si=dce4399ead4b43bb",
   // Opening Day
   "https://open.spotify.com/track/7FI4GNCpplLLHihNZPOwKW?si=feb8206560c44e90",
+  // Soulsides
+  "https://open.spotify.com/track/7njVyqzN7SfrGHvOo4hXGX?si=f526d47cc511405d",
+  // Its Easy to Remember
+  "https://open.spotify.com/track/4L54VoCRj9KvTZzwSqbRnF?si=9f23c371c3474f5b",
+  // Cantaloupe Island
+  "https://open.spotify.com/track/0sCeNwt8xRCMR4NhKpMyBe?si=d17a0a78eca44455",
+  // Where are your branches
+  "https://open.spotify.com/track/7i8MOdbZoAiUCdathqHMDX?si=0707d8cb9b454fdd",
+  // Sonata Concertata, MS 2. II
+  "https://open.spotify.com/track/4MqaFp6x3NT7qHHcGxcbSm?si=6c55b014a29b49c1",
+  // 4 Impromptus, Op. 90 D. 899
+  "https://open.spotify.com/track/0SwKt4T6PMsdqU5q6Pv234?si=2e6d714f1ab24923",
 ]
 
 const DEFAULT_ID: string = "4RBJH7YdpKun59lX0PeHjr" // Trio No 1 Schubert <3
