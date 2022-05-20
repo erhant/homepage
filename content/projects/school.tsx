@@ -57,11 +57,11 @@ const schoolProjects: ProjectType[] = [
   },
   {
     title: "Enigma Machine",
-    githubURL: "https://github.com/erhant/security-and-cryptography/tree/main/cryptography/enigma-machine",
+    githubURL: "https://github.com/erhant/enigma-machine",
     content: (
       <Text>
         An Enigma Machine, with custom rotor settings, eavesdropping simulation and chatting! Shamefully, chatting is
-        done from console, not web.
+        done from console, not web (yet).
       </Text>
     ),
     langs: ["ts"],

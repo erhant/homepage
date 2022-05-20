@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <Box component="header" p="lg">
-      <Container>
+      <Container size="lg">
         <Group>
           <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
             <Navbar isBurger={false} />
