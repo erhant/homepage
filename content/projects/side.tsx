@@ -16,18 +16,6 @@ const sideProjects: ProjectType[] = [
     ),
   },
   {
-    title: "SpotiStuff",
-    githubURL: "https://github.com/erhant/spoti-stuff",
-    demoURL: "https://spoti-stuff.vercel.app/",
-    langs: ["ts", "next", "react"],
-    content: (
-      <Text>
-        A collection of mini-applications I made using Spotify Web API. You can see audio features of your currently
-        playing track, compare playlists of two users, and find if a user has added a track in some playlist.
-      </Text>
-    ),
-  },
-  {
     title: "Lighthouse Problem",
     githubURL: "https://github.com/erhant/lighthouse-problem",
     demoURL: "https://erhant.github.io/lighthouse-problem/",
@@ -63,6 +51,18 @@ const sideProjects: ProjectType[] = [
       </Text>
     ),
     langs: ["cpp"],
+  },
+  {
+    title: "SpotiStuff",
+    githubURL: "https://github.com/erhant/spoti-stuff",
+    demoURL: "https://spoti-stuff.vercel.app/",
+    langs: ["ts", "next", "react"],
+    content: (
+      <Text>
+        A collection of mini-applications I made using Spotify Web API. You can see audio features of your currently
+        playing track, compare playlists of two users, and find if a user has added a track in some playlist.
+      </Text>
+    ),
   },
   {
     title: "Orca Livecoding",
@@ -109,6 +109,18 @@ const sideProjects: ProjectType[] = [
       <Text>
         Well, this page itself is literally a side-project. It is loosely-based on the NextJS blog starter template, but
         I heavily modified and re-designed it with <Anchor href="https://mantine.dev/">Mantine UI</Anchor>.
+      </Text>
+    ),
+  },
+  {
+    title: "Crypto-notes",
+    githubURL: "https://github.com/erhant/crypto-notes",
+    demoURL: "https://crypto-notes-erhant.vercel.app/",
+    langs: ["ts", "next", "react"],
+    content: (
+      <Text>
+        My notes from cryptography class; I revisit them as I transfer them online. Why? Well because cryptography is
+        one of the coolest subjects I have known so far :)
       </Text>
     ),
   },

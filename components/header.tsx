@@ -8,7 +8,9 @@ import {
   Anchor,
   Container,
   MediaQuery,
+  Tooltip,
 } from "@mantine/core"
+import { motion } from "framer-motion"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
@@ -30,42 +32,52 @@ const Header = () => {
           {/* empty space in between left and right*/}
           <Box sx={{ flexGrow: 1 }} />
 
-          <Anchor href="https://www.linkedin.com/in/erhan-tezcan/">
-            <Icon I={BrandLinkedin} />
-          </Anchor>
+          <motion.div whileHover={{ scale: 1.45 }}>
+            <Tooltip label="LinkedIn">
+              <Anchor href="https://www.linkedin.com/in/erhan-tezcan/">
+                <Icon I={BrandLinkedin} />
+              </Anchor>
+            </Tooltip>
+          </motion.div>
 
-          <Anchor href="https://github.com/erhant">
-            <Icon I={BrandGithub} />
-          </Anchor>
+          <motion.div whileHover={{ scale: 1.45 }}>
+            <Tooltip label="GitHub">
+              <Anchor href="https://github.com/erhant">
+                <Icon I={BrandGithub} />
+              </Anchor>
+            </Tooltip>
+          </motion.div>
 
-          <Box onClick={() => toggleColorScheme()} sx={{ cursor: "pointer" }}>
-            {
+          <motion.div style={{ cursor: "pointer" }} onClick={() => toggleColorScheme()} whileHover={{ scale: 1.45 }}>
+            <Tooltip label={colorScheme === "dark" ? "Lights on" : "Lights out"}>
               {
-                light: (
-                  <ThemeIcon
-                    size="xl"
-                    sx={{
-                      backgroundColor: "transparent",
-                      color: "goldenrod",
-                    }}
-                  >
-                    <Bulb />
-                  </ThemeIcon>
-                ),
-                dark: (
-                  <ThemeIcon
-                    size="xl"
-                    sx={{
-                      backgroundColor: "transparent",
-                      color: "darkgray",
-                    }}
-                  >
-                    <BulbOff />
-                  </ThemeIcon>
-                ),
-              }[colorScheme]
-            }
-          </Box>
+                {
+                  light: (
+                    <ThemeIcon
+                      size="xl"
+                      sx={{
+                        backgroundColor: "transparent",
+                        color: "goldenrod",
+                      }}
+                    >
+                      <Bulb />
+                    </ThemeIcon>
+                  ),
+                  dark: (
+                    <ThemeIcon
+                      size="xl"
+                      sx={{
+                        backgroundColor: "transparent",
+                        color: "darkgray",
+                      }}
+                    >
+                      <BulbOff />
+                    </ThemeIcon>
+                  ),
+                }[colorScheme]
+              }
+            </Tooltip>
+          </motion.div>
         </Group>
       </Container>
     </Box>

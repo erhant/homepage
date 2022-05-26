@@ -7,3 +7,4 @@ All kinds of resources that helped me on this development.
 - Good style utils: [Omatsuri](https://omatsuri.app/) and [Smart-Swatch](https://smart-swatch.netlify.app/#fcfcfc)
 - [CSS Fonts](https://www.cssfontstack.com/) and [CSS Layout](https://csslayout.io/)
 - [Framer Motion](https://www.framer.com/docs/examples/)
+- [Regex101](https://regex101.com/) best regex playground
