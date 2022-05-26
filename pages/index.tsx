@@ -1,9 +1,9 @@
-import { Card, Center, Anchor, Title, Stepper, Transition } from "@mantine/core"
+import { Card, Center, Anchor, Title, Stepper } from "@mantine/core"
 import Head from "next/head"
 import Layout from "../components/layout"
 import { motion } from "framer-motion"
-import { User, Notebook, Code, Tool } from "tabler-icons-react"
 import { NextPage } from "next"
+import content from "../content/home"
 
 const Index: NextPage = () => {
   return (
@@ -17,67 +17,62 @@ const Index: NextPage = () => {
           <Title order={1} my="md" sx={{ textAlign: "center" }}>
             Welcome, stranger.
           </Title>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Center>
-              <Stepper
-                my="xl"
-                active={-1}
-                onStepClick={() => {}}
-                orientation="vertical"
-                styles={{
-                  separator: {
-                    minHeight: "85px",
-                  },
-                  stepLabel: {
-                    fontSize: "2em",
-                  },
-                  stepDescription: {
-                    fontSize: "1.2em",
-                  },
-                  step: {
-                    cursor: "default",
-                  },
+          <Center sx={{ width: "min(600px,100%)", margin: "auto" }}>
+            <Stepper
+              my="xl"
+              active={-1}
+              onStepClick={() => {}}
+              orientation="vertical"
+              styles={{
+                separator: {
+                  minHeight: "60px",
+                },
+                stepLabel: {
+                  fontSize: "2em",
+                },
+                stepDescription: {
+                  fontSize: "1.2em",
+                },
+                step: {
+                  cursor: "default",
+                },
+              }}
+            >
+              {content.map((c, i) => (
+                <Stepper.Step
+                  key={i}
+                  label={
+                    <motion.div initial={{ x: 0 }} whileHover={{ x: 20 }} transition={{ ease: "easeOut" }}>
+                      <Anchor href={c.href}>
+                        <Title>{c.title}</Title>
+                      </Anchor>
+                    </motion.div>
+                  }
+                  description={c.desc}
+                  icon={c.icon}
+                />
+              ))}
+            </Stepper>
+          </Center>
+
+          {/* <Group position="center" style={{ overflow: "hidden", paddingTop: "50px", paddingBottom: "50px" }}>
+            {content.map((c, i) => (
+              <motion.span
+                key={i}
+                style={{ originX: "50%", originY: "25vh", opacity: 1 }}
+                animate={{
+                  rotate: (360 / content.length) * (i - elementIndex.active),
+                  opacity: elementIndex.active == i ? 1 : 0.2,
                 }}
               >
-                <Stepper.Step
-                  label={
-                    <Anchor href="/about">
-                      <Title>About me</Title>
-                    </Anchor>
-                  }
-                  description="First, you might want to find out who am I, what do I do & all that. Nice to meet you already :)"
-                  icon={<User />}
-                />
-                <Stepper.Step
-                  label={
-                    <Anchor href="/projects">
-                      <Title>My projects</Title>
-                    </Anchor>
-                  }
-                  description="Then feel free to check out my projects. Most of them are on my GitHub, but I have some other stuff mentioned here too."
-                  icon={<Code />}
-                />
-                <Stepper.Step
-                  label={
-                    <Anchor href="/posts">
-                      <Title>My blog</Title>
-                    </Anchor>
-                  }
-                  description="I will write stuff about maths, music or programming every now and then. Keep your eye out if you enjoy them!"
-                  icon={<Notebook />}
-                />
-                <Stepper.Step
-                  label={
-                    <Anchor href="/tools">
-                      <Title>Tools</Title>
-                    </Anchor>
-                  }
-                  description="Tools of all kinds of things, such as finding prime factors of a number, impermanent loss calculator, automated market-maker trade calculator, and Collatz sequence finder."
-                  icon={<Tool />}
-                />
-              </Stepper>
-            </Center>
-          </motion.div>
+                <ContentView c={c} />
+              </motion.span>
+            ))}
+          </Group>
+          <Group position="center">
+            <Button onClick={() => setElementIndex(nextElementIndex)}>Next</Button>
+            <Button onClick={() => setElementIndex(prevElementIndex)}>Prev</Button>
+          </Group> */}
         </>
       </Layout>
     </>

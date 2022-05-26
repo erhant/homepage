@@ -12,7 +12,7 @@ const Layout: FC<{
       <div className="layout">
         <Header />
         <main>
-          <Container>{children}</Container>
+          <Container size="lg">{children}</Container>
         </main>
         <div style={{ flexGrow: 1 }} />
         <Footer />

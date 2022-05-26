@@ -103,7 +103,7 @@ const sideProjects: ProjectType[] = [
   },
   {
     title: "Homepage",
-    githubURL: "https://github.com/erhant/lighthouse-problem",
+    githubURL: "https://github.com/erhant/homepage",
     langs: ["ts", "next"],
     content: (
       <Text>
