@@ -1,4 +1,4 @@
-import { getAllPosts } from "../api/posts"
+import { getAllPosts } from "../lib/posts"
 import Post from "../types/post"
 import PostPreview from "../components/post-preview"
 import Layout from "../components/layout"

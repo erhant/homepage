@@ -1,7 +1,8 @@
 import DateFormatter from "./date-formatter"
 import Link from "next/link"
-import { Title, Text, Box } from "@mantine/core"
+import { Title, Text, Box, Anchor } from "@mantine/core"
 import { FC } from "react"
+import { motion } from "framer-motion"
 
 const PostPreview: FC<{
   title: string
@@ -10,18 +11,23 @@ const PostPreview: FC<{
   slug: string
 }> = ({ title, date, excerpt, slug }) => {
   return (
-    <Box sx={{ borderLeft: "0.2em outset", paddingLeft: "2em" }}>
-      <Title order={1}>
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          {title}
-        </Link>
-      </Title>
+    <motion.div
+      style={{ paddingLeft: "2em", width: "95%" }}
+      initial={{ borderLeft: "0.2em outset" }}
+      whileHover={{ borderLeft: "1.2em outset" }}
+      transition={{ ease: "easeOut" }}
+    >
+      <Link as={`/posts/${slug}`} href="/posts/[slug]" passHref>
+        <Anchor>
+          <Title>{title}</Title>
+        </Anchor>
+      </Link>
 
       <Text color="dimmed" size="lg">
         <DateFormatter dateString={date} />
       </Text>
       <Text>{excerpt}</Text>
-    </Box>
+    </motion.div>
   )
 }
 

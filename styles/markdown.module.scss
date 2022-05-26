@@ -1,11 +1,21 @@
-// Links
-.markdown a {
-  text-decoration: none;
-  color: inherit;
-  text-decoration: underline;
-}
+.markdown {
+  // Links
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: underline;
+  }
 
-// Code blocks (not inline ones)
-.markdown pre {
-  font-size: 0.82em;
+  // Code blocks (not inline ones)
+  pre {
+    font-size: 0.82em;
+  }
+
+  // Blockquotes
+  blockquote {
+    border-left: 0.5em outset;
+    padding-left: 1em;
+    margin-left: 10px;
+    font-style: italic;
+  }
 }

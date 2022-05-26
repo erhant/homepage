@@ -1,4 +1,4 @@
-import { Affix, Button, Container, Text, Transition, useMantineTheme } from "@mantine/core"
+import { Affix, Button, Transition } from "@mantine/core"
 import { ArrowUp } from "tabler-icons-react"
 import { useWindowScroll } from "@mantine/hooks"
 import { FC } from "react"

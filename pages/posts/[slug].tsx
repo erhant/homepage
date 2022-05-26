@@ -1,9 +1,9 @@
 import { useRouter } from "next/router"
 import ErrorPage from "next/error"
 import { Container, Title, useMantineTheme, Text } from "@mantine/core"
-import { getPostBySlug, getAllPosts } from "../../api/posts"
+import { getPostBySlug, getAllPosts } from "../../lib/posts"
 import Head from "next/head"
-import toHTML from "../../api/markdown"
+import toHTML from "../../lib/markdown"
 import PostType from "../../types/post"
 import PostBody from "../../components/post-body"
 import Layout from "../../components/layout"
@@ -27,43 +27,39 @@ const Post = ({ post }: Props) => {
       <h1>Loading…</h1>
     ) : (
       <Layout>
-        <>
-          <Container>
-            <article>
-              <Head>
-                <title>{post.title}</title>
-                <meta name="description" content={post.excerpt} key="desc" />
-                {/* Math rendering */}
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"></link>
-                {/* Code higlighting */}
-                {theme.colorScheme === "dark" ? (
-                  <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
-                  ></link>
-                ) : (
-                  <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css"
-                  ></link>
-                )}
-              </Head>
-              <div style={{ textAlign: "center" }}>
-                <Title order={1}>{post.title}</Title>
-                <Text color="dimmed" size="lg">
-                  <DateFormatter dateString={post.date} />
-                </Text>
-              </div>
-
-              <PostBody content={post.content} />
-              <Text my="lg">
-                <i>Got questions or comments? Contact me at erhany96 [at] gmail [dot] com</i>
+        <Container>
+          <article>
+            <Head>
+              <title>{post.title}</title>
+              <meta name="description" content={post.excerpt} key="desc" />
+              {/* Code higlighting */}
+              {theme.colorScheme === "dark" ? (
+                <link
+                  rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css"
+                ></link>
+              ) : (
+                <link
+                  rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-light.min.css"
+                ></link>
+              )}
+            </Head>
+            <div style={{ textAlign: "center" }}>
+              <Title order={1}>{post.title}</Title>
+              <Text color="dimmed" size="lg">
+                <DateFormatter dateString={post.date} />
               </Text>
-            </article>
-          </Container>
+            </div>
 
-          <ScrollToTopAffix />
-        </>
+            <PostBody content={post.content} />
+            <Text my="lg">
+              <i>Got questions or comments? Contact me at erhany96 [at] gmail [dot] com</i>
+            </Text>
+          </article>
+        </Container>
+
+        <ScrollToTopAffix />
       </Layout>
     )
   }

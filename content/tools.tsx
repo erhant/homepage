@@ -1,6 +1,6 @@
 import ToolType from "../types/tool"
 import { Text } from "@mantine/core"
-import { MathFunction, Calculator, CurrencyEthereum } from "tabler-icons-react"
+import { MathFunction, Music, CurrencyEthereum } from "tabler-icons-react"
 
 const tools: ToolType[] = [
   {
@@ -14,6 +14,18 @@ const tools: ToolType[] = [
     href: "/tools/collatz",
     description: <Text>Find the Collatz sequence of any positive integer.</Text>,
     icon: MathFunction,
+  },
+  {
+    title: "Music Formula Reader",
+    href: "/tools/music-formula-reader",
+    description: <Text>Find the music notes in chords and scales via their formula.</Text>,
+    icon: Music,
+  },
+  {
+    title: "Random Music Notes",
+    href: "/tools/random-music-notes",
+    description: <Text>Practice your instrument with randomly generated music notes.</Text>,
+    icon: Music,
   },
 ]
 
