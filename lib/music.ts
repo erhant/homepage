@@ -27,8 +27,8 @@ export function isValidFormula(formula: string): boolean {
 
   // check if numbers are increasing from left to right
   let nums = formula
-    .replaceAll("#", "")
-    .replaceAll("b", "")
+    .replace(/#/g, "")
+    .replace(/b/g, "")
     .split("-")
     .map((n) => Number(n))
   for (let i = 0; i < nums.length - 1; i++) {

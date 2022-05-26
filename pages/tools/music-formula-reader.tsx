@@ -35,8 +35,8 @@ const MusicPractice = () => {
         .map((x) => x / 2)
         .join(" ")
         .toString()
-        .replaceAll("0.5", "½") // do this first to get account for 0s
-        .replaceAll(".5", "½"),
+        .replace(/0\.5/g, "½") // do this first to get account for 0s
+        .replace(/\.5/g, "½"),
     [intervals]
   )
   const notes: MusicNote[] = useMemo(
