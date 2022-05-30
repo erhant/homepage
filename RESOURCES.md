@@ -8,3 +8,4 @@ All kinds of resources that helped me on this development.
 - [CSS Fonts](https://www.cssfontstack.com/) and [CSS Layout](https://csslayout.io/)
 - [Framer Motion](https://www.framer.com/docs/examples/)
 - [Regex101](https://regex101.com/) best regex playground
+- [Superdesigner](https://superdesigner.co/) can create cool shapes and backgrounds.
