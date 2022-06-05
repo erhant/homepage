@@ -2,20 +2,13 @@ import { Anchor, Box, Group, Stack, Tooltip, Text } from "@mantine/core"
 import { FC } from "react"
 import ToolType from "../types/tool"
 import Icon from "./icon"
-import { motion, useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
 
 const Tool: FC<{
   t: ToolType
 }> = ({ t }) => {
-  const controls = useAnimation()
-
   return (
-    <motion.div
-      initial={{ x: 0 }}
-      whileHover={{ x: 5 }}
-      onTap={() => controls.start({ scale: 1.1 })}
-      animate={controls}
-    >
+    <motion.div initial={{ x: 0 }} whileHover={{ x: 5 }}>
       <Stack px="sm">
         <Group position="left">
           <Icon I={t.icon} />
@@ -26,7 +19,7 @@ const Tool: FC<{
               </Text>
             </Tooltip>
           ) : (
-            <Anchor href={t.href} sx={{ fontSize: "1.5em" }}>
+            <Anchor href={t.href} sx={{ fontSize: "1.5em" }} target="_blank">
               {t.title}
             </Anchor>
           )}

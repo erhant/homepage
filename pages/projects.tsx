@@ -19,8 +19,8 @@ const Projects = () => {
             Projects
           </Title>
 
-          <Tabs>
-            <Tabs.Tab label="Side Projects">
+          <Tabs position="center" variant="outline">
+            <Tabs.Tab label="Side">
               <Grid>
                 {sideProjects.map((p, i) => (
                   <Grid.Col xs={12} md={6} key={i}>
@@ -30,7 +30,7 @@ const Projects = () => {
               </Grid>
             </Tabs.Tab>
 
-            <Tabs.Tab label="School Projects">
+            <Tabs.Tab label="School">
               <Grid>
                 {schoolProjects.map((p, i) => (
                   <Grid.Col xs={12} md={6} key={i}>
@@ -40,7 +40,7 @@ const Projects = () => {
               </Grid>
             </Tabs.Tab>
 
-            <Tabs.Tab label="Thesis Projects">
+            <Tabs.Tab label="Thesis">
               <Stack>
                 {thesisProjects.map((p, i) => (
                   <Project project={p} key={i} />

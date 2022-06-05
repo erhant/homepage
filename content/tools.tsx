@@ -4,7 +4,7 @@ import { MathFunction, Music, CurrencyEthereum } from "tabler-icons-react"
 
 const tools: ToolType[] = [
   {
-    title: "Impermanent Loss Calculator",
+    title: "Impermanent Loss",
     href: "/tools/impermanent-loss",
     description: <Text>Calculate the impermanent loss in a constant product automated market maker.</Text>,
     icon: CurrencyEthereum,
@@ -16,15 +16,9 @@ const tools: ToolType[] = [
     icon: MathFunction,
   },
   {
-    title: "Music Formula Reader",
-    href: "/tools/music-formula-reader",
-    description: <Text>Find the music notes in chords and scales via their formula.</Text>,
-    icon: Music,
-  },
-  {
-    title: "Random Music Notes",
-    href: "/tools/random-music-notes",
-    description: <Text>Practice your instrument with randomly generated music notes.</Text>,
+    title: "Musical Tools",
+    href: "https://musical-tools-for-everyone.vercel.app/",
+    description: <Text>Practice your instrument and improve your music theory with these awesome free tools!</Text>,
     icon: Music,
   },
 ]

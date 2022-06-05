@@ -138,7 +138,7 @@ int main() {
   }
 
   // done, you can print primes
-  for (i = 0; i < P; i++)
+  for (int i = 0; i < P; i++)
     printf("%d ", primes[i]);
 
 }

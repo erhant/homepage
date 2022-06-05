@@ -10,7 +10,7 @@ const Project: FC<{
   project: ProjectType
 }> = ({ project }) => {
   return (
-    <motion.div whileHover={{ scale: 1.1 }}>
+    <motion.div whileHover={{ scale: 1.035 }}>
       <Paper shadow="lg" radius="xl" p="lg" withBorder>
         <Title>{project.title}</Title>
         {project.content}
