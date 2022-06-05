@@ -53,10 +53,28 @@ const sideProjects: ProjectType[] = [
     langs: ["cpp"],
   },
   {
+    title: "NextJS + Web3 Starter",
+    githubURL: "https://github.com/erhant/nextjs-web3-starter",
+    content: (
+      <Text>
+        A TypeScript template repository to create decentralized applications using NextJS! It uses Hardhat for contract
+        creation and testing, and MantineUI for styling.
+      </Text>
+    ),
+    langs: ["ts", "next", "sol"],
+  },
+  {
+    title: "Musical Tools",
+    githubURL: "https://github.com/erhant/musical-tools-for-everyone",
+    demoURL: "https://musical-tools-for-everyone.vercel.app",
+    content: <Text>A React application to practice your instrument and music theory!</Text>,
+    langs: ["ts", "next", "sol"],
+  },
+  {
     title: "SpotiStuff",
     githubURL: "https://github.com/erhant/spoti-stuff",
     demoURL: "https://spoti-stuff.vercel.app/",
-    langs: ["ts", "next", "react"],
+    langs: ["ts", "react"],
     content: (
       <Text>
         A collection of mini-applications I made using Spotify Web API. You can see audio features of your currently
@@ -70,7 +88,7 @@ const sideProjects: ProjectType[] = [
     langs: [],
     content: (
       <Text>
-        Of the various livecoding programs, I particularly developed an interest in{" "}
+        Of the various music livecoding programs, I particularly developed an interest in{" "}
         <Anchor href="https://hundredrabbits.itch.io/orca">Orca</Anchor>, which is a 2-dimensional esoteric programming
         language. I had some fun with it, such as creating a fretboard and tab-reader, or musical scale player with it.
         I am collecting such things in this repo!
@@ -113,10 +131,10 @@ const sideProjects: ProjectType[] = [
     ),
   },
   {
-    title: "Crypto-notes",
+    title: "Cryptography Notes",
     githubURL: "https://github.com/erhant/crypto-notes",
     demoURL: "https://crypto-notes-erhant.vercel.app/",
-    langs: ["ts", "next", "react"],
+    langs: ["ts", "next"],
     content: (
       <Text>
         My notes from cryptography class; I revisit them as I transfer them online. Why? Well because cryptography is
