@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Divider, Tooltip, Space, Title, Avatar, Grid, Center } from "@mantine/core"
+import { Text, Divider, Tooltip, Space, Title, Avatar, Grid, Center, Anchor } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
@@ -46,15 +46,21 @@ const About: NextPage = () => {
             .
           </Text>
 
+          <Title order={2} my="md">
+            Technology
+          </Title>
+
           <DevStacks />
 
           <Text mx="sm" mt="md">
             My tech-stack is TypeScript oriented, with NextJS for frontend and Node+Express for backend. As for Web3, I
-            use Solidity mostly with EVM-compatible chains. I make use of component libraries on frontend, mostly
-            MantineUI; though I may use SASS if need be. I enjoy following standards and clean-coding practices. I
-            believe it is more valuable that the code is simple, yet generic enough; rather than complex and
-            all-purpose.
+            use Solidity. I make use of component libraries on frontend, mostly MantineUI; using Sass if need be. I
+            enjoy following standards and clean-coding practices, valuing simple over complex.
           </Text>
+
+          <Title order={2} my="md">
+            Background
+          </Title>
 
           <Grid justify="space-between">
             <Grid.Col sm={5.5}>
@@ -67,7 +73,19 @@ const About: NextPage = () => {
             </Grid.Col>
           </Grid>
 
-          <Space h="lg" />
+          <Title order={2} my="md">
+            Trivia
+          </Title>
+
+          <Text>
+            The favicon is just a &amp; symbol in Courier Prime font. My name and surname initials together make
+            <kbd>&quot;et&quot;</kbd>, which is latin for <kbd>&quot;and&quot;</kbd>. This is where the &amp; symbol
+            originates from, which I also think to be a cool symbol. I used to game a lot, maybe hit me up on Steam ✨{" "}
+            <Anchor href="https://steamcommunity.com/id/erhanyyy" target="_blank">
+              erhany
+            </Anchor>
+            ✨
+          </Text>
         </>
       </Layout>
     </>

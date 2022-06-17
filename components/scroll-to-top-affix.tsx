@@ -11,7 +11,7 @@ const ScrollToTopAffix: FC = () => {
       <Transition transition="slide-up" mounted={scroll.y > 0}>
         {(transitionStyles) => (
           <Button variant="subtle" leftIcon={<ArrowUp />} style={transitionStyles} onClick={() => scrollTo({ y: 0 })}>
-            Scroll to top
+            Up
           </Button>
         )}
       </Transition>

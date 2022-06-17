@@ -55,10 +55,12 @@ const sideProjects: ProjectType[] = [
   {
     title: "NextJS + Web3 Starter",
     githubURL: "https://github.com/erhant/nextjs-web3-starter",
+    demoURL: "https://nextjs-web3-starter-erhant.vercel.app/",
     content: (
       <Text>
-        A TypeScript template repository to create decentralized applications using NextJS! It uses Hardhat for contract
-        creation and testing, and MantineUI for styling.
+        A TypeScript template repository to create decentralized applications using{" "}
+        <Anchor href="https://nextjs.org/">NextJS</Anchor> and <Anchor href="https://hardhat.org/">Hardhat</Anchor>! Has
+        a simple counter contract and an ERC-20 token contract example in it.
       </Text>
     ),
     langs: ["ts", "next", "sol"],
@@ -67,7 +69,12 @@ const sideProjects: ProjectType[] = [
     title: "Musical Tools",
     githubURL: "https://github.com/erhant/musical-tools-for-everyone",
     demoURL: "https://musical-tools-for-everyone.vercel.app",
-    content: <Text>A React application to practice your instrument and music theory!</Text>,
+    content: (
+      <Text>
+        A React application to practice your instrument and music theory! Play along random notes, looking at their
+        names and seeing them on score too; or practice scales and chords of your choice.
+      </Text>
+    ),
     langs: ["ts", "next", "sol"],
   },
   {

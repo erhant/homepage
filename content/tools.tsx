@@ -6,7 +6,7 @@ const tools: ToolType[] = [
   {
     title: "Impermanent Loss",
     href: "/tools/impermanent-loss",
-    description: <Text>Calculate the impermanent loss in a constant product automated market maker.</Text>,
+    description: <Text>Calculate your impermanent loss in a constant product automated market maker.</Text>,
     icon: CurrencyEthereum,
   },
   {
@@ -20,6 +20,12 @@ const tools: ToolType[] = [
     href: "https://musical-tools-for-everyone.vercel.app/",
     description: <Text>Practice your instrument and improve your music theory with these awesome free tools!</Text>,
     icon: Music,
+  },
+  {
+    title: "Ethertools",
+    href: "/tools/ethertools",
+    description: <Text>A handful of Ethereum utilities such as unit conversion and hashing.</Text>,
+    icon: CurrencyEthereum,
   },
 ]
 
