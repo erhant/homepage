@@ -22,7 +22,7 @@ const Experience: FC = () => {
           <>
             <Text>Macerita - Istanbul, Turkey</Text>
             <Text size="xs" color="dimmed">
-              Self-Employed. Apr 2022 - <i>present</i>
+              Self-Employed. Mar 2022 - Jun 2022
             </Text>
           </>
         }

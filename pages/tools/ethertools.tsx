@@ -3,7 +3,7 @@ import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Anchor, Button, Group, TextInput, Table, Input } from "@mantine/core"
 import Head from "next/head"
 import { useEffect, useState } from "react"
-import keccak256 from "keccak256"
+import keccak256 from "keccak256" // @todo use "@ethersproject/keccak256"
 import { BigNumber, formatFixed, parseFixed } from "@ethersproject/bignumber"
 
 const etherUnitNames: [string, string, string, string, string, string, string] = [
@@ -29,12 +29,35 @@ const Ethertools = () => {
   const [hashText, setHashText] = useState("")
   const [hashValue, setHashValue] = useState("")
   const [funcText, setFuncText] = useState("")
-  const [funcEncoded, setFuncEncoded] = useState("")
+  const [funcTextError, setFuncTextError] = useState(false)
+  const [funcTextSignature, setFuncTextSignature] = useState("")
+  const [funcByteSignature, setFuncByteSignature] = useState("")
 
-  function encodeFunction(funcStr: string) {
+  function encodeFunction(funcStr: string): string {
     // regex assures this to work
-    let params = funcStr.indexOf("(")
+    let sanFuncStr = funcStr
+      .replace(/\s*\(\s*/g, "(") // sanitize parenthesis
+      .replace(/\s*\)\s*/g, ")") // sanitize parenthesis
+      .replace(/\s*,\s*/g, ",") // sanitize comma
+
+    // regex to check sanitized expression
+    if (!/\s*\w+\((?:[\w\[\]]+(?:\s+\w+)*,?)*\)\.*/gm.test(sanFuncStr)) {
+      return ""
+    }
+    let startIdx = sanFuncStr.indexOf("(")
+    let endIdx = sanFuncStr.indexOf(")")
+
+    let idenIdx = sanFuncStr.indexOf(" ")
+    if (idenIdx > startIdx) idenIdx = -1
+    const identifier = sanFuncStr.slice(idenIdx + 1, startIdx)
+    const params = sanFuncStr
+      .slice(startIdx + 1, endIdx)
+      .split(",")
+      .map((s) => s.split(" ")[0])
+
+    return `${identifier}(${params.join(",")})`
   }
+
   useEffect(() => {
     setEtherValues([
       formatFixed(weiValue, 0),
@@ -61,14 +84,18 @@ const Ethertools = () => {
             This toolset has 3 tools:
             <ul>
               <li>
-                <b>Ether-Unit Converter</b>. See{" "}
+                <b>Ether-Unit Converter</b>. EVM does integer arithmetic only, where everything happens in Wei (18
+                decimals). To use other units, you might find a converter useful. See{" "}
                 <Anchor href="https://ethdocs.org/en/latest/ether.html">ethdocs</Anchor> for more information on units.
               </li>
               <li>
                 <b>Hashing</b> Find the Keccak256 (SHA3) hash of any string.
               </li>
               <li>
-                <b>Function Signature Encoder</b>.
+                <b>Function Signature Encoder</b>. EVM uses the first 4 bytes of the canonical forms of functions to
+                understand which function is being called. Being aware of the signature might be useful in attacking and
+                defending a smart contract. See <Anchor href="https://www.4byte.directory/">4byte.directory</Anchor> for
+                a database of these signatures.
               </li>
             </ul>
           </Text>
@@ -82,7 +109,7 @@ const Ethertools = () => {
                 <th>
                   <b>Unit Name</b>
                 </th>
-                {/* <th>Value</th> */}
+                <th>Value</th>
                 <th>
                   <b>Wei</b>
                 </th>
@@ -94,7 +121,9 @@ const Ethertools = () => {
                   <td>
                     <strong>{etherUnitNames[i]}</strong>
                   </td>
-                  {/* <td>{`1e${i * 3} wei`}</td> */}
+                  <td>
+                    10<sup>{i * 3}</sup> wei
+                  </td>
                   <td>
                     <Input
                       value={v.toString()} //.replace(/\.0$/, "")}
@@ -131,7 +160,7 @@ const Ethertools = () => {
           />
           <Text my="md" sx={{ overflowY: "auto" }}>
             <b>Digest:</b>
-            {"   0x" + hashValue}
+            {" 0x" + hashValue}
           </Text>
 
           <Title order={2} my="md">
@@ -139,13 +168,22 @@ const Ethertools = () => {
           </Title>
           <TextInput
             value={funcText}
-            onChange={(event) => setHashText(event.currentTarget.value)}
+            onChange={(event) => setFuncText(event.currentTarget.value)}
             label="Function Signature"
+            error={funcTextError}
             placeholder="function transfer(address _from, uint256 _amount) public;"
             rightSection={
               <Button
                 onClick={() => {
-                  setFuncEncoded(keccak256(funcText).toString("hex"))
+                  // regex check
+                  let s = encodeFunction(funcText)
+                  if (s == "") {
+                    setFuncTextError(true)
+                  } else {
+                    if (funcTextError) setFuncTextError(false)
+                    setFuncTextSignature(s)
+                    setFuncByteSignature(keccak256(s).toString("hex").slice(0, 8))
+                  }
                 }}
               >
                 Encode
@@ -154,11 +192,11 @@ const Ethertools = () => {
           />
           <Text my="md">
             <b>Canonical Form:</b>
-            {funcEncoded}
+            {" " + funcTextSignature}
           </Text>
           <Text my="md">
             <b>Bytes Signature:</b>
-            {"   " + keccak256(funcEncoded).toString("hex").slice(0, 8)}
+            {" 0x" + funcByteSignature}
           </Text>
         </>
       </Layout>

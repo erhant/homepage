@@ -37,13 +37,10 @@ const About: NextPage = () => {
             I have obtained my B.Sc. in Computer Engineering from Y&#x131;ld&#x131;z Technical University on February
             2019, and then I have recently obtained my M.Sc. in Computer Science &amp; Engineering from Koç University
             on February 2022. Most of my study has been on the more theoretical computer science part; I really enjoy
-            cryptography and theory of computation in particular. I am currently working as a self-employed full-stack
-            developer in Macerita, a fresh startup! I plan on working more on the web3 side of things in future; as in
-            the end I believe{" "}
+            cryptography and theory of computation in particular and I plan on working more on the Web3 in future!{" "}
             <Tooltip label="We are all gonna make it 🚀" position="bottom">
               <FancyWord word="#WAGMI" />
             </Tooltip>
-            .
           </Text>
 
           <Title order={2} my="md">
