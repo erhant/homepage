@@ -3,7 +3,6 @@ import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Stack, Group, Anchor, Blockquote, Divider, Code } from "@mantine/core"
 import Head from "next/head"
 import { useEffect, useState } from "react"
-import { Prism } from "@mantine/prism"
 import { CurrencyDollar } from "tabler-icons-react"
 
 const MIN = 0.01
@@ -222,13 +221,7 @@ const ImpermanentLoss = () => {
       <br />
       <Text>
         To calculate the new quantities, we do as follows:
-        <Prism
-          my="sm"
-          language="jsx"
-          withLineNumbers
-          copyLabel="Copy code to clipboard"
-          copiedLabel="Code copied to clipboard"
-        >
+        <pre>
           {`
 spot_ratio = spotA / spotB
 future_ratio = futureA / futureB
@@ -236,7 +229,7 @@ ratio_change = spot_ratio / future_ratio
 qtyA_new = qtyA * sqrt(ratio_change)
 qtyB_new = qtyB / sqrt(ratio_change)
             `}
-        </Prism>
+        </pre>
         With these new quantities, we calculate our gains with respect to the future prices, as if we are withdrawing
         the assets from the pool. Then, we look at the difference between our gains from this and HODLing, giving our
         impermanent loss.
