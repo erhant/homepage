@@ -17,10 +17,7 @@ const Tools = () => {
           <Title order={1} mb="md">
             Tools
           </Title>
-          <Text mb="lg">
-            I might have some utility tools here for fun, or other purposes. These may range from math to crypto, or
-            visualizations!
-          </Text>
+          <Text mb="lg">I occasionally write some utility tools here for fun, ranging from math to crypto!</Text>
           <Stack>
             {tools.map((t, i) => {
               return <Tool t={t} key={i} />

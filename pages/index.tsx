@@ -1,4 +1,4 @@
-import { Card, Center, Anchor, Title, Stepper } from "@mantine/core"
+import { Center, Anchor, Title, Stepper } from "@mantine/core"
 import Head from "next/head"
 import Layout from "../components/layout"
 import { motion } from "framer-motion"

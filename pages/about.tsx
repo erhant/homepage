@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Divider, Tooltip, Space, Title, Avatar, Grid, Center, Anchor } from "@mantine/core"
+import { Text, Divider, Tooltip, Title, Avatar, Grid, Anchor } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"

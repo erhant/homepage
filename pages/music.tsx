@@ -4,7 +4,6 @@ import Head from "next/head"
 import { NextPage } from "next"
 import { useEffect, useState } from "react"
 import getRandomTrackID from "../content/music"
-import PlaylistType from "../types/playlist"
 import PlaylistView from "../components/playlist-view"
 import { specialLists, drivingLists, genericLists } from "../content/playlists"
 
@@ -12,9 +11,11 @@ const Music: NextPage = () => {
   const [loading, setLoading] = useState(true)
   const [songID, setSongID] = useState<string>()
 
+  // choose a random song on mount
   useEffect(() => {
     setSongID(getRandomTrackID())
   }, [])
+
   return (
     <>
       <Head>
