@@ -2,7 +2,7 @@
 import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Anchor, Button, Group, TextInput, Table, Input } from "@mantine/core"
 import Head from "next/head"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import keccak256 from "keccak256" // @todo use "@ethersproject/keccak256"
 import { BigNumber, formatFixed, parseFixed } from "@ethersproject/bignumber"
 
@@ -15,17 +15,33 @@ const etherUnitNames: [string, string, string, string, string, string, string] =
   "milliether (finney)",
   "ether",
 ]
+
+function encodeFunction(funcStr: string): string {
+  let sanFuncStr = funcStr
+    .replace(/\s*\(\s*/g, "(") // sanitize parenthesis
+    .replace(/\s*\)\s*/g, ")") // sanitize parenthesis
+    .replace(/\s*,\s*/g, ",") // sanitize comma
+
+  // regex to check sanitized expression
+  if (!/\s*\w+\((?:[\w\[\]]+(?:\s+\w+)*,?)*\)\.*/gm.test(sanFuncStr)) {
+    return ""
+  }
+  let startIdx = sanFuncStr.indexOf("(")
+  let endIdx = sanFuncStr.indexOf(")")
+
+  let idenIdx = sanFuncStr.indexOf(" ")
+  if (idenIdx > startIdx) idenIdx = -1
+  const identifier = sanFuncStr.slice(idenIdx + 1, startIdx)
+  const params = sanFuncStr
+    .slice(startIdx + 1, endIdx)
+    .split(",")
+    .map((s) => s.split(" ")[0])
+
+  return `${identifier}(${params.join(",")})`
+}
+
 const Ethertools = () => {
   const [weiValue, setWeiValue] = useState<BigNumber>(BigNumber.from("1000000000000000000"))
-  const [etherValues, setEtherValues] = useState<[string, string, string, string, string, string, string]>([
-    formatFixed("1000000000000000000", 0),
-    formatFixed("1000000000000000000", 3),
-    formatFixed("1000000000000000000", 6),
-    formatFixed("1000000000000000000", 9),
-    formatFixed("1000000000000000000", 12),
-    formatFixed("1000000000000000000", 15),
-    formatFixed("1000000000000000000", 18),
-  ])
   const [hashText, setHashText] = useState("")
   const [hashValue, setHashValue] = useState("")
   const [funcText, setFuncText] = useState("")
@@ -33,42 +49,15 @@ const Ethertools = () => {
   const [funcTextSignature, setFuncTextSignature] = useState("")
   const [funcByteSignature, setFuncByteSignature] = useState("")
 
-  function encodeFunction(funcStr: string): string {
-    // regex assures this to work
-    let sanFuncStr = funcStr
-      .replace(/\s*\(\s*/g, "(") // sanitize parenthesis
-      .replace(/\s*\)\s*/g, ")") // sanitize parenthesis
-      .replace(/\s*,\s*/g, ",") // sanitize comma
-
-    // regex to check sanitized expression
-    if (!/\s*\w+\((?:[\w\[\]]+(?:\s+\w+)*,?)*\)\.*/gm.test(sanFuncStr)) {
-      return ""
-    }
-    let startIdx = sanFuncStr.indexOf("(")
-    let endIdx = sanFuncStr.indexOf(")")
-
-    let idenIdx = sanFuncStr.indexOf(" ")
-    if (idenIdx > startIdx) idenIdx = -1
-    const identifier = sanFuncStr.slice(idenIdx + 1, startIdx)
-    const params = sanFuncStr
-      .slice(startIdx + 1, endIdx)
-      .split(",")
-      .map((s) => s.split(" ")[0])
-
-    return `${identifier}(${params.join(",")})`
-  }
-
-  useEffect(() => {
-    setEtherValues([
-      formatFixed(weiValue, 0),
-      formatFixed(weiValue, 3),
-      formatFixed(weiValue, 6),
-      formatFixed(weiValue, 9),
-      formatFixed(weiValue, 12),
-      formatFixed(weiValue, 15),
-      formatFixed(weiValue, 18),
-    ])
-  }, [weiValue])
+  const etherValues: [string, string, string, string, string, string, string] = [
+    formatFixed(weiValue, 0),
+    formatFixed(weiValue, 3),
+    formatFixed(weiValue, 6),
+    formatFixed(weiValue, 9),
+    formatFixed(weiValue, 12),
+    formatFixed(weiValue, 15),
+    formatFixed(weiValue, 18),
+  ]
 
   return (
     <>
@@ -151,7 +140,7 @@ const Ethertools = () => {
             rightSection={
               <Button
                 onClick={() => {
-                  setHashValue("0x" + keccak256(hashText).toString("hex"))
+                  setHashValue(" 0x" + keccak256(hashText).toString("hex"))
                 }}
               >
                 Hash
@@ -160,7 +149,7 @@ const Ethertools = () => {
           />
           <Text my="md" sx={{ overflowY: "auto" }}>
             <b>Digest:</b>
-            {" 0x" + hashValue}
+            {hashValue}
           </Text>
 
           <Title order={2} my="md">
@@ -182,7 +171,7 @@ const Ethertools = () => {
                   } else {
                     if (funcTextError) setFuncTextError(false)
                     setFuncTextSignature(s)
-                    setFuncByteSignature(keccak256(s).toString("hex").slice(0, 8))
+                    setFuncByteSignature(" 0x" + keccak256(s).toString("hex").slice(0, 8))
                   }
                 }}
               >
@@ -196,7 +185,7 @@ const Ethertools = () => {
           </Text>
           <Text my="md">
             <b>Bytes Signature:</b>
-            {" 0x" + funcByteSignature}
+            {funcByteSignature}
           </Text>
         </>
       </Layout>

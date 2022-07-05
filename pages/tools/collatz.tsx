@@ -36,10 +36,10 @@ const Collatz = () => {
             Collatz Sequence Finder
           </Title>
           <Text my="md">
-            The <Anchor href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture</Anchor> states that
-            if you pick any positive integer, and recursively divide it by 2 if even or multiply by 3 and add 1 if odd,
-            you will reach 1 at the end. The Collatz Sequence of a number is the set of numbers that appear until the
-            iterative process reaches one.
+            The <Anchor href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture</Anchor> is a
+            conjecture stating that if you pick any positive integer, and recursively divide it by 2 if even or multiply
+            by 3 and add 1 if odd, you will reach 1 at the end. The Collatz Sequence of a number is the set of numbers
+            that appear until the iterative process reaches one.
           </Text>
           <Group>
             <NumberInput

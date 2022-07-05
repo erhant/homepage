@@ -2,7 +2,7 @@
 import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Stack, Group, Anchor, Blockquote, Divider, Code } from "@mantine/core"
 import Head from "next/head"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { CurrencyDollar } from "tabler-icons-react"
 
 const MIN = 0.01
@@ -33,17 +33,8 @@ const defaultTokenVals: PoolType = {
 
 const ImpermanentLoss = () => {
   const [tokenVals, setTokenVals] = useState<PoolType>(defaultTokenVals)
-  const [results, setResults] = useState({
-    qtyA_new: INIT_LIQ / INIT_PRICE,
-    qtyB_new: INIT_LIQ / INIT_PRICE,
-    hodl: 2 * INIT_LIQ,
-    lp: 2 * INIT_LIQ,
-    diff: 0,
-  })
 
-  useEffect(() => {
-    // calculate new prices
-
+  const results = (() => {
     const spot_ratio = tokenVals.spotA / tokenVals.spotB
     const future_ratio = tokenVals.futureA / tokenVals.futureB
     const ratio_change = spot_ratio / future_ratio
@@ -53,14 +44,14 @@ const ImpermanentLoss = () => {
     const hodl = tokenVals.qtyA * tokenVals.futureA + tokenVals.qtyB * tokenVals.futureB
     const lp = qtyA_new * tokenVals.futureA + qtyB_new * tokenVals.futureB
 
-    setResults({
+    return {
       qtyA_new: qtyA_new,
       qtyB_new: qtyB_new,
       hodl,
       lp,
       diff: hodl - lp,
-    })
-  }, [tokenVals])
+    }
+  })()
 
   return (
     <Layout>
@@ -133,7 +124,13 @@ const ImpermanentLoss = () => {
             label="Liquidity of each token"
             description={"Total value in the pool: " + tokenVals.liq * 2}
             onChange={(val: number) => {
-              if (val) setTokenVals({ ...tokenVals, liq: val })
+              if (val)
+                setTokenVals((tokenVals) => ({
+                  ...tokenVals,
+                  liq: val,
+                  qtyA: val / (tokenVals.liq / tokenVals.qtyA),
+                  qtyB: val / (tokenVals.liq / tokenVals.qtyB),
+                }))
             }}
             value={tokenVals.liq}
             icon={<CurrencyDollar size={ICONSIZE} />}

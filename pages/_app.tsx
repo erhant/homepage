@@ -16,12 +16,14 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
     setCookies("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
   }
 
+  // decide color scheme on mount
   useEffect(() => {
     const color: CookieValueTypes = getCookie("mantine-color-scheme")
     if (!color) {
       setColorScheme("light")
     } else setColorScheme(color.toString() as "light" | "dark")
   }, [])
+
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider
