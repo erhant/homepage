@@ -11,7 +11,7 @@ const Projects = () => {
     <>
       <Head>
         <title>Projects</title>
-        <meta name="description" content="Projects of Erhan Tezcan." key="desc" />
+        <meta name="description" content="Projects." key="desc" />
       </Head>
       <Layout>
         <>
@@ -20,7 +20,7 @@ const Projects = () => {
           </Title>
 
           <Tabs position="center" variant="outline">
-            <Tabs.Tab label="Side">
+            <Tabs.Tab label={<Title order={3}>Side</Title>}>
               <Grid>
                 {sideProjects.map((p, i) => (
                   <Grid.Col xs={12} md={6} key={i}>
@@ -30,7 +30,7 @@ const Projects = () => {
               </Grid>
             </Tabs.Tab>
 
-            <Tabs.Tab label="School">
+            <Tabs.Tab label={<Title order={3}>School</Title>}>
               <Grid>
                 {schoolProjects.map((p, i) => (
                   <Grid.Col xs={12} md={6} key={i}>
@@ -40,7 +40,7 @@ const Projects = () => {
               </Grid>
             </Tabs.Tab>
 
-            <Tabs.Tab label="Thesis">
+            <Tabs.Tab label={<Title order={3}>Thesis</Title>}>
               <Stack>
                 {thesisProjects.map((p, i) => (
                   <Project project={p} key={i} />

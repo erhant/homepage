@@ -9,7 +9,7 @@ const Tools = () => {
     <>
       <Head>
         <title>Tools</title>
-        <meta name="description" content="All kinds of lightweight online tools by Erhan Tezcan." key="desc" />
+        <meta name="description" content="All kinds of tools!" key="desc" />
       </Head>
 
       <Layout>
@@ -17,7 +17,6 @@ const Tools = () => {
           <Title order={1} mb="md">
             Tools
           </Title>
-          <Text mb="lg">I occasionally write some utility tools here for fun, ranging from math to crypto!</Text>
           <Stack>
             {tools.map((t, i) => {
               return <Tool t={t} key={i} />

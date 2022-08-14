@@ -1,44 +1,44 @@
-import { Grid, Stack, Center, Divider } from "@mantine/core"
+import { Grid, Title, Stack, Center, Divider } from "@mantine/core"
 import { FC } from "react"
+import LanguageType from "../../types/language"
 import Language from "../language"
 
+const stacks: {
+  title: string
+  langs: LanguageType[]
+}[] = [
+  {
+    title: "Frontend",
+    langs: ["ts", "react", "next", "sass"],
+  },
+  {
+    title: "Backend",
+    langs: ["ts", "node", "express", "sol"],
+  },
+  {
+    title: "Academic",
+    langs: ["cpp", "c", "py", "tex"],
+  },
+  {
+    title: "Curious",
+    langs: ["hs", "rust"],
+  },
+]
+const TITLE_ORDER = 3
 const DevStacks: FC = () => {
   return (
     <Center my="md">
       <Grid sx={{ textAlign: "center", width: "60%" }}>
-        <Grid.Col xs={6} sm={3}>
-          <Stack>
-            <Divider label="Frontend" labelPosition="center" />
-            <Language l="ts" />
-            <Language l="react" />
-            <Language l="next" />
-            <Language l="sass" />
-          </Stack>
-        </Grid.Col>
-        <Grid.Col xs={6} sm={3}>
-          <Stack>
-            <Divider label="Backend" labelPosition="center" />
-            <Language l="ts" />
-            <Language l="node" />
-            <Language l="express" />
-            <Language l="sol" />
-          </Stack>
-        </Grid.Col>
-        <Grid.Col xs={6} sm={3}>
-          <Stack>
-            <Divider label="Academic" labelPosition="center" />
-            <Language l="c" />
-            <Language l="py" />
-            <Language l="tex" />
-          </Stack>
-        </Grid.Col>
-        <Grid.Col xs={6} sm={3}>
-          <Stack>
-            <Divider label="Curious" labelPosition="center" />
-            <Language l="hs" />
-            <Language l="rust" />
-          </Stack>
-        </Grid.Col>
+        {stacks.map(({ title, langs }) => (
+          <Grid.Col xs={6} sm={3}>
+            <Stack>
+              <Divider label={<Title order={TITLE_ORDER}>{title}</Title>} labelPosition="center" />
+              {langs.map((l) => (
+                <Language l={l} />
+              ))}
+            </Stack>
+          </Grid.Col>
+        ))}
       </Grid>
     </Center>
   )

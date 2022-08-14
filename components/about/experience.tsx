@@ -3,6 +3,38 @@ import { FC } from "react"
 import { Tie } from "tabler-icons-react"
 
 const ICON_SIZE = 20
+
+const experiences: {
+  title: string
+  company: string
+  position: string
+}[] = [
+  {
+    title: "Junior Blockchain Developer",
+    company: "Dynasty Studios - Istanbul, Turkey",
+    position: "Full-time. Aug 2022 - present",
+  },
+  {
+    title: "Full-Stack Developer",
+    company: "Macerita - Istanbul, Turkey",
+    position: "Self-Employed. Mar 2022 - Jun 2022",
+  },
+  {
+    title: "Graduate Research & Teaching Assistant",
+    company: "Koç University - Istanbul, Turkey",
+    position: "Full-time. Sep 2019 - Feb 2022",
+  },
+  {
+    title: "Backend Developer",
+    company: "Sociable, Inc. - Istanbul, Turkey",
+    position: "Full-time. Jul 2018 - Seb 2018",
+  },
+  {
+    title: "Software Specialist",
+    company: "Ata Technology Platforms - Istanbul, Turkey",
+    position: "Part-time. Sep 2016 - Apr 2017",
+  },
+]
 const Experience: FC = () => {
   return (
     <Stepper
@@ -14,58 +46,21 @@ const Experience: FC = () => {
         },
       }}
     >
-      <Stepper.Step
-        icon={<Tie size={ICON_SIZE} />}
-        label="Full-stack Developer"
-        allowStepSelect={false}
-        description={
-          <>
-            <Text>Macerita - Istanbul, Turkey</Text>
-            <Text size="xs" color="dimmed">
-              Self-Employed. Mar 2022 - Jun 2022
-            </Text>
-          </>
-        }
-      ></Stepper.Step>
-      <Stepper.Step
-        icon={<Tie size={ICON_SIZE} />}
-        label="Graduate Research & Teaching Assistant"
-        allowStepSelect={false}
-        description={
-          <>
-            <Text>Koç University - Istanbul, Turkey</Text>
-            <Text size="xs" color="dimmed">
-              Full-time. Sep 2019 - Feb 2022
-            </Text>
-          </>
-        }
-      ></Stepper.Step>
-      <Stepper.Step
-        icon={<Tie size={ICON_SIZE} />}
-        label="Backend Developer"
-        allowStepSelect={false}
-        description={
-          <>
-            <Text>Sociable, Inc. - Istanbul, Turkey</Text>
-            <Text size="xs" color="dimmed">
-              Full-time. Jul 2018 - Seb 2018
-            </Text>
-          </>
-        }
-      ></Stepper.Step>
-      <Stepper.Step
-        icon={<Tie size={ICON_SIZE} />}
-        label="Software Specialist"
-        allowStepSelect={false}
-        description={
-          <>
-            <Text>Ata Technology Platforms - Istanbul, Turkey</Text>
-            <Text size="xs" color="dimmed">
-              Part-time. Sep 2016 - Apr 2017
-            </Text>
-          </>
-        }
-      ></Stepper.Step>
+      {experiences.map(({ title, company, position }) => (
+        <Stepper.Step
+          icon={<Tie size={ICON_SIZE} />}
+          label={title}
+          allowStepSelect={false}
+          description={
+            <>
+              <Text>{company}</Text>
+              <Text size="xs" color="dimmed">
+                {position}
+              </Text>
+            </>
+          }
+        ></Stepper.Step>
+      ))}
     </Stepper>
   )
 }

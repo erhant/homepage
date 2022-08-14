@@ -10,7 +10,6 @@ const NavbarItemsList: [TablerIcon, string, string][] = [
   [Home, "/", "Home"],
   [User, "/about", "About"],
   [Code, "/projects", "Projects"],
-  [Notebook, "/posts", "Blog"],
   [Tool, "/tools", "Tools"],
   [Music, "/music", "Music"],
   [School, "/cv.pdf", "CV"],

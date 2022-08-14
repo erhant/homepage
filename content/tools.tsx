@@ -15,12 +15,12 @@ const tools: ToolType[] = [
     description: <Text>Find the Collatz sequence of any positive integer.</Text>,
     icon: MathFunction,
   },
-  {
-    title: "Musical Tools",
-    href: "https://musical-tools-for-everyone.vercel.app/",
-    description: <Text>Practice your instrument and improve your music theory with these awesome free tools!</Text>,
-    icon: Music,
-  },
+  // {
+  //   title: "Musical Tools",
+  //   href: "https://musical-tools-for-everyone.vercel.app/",
+  //   description: <Text>Practice your instrument and improve your music theory with these awesome free tools!</Text>,
+  //   icon: Music,
+  // },
   {
     title: "Ethertools",
     href: "/tools/ethertools",

@@ -1,4 +1,4 @@
-import { Box, useMantineTheme } from "@mantine/core"
+import { Box, useMantineTheme, Tooltip } from "@mantine/core"
 import { FC } from "react"
 import LanguageType from "../types/language"
 
@@ -22,6 +22,24 @@ const lmap: { [key: string]: string } = {
   express: "devicon-express-original",
   rust: "devicon-rust-plain",
 }
+const ldesc: { [key: string]: string } = {
+  js: "JavaScript",
+  ts: "TypeScript",
+  c: "C",
+  py: "Python",
+  cpp: "C++",
+  hs: "Haskell",
+  go: "Go",
+  tex: "LaTeX",
+  sass: "SASS",
+  sol: "Solidity",
+  next: "NextJS",
+  bash: "Bash",
+  react: "ReactJS",
+  node: "NodeJS",
+  express: "ExpressJS",
+  rust: "Rust",
+}
 
 const Language: FC<{
   l: LanguageType
@@ -30,7 +48,9 @@ const Language: FC<{
 
   return (
     <Box sx={{ color: theme.colors.icons[theme.colorScheme === "dark" ? 3 : 8] }}>
-      <i className={lmap[l]} style={{ fontSize: "2.5em" }} />
+      <Tooltip label={ldesc[l]}>
+        <i className={lmap[l]} style={{ fontSize: "2.5em" }} />
+      </Tooltip>
     </Box>
   )
 }

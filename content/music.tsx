@@ -24,6 +24,8 @@ const tracks: Readonly<string[]> = [
   "https://open.spotify.com/track/4MqaFp6x3NT7qHHcGxcbSm?si=6c55b014a29b49c1",
   // 4 Impromptus, Op. 90 D. 899
   "https://open.spotify.com/track/0SwKt4T6PMsdqU5q6Pv234?si=2e6d714f1ab24923",
+  // Fruit Stand
+  "https://open.spotify.com/track/6yZs3T7BnMwxVELyo6OduT?si=8e98226fb3264fc0",
 ]
 
 const DEFAULT_ID: string = "4RBJH7YdpKun59lX0PeHjr" // Trio No 1 Schubert <3

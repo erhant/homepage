@@ -10,6 +10,7 @@ const FancyWord: FC<{
       component="span"
       variant="gradient"
       gradient={{ from: theme.colors.blues[3], to: theme.colors.oranges[3], deg: 90 }}
+      sx={{ fontSize: "inherit" }}
     >
       {word}
     </Text>

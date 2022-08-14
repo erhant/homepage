@@ -17,7 +17,7 @@ const PlaylistView: FC<{ playlist: PlaylistType }> = ({ playlist }) => {
           sx={{ borderColor: theme.colors.icons[6], textDecoration: "none" }}
         >
           <Title order={5}>{playlist.name}</Title>
-          <Text>{playlist.desc}</Text>
+          {/* <Text>{playlist.desc}</Text> */}
         </Paper>
       </Anchor>
     </motion.div>

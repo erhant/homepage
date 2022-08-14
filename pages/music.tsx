@@ -7,6 +7,11 @@ import getRandomTrackID from "../content/music"
 import PlaylistView from "../components/playlist-view"
 import { specialLists, drivingLists, genericLists } from "../content/playlists"
 
+const lists = specialLists
+  .concat(drivingLists)
+  .concat(genericLists)
+  .sort((a, b) => Math.random() - 0.5) // shuffle
+
 const Music: NextPage = () => {
   const [loading, setLoading] = useState(true)
   const [songID, setSongID] = useState<string>()
@@ -20,7 +25,7 @@ const Music: NextPage = () => {
     <>
       <Head>
         <title>Music</title>
-        <meta name="description" content="Music recommendations." key="desc" />
+        <meta name="description" content="Things to listen before you no longer can." key="desc" />
       </Head>
       <Layout>
         <>
@@ -28,7 +33,7 @@ const Music: NextPage = () => {
             Music
           </Title>
 
-          <Title order={3} my="xs">
+          <Title order={2} my="xs">
             Song of the day
           </Title>
           <Box m="xl" sx={{ position: "relative" }}>
@@ -46,32 +51,11 @@ const Music: NextPage = () => {
             )}
           </Box>
 
-          <Title order={3} my="xs">
-            Special Playlists
+          <Title order={2} my="xs">
+            Playlists
           </Title>
-          <Text>I love making playlists, preferably with some mood &amp; feeling behind it.</Text>
           <Group my="sm" position="center" grow>
-            {specialLists.map((l, i) => (
-              <PlaylistView key={i} playlist={l} />
-            ))}
-          </Group>
-
-          <Title order={3} my="xs">
-            Driving Playlists
-          </Title>
-          <Text>I have genre-based playlists for going out in traffic too. Istanbul made me do it.</Text>
-          <Group my="sm" position="center" grow>
-            {drivingLists.map((l, i) => (
-              <PlaylistView key={i} playlist={l} />
-            ))}
-          </Group>
-
-          <Title order={3} my="xs">
-            General Playlists
-          </Title>
-          <Text>Other than that, there are some generic playlists with quite a lot of tracks in them.</Text>
-          <Group my="sm" position="center" grow>
-            {genericLists.map((l, i) => (
+            {lists.map((l, i) => (
               <PlaylistView key={i} playlist={l} />
             ))}
           </Group>

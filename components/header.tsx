@@ -11,10 +11,11 @@ import {
   Tooltip,
 } from "@mantine/core"
 import { motion } from "framer-motion"
-import { Bulb, BulbOff, BrandLinkedin, BrandGithub } from "tabler-icons-react"
+import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
 
+const BULB_SIZE = 32
 const Header = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
 
@@ -48,6 +49,14 @@ const Header = () => {
             </Tooltip>
           </motion.div>
 
+          <motion.div whileHover={{ scale: 1.45 }}>
+            <Tooltip label="ENS">
+              <Anchor href="https://app.ens.domains/name/erhant.eth/details">
+                <Icon I={CurrencyEthereum} />
+              </Anchor>
+            </Tooltip>
+          </motion.div>
+
           <motion.div style={{ cursor: "pointer" }} onClick={() => toggleColorScheme()} whileHover={{ scale: 1.45 }}>
             <Tooltip label={colorScheme === "dark" ? "Lights on" : "Lights out"}>
               {
@@ -60,7 +69,7 @@ const Header = () => {
                         color: "goldenrod",
                       }}
                     >
-                      <Bulb />
+                      <Bulb size={BULB_SIZE} />
                     </ThemeIcon>
                   ),
                   dark: (
@@ -71,7 +80,7 @@ const Header = () => {
                         color: "darkgray",
                       }}
                     >
-                      <BulbOff />
+                      <BulbOff size={BULB_SIZE} />
                     </ThemeIcon>
                   ),
                 }[colorScheme]

@@ -9,14 +9,11 @@ const Index: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Hey! 🥂</title>
-        <meta name="description" content="Homepage of Erhan Tezcan." key="desc" />
+        <title>🥂</title>
+        <meta name="description" content="Homepage of me." key="desc" />
       </Head>
       <Layout>
         <>
-          <Title order={1} my="md" sx={{ textAlign: "center" }}>
-            Welcome, stranger.
-          </Title>
           <Center sx={{ width: "min(600px,100%)", margin: "auto" }}>
             <Stepper
               my="xl"

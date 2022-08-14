@@ -12,7 +12,7 @@ const Project: FC<{
   return (
     <motion.div whileHover={{ scale: 1.035 }}>
       <Paper shadow="lg" radius="xl" p="lg" withBorder>
-        <Title>{project.title}</Title>
+        <Title order={2}>{project.title}</Title>
         {project.content}
         <Divider my="sm" />
         <Group>
