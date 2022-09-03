@@ -10,7 +10,7 @@ const experiences: {
   position: string
 }[] = [
   {
-    title: "Junior Blockchain Developer",
+    title: "Blockchain Developer",
     company: "Dynasty Studios - Istanbul, Turkey",
     position: "Full-time. Aug 2022 - present",
   },

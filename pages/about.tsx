@@ -1,11 +1,12 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Divider, Tooltip, Title, Avatar, Grid } from "@mantine/core"
+import { Text, Divider, Tooltip, Title, Avatar, Grid, Group, Badge, Anchor, Button } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
 import Experience from "../components/about/experience"
 import type { NextPage } from "next"
+import { School, Microscope, Books } from "tabler-icons-react"
 
 const About: NextPage = () => {
   return (
@@ -33,6 +34,25 @@ const About: NextPage = () => {
             </Grid.Col>
           </Grid>
 
+          <Group position="center">
+            <Anchor target="_blank" href="/cv.pdf">
+              <Button variant="subtle" size="sm" leftIcon={<School size={22} />}>
+                CV
+              </Button>
+            </Anchor>
+
+            <Anchor target="_blank" href="/msc.pdf">
+              <Button variant="subtle" size="sm" leftIcon={<Microscope size={22} />}>
+                M.Sc. Transcript
+              </Button>
+            </Anchor>
+
+            <Anchor target="_blank" href="/bsc.pdf">
+              <Button variant="subtle" size="sm" leftIcon={<Books size={22} />}>
+                B.Sc. Transcript
+              </Button>
+            </Anchor>
+          </Group>
           <Title order={2} my="md">
             Technology
           </Title>

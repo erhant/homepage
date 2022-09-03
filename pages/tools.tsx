@@ -1,5 +1,5 @@
 import Layout from "../components/layout"
-import { Stack, Text, Title } from "@mantine/core"
+import { Stack, Title } from "@mantine/core"
 import Head from "next/head"
 import Tool from "../components/tool"
 import tools from "../content/tools"

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Navbar as _Navbar, Stack, Group, Anchor, Popover, Tooltip, Burger } from "@mantine/core"
 import Icon from "./icon"
 // icons for navbar
-import { User, Notebook, Code, Home, Tool, Music, School, Icon as TablerIcon } from "tabler-icons-react"
+import { User, Code, Home, Tool, Music, School, Icon as TablerIcon } from "tabler-icons-react"
 import { FC, useState } from "react"
 import { motion } from "framer-motion"
 

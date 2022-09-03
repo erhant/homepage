@@ -1,21 +1,10 @@
-import {
-  Group,
-  ThemeIcon,
-  Box,
-  useMantineColorScheme,
-  Popover,
-  Burger,
-  Anchor,
-  Container,
-  MediaQuery,
-  Tooltip,
-} from "@mantine/core"
+import { Group, ThemeIcon, Box, useMantineColorScheme, Anchor, Container, MediaQuery, Tooltip } from "@mantine/core"
 import { motion } from "framer-motion"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
 
-const BULB_SIZE = 32
+const BULB_SIZE = 26
 const Header = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
 
@@ -63,7 +52,7 @@ const Header = () => {
                 {
                   light: (
                     <ThemeIcon
-                      size="xl"
+                      size="lg"
                       sx={{
                         backgroundColor: "transparent",
                         color: "goldenrod",
@@ -74,7 +63,7 @@ const Header = () => {
                   ),
                   dark: (
                     <ThemeIcon
-                      size="xl"
+                      size="lg"
                       sx={{
                         backgroundColor: "transparent",
                         color: "darkgray",

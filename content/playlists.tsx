@@ -22,6 +22,11 @@ export const specialLists: PlaylistType[] = [
     desc: "Tunes and blues from the dunes.",
   },
   {
+    name: "🏚️🎧🕯️",
+    href: "https://open.spotify.com/playlist/3NbvMMwj3JCra7NHrjCeu8?si=1bb3cfbfc00d48dd",
+    desc: "House music.",
+  },
+  {
     name: "Surrealists' Companion",
     href: "https://open.spotify.com/playlist/5gj004PS8BUlrFAAZ4MBi6?si=8be762b130a74c76",
     desc: "A collection of 100 songs to guide you in your surrealist experience, such as in a museum.",

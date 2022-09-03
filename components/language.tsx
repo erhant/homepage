@@ -49,7 +49,7 @@ const Language: FC<{
   return (
     <Box sx={{ color: theme.colors.icons[theme.colorScheme === "dark" ? 3 : 8] }}>
       <Tooltip label={ldesc[l]}>
-        <i className={lmap[l]} style={{ fontSize: "2.5em" }} />
+        <i className={lmap[l]} style={{ fontSize: "1.8em" }} />
       </Tooltip>
     </Box>
   )

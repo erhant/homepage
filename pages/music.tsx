@@ -1,4 +1,4 @@
-import { Anchor, Badge, Text, Group, Box, Title, LoadingOverlay } from "@mantine/core"
+import { Group, Box, Title, LoadingOverlay } from "@mantine/core"
 import Layout from "../components/layout"
 import Head from "next/head"
 import { NextPage } from "next"

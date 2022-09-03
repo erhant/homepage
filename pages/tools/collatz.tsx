@@ -1,4 +1,3 @@
-// Collatz sequence tool
 import Layout from "../../components/layout"
 import { Title, Text, NumberInput, Anchor, Button, Group } from "@mantine/core"
 import Head from "next/head"
