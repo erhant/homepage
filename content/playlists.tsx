@@ -22,12 +22,12 @@ export const specialLists: PlaylistType[] = [
     desc: "Tunes and blues from the dunes.",
   },
   {
-    name: "🏚️🎧🕯️",
+    name: "🎈🌇🎉",
     href: "https://open.spotify.com/playlist/3NbvMMwj3JCra7NHrjCeu8?si=1bb3cfbfc00d48dd",
     desc: "House music.",
   },
   {
-    name: "Surrealists' Companion",
+    name: "🎭🎨⚱️",
     href: "https://open.spotify.com/playlist/5gj004PS8BUlrFAAZ4MBi6?si=8be762b130a74c76",
     desc: "A collection of 100 songs to guide you in your surrealist experience, such as in a museum.",
   },
@@ -95,6 +95,6 @@ export const drivingLists: PlaylistType[] = [
   {
     name: "Driving Skrrt",
     href: "https://open.spotify.com/playlist/01oYqzM3QPXrjJtD7if7PZ?si=9b2bb342ce474908",
-    desc: "I won't lie I listen to trap in traffic.",
+    desc: "Not gonna lie, I listen to trap in traffic.",
   },
 ]

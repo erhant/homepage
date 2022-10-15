@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/layout"
-import { Text, Divider, Tooltip, Title, Avatar, Grid, Group, Badge, Anchor, Button } from "@mantine/core"
+import { Text, Divider, Tooltip, Title, Avatar, Grid, Group, Badge, Anchor, Button, List } from "@mantine/core"
 import FancyWord from "../components/fancy-word"
 import DevStacks from "../components/about/dev-stacks"
 import Education from "../components/about/education"
@@ -17,6 +17,7 @@ const About: NextPage = () => {
       </Head>
       <Layout>
         <>
+          {/* about */}
           <Title order={1} mb="md">
             About
           </Title>
@@ -64,6 +65,7 @@ const About: NextPage = () => {
 
           <DevStacks />
 
+          {/* background */}
           <Title order={2} my="md">
             Background
           </Title>
@@ -78,6 +80,8 @@ const About: NextPage = () => {
             </Tooltip>{" "}
             .
           </Text>
+
+          {/* education & experience */}
           <Grid justify="space-between">
             <Grid.Col sm={5.5}>
               <Divider my="xl" label={<Title order={3}>Education</Title>} labelPosition="center" />
@@ -88,6 +92,35 @@ const About: NextPage = () => {
               <Experience />
             </Grid.Col>
           </Grid>
+
+          {/* publications */}
+          <Title order={2} my="md">
+            Publications
+          </Title>
+
+          <List>
+            <List.Item mx="sm" my="md">
+              Erhan Tezcan, Tugba Torun, Fahrican Koşar, Kamer Kaya, and Didem Unat.{" "}
+              <em>"Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection"</em>. IEEE 34th
+              International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD'22), November
+              2-5, 2022, Bordeaux, France. <em>Best paper award candidate</em>.
+            </List.Item>
+            <List.Item mx="sm" my="md">
+              Muhammet Abdullah Soytürk, Palwisha Akhtar, Erhan Tezcan, and Didem Unat,{" "}
+              <em>"Monitoring Collective Communication Among GPUs"</em>, European Conference on Parallel Processing
+              (Workshop Paper), 2022
+            </List.Item>
+            <List.Item mx="sm" my="md">
+              Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat,{" "}
+              <em>"ComScribe: Identifying Intra-node GPU Communication"</em>, BENCH'20, November 2020
+            </List.Item>
+            <List.Item mx="sm" my="md">
+              Erhan Tezcan, <em>"A Lighthouse Illumniation Problem"</em>, arXiv e-prints, March 2019
+            </List.Item>
+            <List.Item mx="sm" my="md">
+              Erhan Tezcan, <em>"On Collatz Conjecture"</em>, arXiv e-prints, February 2019
+            </List.Item>
+          </List>
         </>
       </Layout>
     </>

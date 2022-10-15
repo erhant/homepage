@@ -29,8 +29,8 @@ const DevStacks: FC = () => {
   return (
     <Center my="md">
       <Grid sx={{ textAlign: "center", width: "60%" }}>
-        {stacks.map(({ title, langs }) => (
-          <Grid.Col xs={6} sm={3}>
+        {stacks.map(({ title, langs }, i) => (
+          <Grid.Col xs={6} sm={3} key={i}>
             <Stack>
               <Divider label={<Title order={TITLE_ORDER}>{title}</Title>} labelPosition="center" />
               {langs.map((l) => (

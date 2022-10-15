@@ -16,6 +16,30 @@ const sideProjects: ProjectType[] = [
     ),
   },
   {
+    title: "NextJS + Web3 Starter",
+    githubURL: "https://github.com/erhant/nextjs-web3-starter",
+    demoURL: "https://nextjs-web3-starter-erhant.vercel.app/",
+    content: (
+      <Text>
+        A TypeScript template repository to create decentralized applications using{" "}
+        <Anchor href="https://nextjs.org/">NextJS</Anchor> and <Anchor href="https://hardhat.org/">Hardhat</Anchor>! Has
+        a simple counter contract and an ERC-20 token contract example in it.
+      </Text>
+    ),
+    langs: ["ts", "next", "sol"],
+  },
+  {
+    title: "Contract Playground",
+    githubURL: "https://github.com/erhant/contract-playground",
+    langs: ["ts", "sol"],
+    content: (
+      <Text>
+        A Hardhat template with TypeScript, includes several token implementations: ERC20, ERC721, ERC777, ERC1155 with
+        their contracts and tests.
+      </Text>
+    ),
+  },
+  {
     title: "Lighthouse Problem",
     githubURL: "https://github.com/erhant/lighthouse-problem",
     demoURL: "https://erhant.github.io/lighthouse-problem/",
@@ -30,7 +54,7 @@ const sideProjects: ProjectType[] = [
   },
   {
     title: "Collatz Conjecture",
-    langs: ["py", "ts", "hs", "cpp"],
+    langs: ["py", "ts", "hs", "cpp", "go"],
     content: (
       <Text>
         As a form of recreational mathematics, I have been working on the Collatz Conjecture since late highschool. I
@@ -51,19 +75,6 @@ const sideProjects: ProjectType[] = [
       </Text>
     ),
     langs: ["cpp"],
-  },
-  {
-    title: "NextJS + Web3 Starter",
-    githubURL: "https://github.com/erhant/nextjs-web3-starter",
-    demoURL: "https://nextjs-web3-starter-erhant.vercel.app/",
-    content: (
-      <Text>
-        A TypeScript template repository to create decentralized applications using{" "}
-        <Anchor href="https://nextjs.org/">NextJS</Anchor> and <Anchor href="https://hardhat.org/">Hardhat</Anchor>! Has
-        a simple counter contract and an ERC-20 token contract example in it.
-      </Text>
-    ),
-    langs: ["ts", "next", "sol"],
   },
   {
     title: "Musical Tools",

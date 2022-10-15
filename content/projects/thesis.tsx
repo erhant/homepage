@@ -5,6 +5,8 @@ import FancyWord from "../../components/fancy-word"
 const thesisProjects: ProjectType[] = [
   {
     title: "Exploring Mixed and Multi-Precision SpMV for GPUs",
+    githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
+    demoURL: "https://parcorelab.ku.edu.tr/wp-content/uploads/2022/10/MSc_Thesis___Erhan_Tezcan-3.pdf",
     content: (
       <>
         <FancyWord word="M.Sc. Thesis - Koç University" />

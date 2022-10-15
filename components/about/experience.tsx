@@ -46,8 +46,9 @@ const Experience: FC = () => {
         },
       }}
     >
-      {experiences.map(({ title, company, position }) => (
+      {experiences.map(({ title, company, position }, i) => (
         <Stepper.Step
+          key={i}
           icon={<Tie size={ICON_SIZE} />}
           label={title}
           allowStepSelect={false}
@@ -59,7 +60,7 @@ const Experience: FC = () => {
               </Text>
             </>
           }
-        ></Stepper.Step>
+        />
       ))}
     </Stepper>
   )
