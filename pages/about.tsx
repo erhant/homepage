@@ -103,7 +103,7 @@ const About: NextPage = () => {
               Erhan Tezcan, Tugba Torun, Fahrican Koşar, Kamer Kaya, and Didem Unat.{" "}
               <em>"Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection"</em>. IEEE 34th
               International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD'22), November
-              2-5, 2022, Bordeaux, France. <em>Best paper award candidate</em>.
+              2-5, 2022, Bordeaux, France. 🏆<b>Received the Best Paper Award</b>🏆.
             </List.Item>
             <List.Item mx="sm" my="md">
               Muhammet Abdullah Soytürk, Palwisha Akhtar, Erhan Tezcan, and Didem Unat,{" "}
