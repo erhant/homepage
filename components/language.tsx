@@ -29,7 +29,7 @@ const ldesc: { [key: string]: string } = {
   py: "Python",
   cpp: "C++",
   hs: "Haskell",
-  go: "Go",
+  go: "Golang",
   tex: "LaTeX",
   sass: "SASS",
   sol: "Solidity",

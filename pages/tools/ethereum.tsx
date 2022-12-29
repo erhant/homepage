@@ -1,6 +1,6 @@
 // Collatz sequence tool
 import Layout from "../../components/layout"
-import { Title, Text, NumberInput, Anchor, Button, Group, TextInput, Table, Input } from "@mantine/core"
+import { Title, Text, Anchor, Button, TextInput, Table, Input } from "@mantine/core"
 import Head from "next/head"
 import { useState } from "react"
 import keccak256 from "keccak256" // @todo use "@ethersproject/keccak256"
@@ -62,13 +62,13 @@ const Ethertools = () => {
   return (
     <>
       <Head>
-        <title>Ethertools</title>
+        <title>Ethereum Tools</title>
         <meta name="description" content="Ether unit converter and hashing." key="desc" />
       </Head>
 
       <Layout>
         <>
-          <Title>Ethertools</Title>
+          <Title>Ethereum Tools</Title>
           <Text>
             This toolset has 3 tools:
             <ul>

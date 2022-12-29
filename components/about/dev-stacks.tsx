@@ -13,7 +13,7 @@ const stacks: {
   },
   {
     title: "Backend",
-    langs: ["ts", "node", "express", "sol"],
+    langs: ["ts", "go", "node", "express", "sol"],
   },
   {
     title: "Academic",
@@ -33,8 +33,8 @@ const DevStacks: FC = () => {
           <Grid.Col xs={6} sm={3} key={i}>
             <Stack>
               <Divider label={<Title order={TITLE_ORDER}>{title}</Title>} labelPosition="center" />
-              {langs.map((l) => (
-                <Language l={l} />
+              {langs.map((l, i) => (
+                <Language l={l} key={i} />
               ))}
             </Stack>
           </Grid.Col>
