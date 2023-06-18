@@ -1,4 +1,3 @@
-// the layout is simply header - footer - side navbar - content
 import { Container } from "@mantine/core"
 import { FC, ReactNode } from "react"
 import Header from "./header"

@@ -1,17 +1,40 @@
 import Link from "next/link"
 import { Navbar as _Navbar, Stack, Group, Anchor, Popover, Tooltip, Burger } from "@mantine/core"
 import Icon from "./icon"
-// icons for navbar
-import { User, Code, Home, Tool, Music, School, Icon as TablerIcon } from "tabler-icons-react"
+import { Code, Home, MathFunction, School, Icon as TablerIcon, Tool } from "tabler-icons-react"
 import { FC, useState } from "react"
 import { motion } from "framer-motion"
+import NavbarItemType from "../types/navbar"
 
-const NavbarItemsList: [TablerIcon, string, string][] = [
-  [Home, "/", "Home"],
-  [User, "/about", "About"],
-  [Code, "/projects", "Projects"],
-  [Tool, "/tools", "Tools"],
-  [School, "/cv.pdf", "CV"],
+const NavbarItemsList: NavbarItemType[] = [
+  {
+    name: "Home",
+    href: "/",
+    icon: Home,
+  },
+  {
+    name: "Project",
+    href: "/project",
+    icon: Code,
+  },
+  {
+    name: "Crypto",
+    href: "https://crypto.erhant.me",
+    icon: MathFunction,
+    openNewPage: true,
+  },
+  {
+    name: "Tools",
+    href: "https://tools.erhant.me",
+    icon: Tool,
+    openNewPage: true,
+  },
+  {
+    name: "CV",
+    href: "/cv.pdf",
+    icon: School,
+    openNewPage: true,
+  },
 ]
 
 const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, className }) => {
@@ -34,11 +57,11 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
             {NavbarItemsList.map((item, i) => {
               return (
                 <_Navbar.Section key={i} component={Group}>
-                  <Icon I={item[0]} />
-                  <Link href={item[1]} passHref>
+                  <Icon I={item.icon} />
+                  <Link href={item.href} passHref>
                     <Anchor
                       size="lg"
-                      target={item[2] == "CV" ? "_blank" : undefined}
+                      target={item.openNewPage ? "_blank" : undefined}
                       sx={(theme) => {
                         return {
                           color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],
@@ -46,7 +69,7 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
                         }
                       }}
                     >
-                      {item[2]}
+                      {item.name}
                     </Anchor>
                   </Link>
                 </_Navbar.Section>
@@ -59,11 +82,11 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
           {NavbarItemsList.map((item, i) => {
             return (
               <motion.div whileHover={{ scale: 1.45 }} key={i}>
-                <Tooltip label={item[2]}>
-                  <Link href={item[1]} passHref>
+                <Tooltip label={item.name}>
+                  <Link href={item.href} passHref>
                     <Anchor
                       size="lg"
-                      target={item[2] == "CV" ? "_blank" : undefined}
+                      target={item.openNewPage ? "_blank" : undefined}
                       sx={(theme) => {
                         return {
                           color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],
@@ -71,7 +94,7 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
                         }
                       }}
                     >
-                      <Icon I={item[0]} />
+                      <Icon I={item.icon} />
                     </Anchor>
                   </Link>
                 </Tooltip>

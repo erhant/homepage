@@ -2,9 +2,9 @@ import { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import DefaultMantineTheme from "../themes/default"
 import { getCookie, setCookies } from "cookies-next"
-import "../styles/globals.scss"
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
 import { CookieValueTypes } from "cookies-next/lib/types"
+import "../styles/globals.scss"
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props

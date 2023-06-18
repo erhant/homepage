@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-
 import LanguageType from "./language"
 
 type ProjectType = {

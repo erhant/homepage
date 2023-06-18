@@ -1,7 +1,5 @@
-import { Anchor, Box, Group, Text, Tooltip } from "@mantine/core"
-import { BrandGithub } from "tabler-icons-react"
-import { FC, useState } from "react"
-import Icon from "./icon"
+import { Box, Text } from "@mantine/core"
+import type { FC } from "react"
 
 const Footer: FC = () => {
   return (

@@ -1,6 +1,6 @@
 import { Group, ThemeIcon, Box, useMantineColorScheme, Anchor, Container, MediaQuery, Tooltip } from "@mantine/core"
 import { motion } from "framer-motion"
-import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum } from "tabler-icons-react"
+import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum, BrandTwitter } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
 
@@ -31,17 +31,17 @@ const Header = () => {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.45 }}>
-            <Tooltip label="GitHub">
-              <Anchor href="https://github.com/erhant">
-                <Icon I={BrandGithub} />
+            <Tooltip label="Twitter">
+              <Anchor href="https://www.twitter.com/0xerhant/">
+                <Icon I={BrandTwitter} />
               </Anchor>
             </Tooltip>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.45 }}>
-            <Tooltip label="ENS">
-              <Anchor href="https://app.ens.domains/name/erhant.eth/details">
-                <Icon I={CurrencyEthereum} />
+            <Tooltip label="GitHub">
+              <Anchor href="https://github.com/erhant">
+                <Icon I={BrandGithub} />
               </Anchor>
             </Tooltip>
           </motion.div>
