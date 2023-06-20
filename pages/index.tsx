@@ -2,6 +2,8 @@ import { Center, Anchor, Title, Stepper, Grid, Avatar, Text, List } from "@manti
 import Head from "next/head"
 import Layout from "../components/layout"
 import { NextPage } from "next"
+import Publication from "../components/publications"
+import Project from "../components/project"
 
 const Index: NextPage = () => {
   return (
@@ -25,32 +27,44 @@ const Index: NextPage = () => {
             </Grid.Col>
           </Grid>
 
+          {/* stack */}
+          <Title order={2} my="md">
+            Stack
+          </Title>
+          <Text>I'm maining the TypeScript hero most of the time, (TODO) </Text>
+
+          {/* projects */}
+          <Title order={2} my="md">
+            Projects
+          </Title>
+          <Text>fsdkhfjds</Text>
+
           {/* publications */}
           <Title order={2} my="md">
             Publications
           </Title>
           <List>
-            <List.Item mx="sm" my="md">
+            <Publication>
               Erhan Tezcan, Tugba Torun, Fahrican Koşar, Kamer Kaya, and Didem Unat.{" "}
               <em>"Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection"</em>. IEEE 34th
               International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD'22), November
               2-5, 2022, Bordeaux, France. 🏆<b>Received the Best Paper Award</b>🏆.
-            </List.Item>
-            <List.Item mx="sm" my="md">
+            </Publication>
+            <Publication>
               Muhammet Abdullah Soytürk, Palwisha Akhtar, Erhan Tezcan, and Didem Unat,{" "}
               <em>"Monitoring Collective Communication Among GPUs"</em>, European Conference on Parallel Processing
               (Workshop Paper), 2022
-            </List.Item>
-            <List.Item mx="sm" my="md">
+            </Publication>
+            <Publication>
               Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat,{" "}
               <em>"ComScribe: Identifying Intra-node GPU Communication"</em>, BENCH'20, November 2020
-            </List.Item>
-            <List.Item mx="sm" my="md">
+            </Publication>
+            <Publication>
               Erhan Tezcan, <em>"A Lighthouse Illumniation Problem"</em>, arXiv e-prints, March 2019
-            </List.Item>
-            <List.Item mx="sm" my="md">
+            </Publication>
+            <Publication>
               Erhan Tezcan, <em>"On Collatz Conjecture"</em>, arXiv e-prints, February 2019
-            </List.Item>
+            </Publication>
           </List>
         </>
       </Layout>

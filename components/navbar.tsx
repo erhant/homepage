@@ -13,8 +13,8 @@ const NavbarItemsList: NavbarItemType[] = [
     icon: Home,
   },
   {
-    name: "Project",
-    href: "/project",
+    name: "Projects",
+    href: "/projects",
     icon: Code,
   },
   {

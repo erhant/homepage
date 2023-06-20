@@ -116,7 +116,7 @@ const schoolProjects: ProjectType[] = [
 
 const sideProjects: ProjectType[] = [
   {
-    title: "Blockchattin",
+    title: "Blockchatting",
     githubURL: "https://github.com/erhant/blockchatting",
     demoURL: "https://blockchatting.vercel.app/",
     langs: ["ts", "next", "react", "sol"],
@@ -291,6 +291,8 @@ const sideProjects: ProjectType[] = [
 const thesisProjects: ProjectType[] = [
   {
     title: "Exploring Mixed and Multi-Precision SpMV for GPUs",
+    githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
+    demoURL: "https://ieeexplore.ieee.org/document/9980904",
     content: (
       <Text>
         As my M.Sc. thesis, I worked on the optimization of Sparse Matrix-Vector Multiplication in NVIDIA GPUs. For
