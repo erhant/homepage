@@ -1,26 +1,22 @@
-import { Paper, Title, Stack } from "@mantine/core"
-import type ProjectType from "../types/project"
+import { Paper, Group, Text } from "@mantine/core"
 import TechBadge from "./techbadge"
 import LinkBadge from "./linkbadge"
 import type { FC } from "react"
+import type PublicationType from "../types/publication"
 
-const Project: FC<{
-  p: ProjectType
-}> = ({ p }) => {
+const Publication: FC<{ p: PublicationType }> = ({ p }) => {
   return (
     <Paper>
-      <Title order={3}>{p.title}</Title>
+      <Text>{p.content}</Text>
 
       {p.githubURL && <LinkBadge type="repo" url={p.githubURL} />}
-      {p.demoURL && <LinkBadge type="demo" url={p.demoURL} />}
+      {p.paperURL && <LinkBadge type="paper" url={p.paperURL} />}
 
       {p.langs.map((type, i) => (
         <TechBadge type={type} key={i} />
       ))}
-
-      {p.content}
     </Paper>
   )
 }
 
-export default Project
+export default Publication

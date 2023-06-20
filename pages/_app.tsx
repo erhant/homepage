@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import DefaultMantineTheme from "../themes/default"
 import { getCookie, setCookies } from "cookies-next"
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
-import { CookieValueTypes } from "cookies-next/lib/types"
 import "../styles/globals.scss"
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
@@ -18,7 +17,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
   // decide color scheme on mount
   useEffect(() => {
-    const color: CookieValueTypes = getCookie("mantine-color-scheme")
+    const color = getCookie("mantine-color-scheme")
     if (!color) {
       setColorScheme("light")
     } else setColorScheme(color.toString() as "light" | "dark")

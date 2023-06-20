@@ -1,15 +1,18 @@
-import { Center, Anchor, Title, Stepper, Grid, Avatar, Text, List } from "@mantine/core"
+import { Center, Anchor, Title, Stepper, Grid, Avatar, Text, List, Stack, Group } from "@mantine/core"
 import Head from "next/head"
 import Layout from "../components/layout"
 import { NextPage } from "next"
-import Publication from "../components/publications"
+import Publication from "../components/publication"
 import Project from "../components/project"
+import { schoolProjects, sideProjects, thesisProjects } from "../contents/projects"
+import { publications } from "../contents/publications"
+import TechBadge from "../components/techbadge"
 
 const Index: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🥂</title>
+        <title> e r h a n t . m e </title>
         <meta name="description" content="who dis?" key="desc" />
       </Head>
       <Layout>
@@ -17,10 +20,10 @@ const Index: NextPage = () => {
           {/* about */}
           <Grid grow gutter="md" justify="center" align="center">
             <Grid.Col xs={12} sm={2}>
-              <Avatar src="/assets/me.webp" alt="it is I" size={150} radius={100} sx={{ margin: "auto" }} />
+              <Avatar src="/assets/me.webp" alt="it is I" size={200} radius={100} sx={{ margin: "auto" }} />
             </Grid.Col>
             <Grid.Col xs={12} sm={9}>
-              <Text sx={{ fontSize: "1.2em" }} my="lg">
+              <Text sx={{ fontSize: "1.3em" }} my="lg">
                 I'm a Full-stack Blockchain Developer from Istanbul, Turkey. I build &amp; engineer computer software;
                 driven by a thirst for knowledge and with respect to style, standards, security and scalability.
               </Text>
@@ -28,44 +31,50 @@ const Index: NextPage = () => {
           </Grid>
 
           {/* stack */}
-          <Title order={2} my="md">
+          <Title order={1} my="md">
             Stack
           </Title>
-          <Text>I'm maining the TypeScript hero most of the time, (TODO) </Text>
+          <Text>
+            I'm maining the TypeScript hero most of the time, but I have occasionally worked with Solidity and Go. I'm
+            curious about using Rust and Huff at some point. I love & use Circom for zero-knowledge stuff; though at
+            some point after getting into Rust I would love to explore options there!
+            <Group position="center" my="md">
+              <TechBadge type="typescript" />
+              <TechBadge type="circom" />
+              <TechBadge type="go" />
+              <TechBadge type="solidity" />
+              <TechBadge type="react" />
+              <TechBadge type="next" />
+              <TechBadge type="git" />
+              <TechBadge type="bash" />
+            </Group>
+          </Text>
 
           {/* projects */}
-          <Title order={2} my="md">
+          <Title order={1} my="md">
             Projects
           </Title>
-          <Text>fsdkhfjds</Text>
+          <Stack>
+            {sideProjects.map((p, i) => (
+              <Project p={p} key={i} />
+            ))}
+            {thesisProjects.map((p, i) => (
+              <Project p={p} key={i} />
+            ))}
+            {schoolProjects.map((p, i) => (
+              <Project p={p} key={i} />
+            ))}
+          </Stack>
 
           {/* publications */}
-          <Title order={2} my="md">
+          <Title order={1} my="md">
             Publications
           </Title>
-          <List>
-            <Publication>
-              Erhan Tezcan, Tugba Torun, Fahrican Koşar, Kamer Kaya, and Didem Unat.{" "}
-              <em>"Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection"</em>. IEEE 34th
-              International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD'22), November
-              2-5, 2022, Bordeaux, France. 🏆<b>Received the Best Paper Award</b>🏆.
-            </Publication>
-            <Publication>
-              Muhammet Abdullah Soytürk, Palwisha Akhtar, Erhan Tezcan, and Didem Unat,{" "}
-              <em>"Monitoring Collective Communication Among GPUs"</em>, European Conference on Parallel Processing
-              (Workshop Paper), 2022
-            </Publication>
-            <Publication>
-              Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat,{" "}
-              <em>"ComScribe: Identifying Intra-node GPU Communication"</em>, BENCH'20, November 2020
-            </Publication>
-            <Publication>
-              Erhan Tezcan, <em>"A Lighthouse Illumniation Problem"</em>, arXiv e-prints, March 2019
-            </Publication>
-            <Publication>
-              Erhan Tezcan, <em>"On Collatz Conjecture"</em>, arXiv e-prints, February 2019
-            </Publication>
-          </List>
+          <Stack>
+            {publications.map((p, i) => (
+              <Publication p={p} key={i} />
+            ))}
+          </Stack>
         </>
       </Layout>
     </>
