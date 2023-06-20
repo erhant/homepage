@@ -45,7 +45,7 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
         <Group>
           {navbarItems.map((item, i) => {
             return (
-              <Tooltip label={item.name}>
+              <Tooltip label={item.name} key={i}>
                 <Link href={item.href} passHref>
                   <Anchor
                     size="lg"

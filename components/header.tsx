@@ -1,5 +1,4 @@
 import { Group, ThemeIcon, Box, useMantineColorScheme, Anchor, Container, MediaQuery, Tooltip } from "@mantine/core"
-import { motion } from "framer-motion"
 import { Bulb, BulbOff, BrandLinkedin, BrandGithub, CurrencyEthereum, BrandTwitter } from "tabler-icons-react"
 import Icon from "./icon"
 import Navbar from "./navbar"
@@ -22,31 +21,25 @@ const Header = () => {
           {/* empty space in between left and right*/}
           <Box sx={{ flexGrow: 1 }} />
 
-          <motion.div whileHover={{ scale: 1.45 }}>
-            <Tooltip label="LinkedIn">
-              <Anchor href="https://www.linkedin.com/in/erhan-tezcan/">
-                <Icon I={BrandLinkedin} />
-              </Anchor>
-            </Tooltip>
-          </motion.div>
+          <Tooltip label="LinkedIn">
+            <Anchor href="https://www.linkedin.com/in/erhan-tezcan/">
+              <Icon I={BrandLinkedin} />
+            </Anchor>
+          </Tooltip>
 
-          <motion.div whileHover={{ scale: 1.45 }}>
-            <Tooltip label="Twitter">
-              <Anchor href="https://www.twitter.com/0xerhant/">
-                <Icon I={BrandTwitter} />
-              </Anchor>
-            </Tooltip>
-          </motion.div>
+          <Tooltip label="Twitter">
+            <Anchor href="https://www.twitter.com/0xerhant/">
+              <Icon I={BrandTwitter} />
+            </Anchor>
+          </Tooltip>
 
-          <motion.div whileHover={{ scale: 1.45 }}>
-            <Tooltip label="GitHub">
-              <Anchor href="https://github.com/erhant">
-                <Icon I={BrandGithub} />
-              </Anchor>
-            </Tooltip>
-          </motion.div>
+          <Tooltip label="GitHub">
+            <Anchor href="https://github.com/erhant">
+              <Icon I={BrandGithub} />
+            </Anchor>
+          </Tooltip>
 
-          <motion.div style={{ cursor: "pointer" }} onClick={() => toggleColorScheme()} whileHover={{ scale: 1.45 }}>
+          <Box style={{ cursor: "pointer" }} onClick={() => toggleColorScheme()}>
             <Tooltip label={colorScheme === "dark" ? "Lights on" : "Lights out"}>
               {
                 {
@@ -75,7 +68,7 @@ const Header = () => {
                 }[colorScheme]
               }
             </Tooltip>
-          </motion.div>
+          </Box>
         </Group>
       </Container>
     </Box>
