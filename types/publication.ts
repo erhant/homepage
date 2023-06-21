@@ -4,7 +4,7 @@ import { TECH_BADGE_PARAMS } from "../contents/techbadge"
 type PublicationType = {
   githubURL: string
   paperURL: string
-  langs: (keyof typeof TECH_BADGE_PARAMS)[]
+  tech: (keyof typeof TECH_BADGE_PARAMS)[]
   content: ReactNode
 }
 

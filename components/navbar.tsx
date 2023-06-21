@@ -21,20 +21,20 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
                 return (
                   <_Navbar.Section key={i} component={Group}>
                     <Icon I={item.icon} />
-                    <Link href={item.href} passHref>
-                      <Anchor
-                        size="lg"
-                        target={item.openNewPage ? "_blank" : undefined}
-                        sx={(theme) => {
-                          return {
-                            color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],
-                            fontWeight: "bold",
-                          }
-                        }}
-                      >
-                        {item.name}
-                      </Anchor>
-                    </Link>
+
+                    <Anchor
+                      href={item.href}
+                      size="lg"
+                      target={"_blank"}
+                      sx={(theme) => {
+                        return {
+                          color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],
+                          fontWeight: "bold",
+                        }
+                      }}
+                    >
+                      {item.name}
+                    </Anchor>
                   </_Navbar.Section>
                 )
               })}
@@ -49,7 +49,7 @@ const Navbar: FC<{ isBurger: boolean; className?: string }> = ({ isBurger, class
                 <Link href={item.href} passHref>
                   <Anchor
                     size="lg"
-                    target={item.openNewPage ? "_blank" : undefined}
+                    target={"_blank"}
                     sx={(theme) => {
                       return {
                         color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.dark[9],

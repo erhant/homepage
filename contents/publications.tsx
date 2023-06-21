@@ -3,7 +3,7 @@ import type PublicationType from "../types/publication"
 
 export const publications: PublicationType[] = [
   {
-    langs: ["c", "cpp", "python", "tex"],
+    tech: ["c", "cpp", "python", "tex"],
     githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
     paperURL: "https://ieeexplore.ieee.org/document/9980904",
     content: (
@@ -16,7 +16,7 @@ export const publications: PublicationType[] = [
     ),
   },
   {
-    langs: ["python", "tex"],
+    tech: ["python", "tex"],
     githubURL: "https://github.com/ParCoreLab/ComScribe",
     paperURL: "https://link.springer.com/chapter/10.1007/978-3-031-06156-1_4",
     content: (
@@ -28,7 +28,7 @@ export const publications: PublicationType[] = [
     ),
   },
   {
-    langs: ["python", "tex"],
+    tech: ["python", "tex"],
     githubURL: "https://github.com/ParCoreLab/ComScribe",
     paperURL: "https://link.springer.com/chapter/10.1007/978-3-030-71058-3_10",
     content: (
@@ -39,7 +39,7 @@ export const publications: PublicationType[] = [
     ),
   },
   {
-    langs: ["python", "javascript", "tex"],
+    tech: ["python", "javascript", "tex"],
     githubURL: "https://github.com/erhant/lighthouse-problem",
     paperURL: "https://arxiv.org/abs/1903.09001",
     content: (
@@ -49,7 +49,7 @@ export const publications: PublicationType[] = [
     ),
   },
   {
-    langs: ["python", "javascript", "cpp", "haskell", "tex"],
+    tech: ["python", "javascript", "cpp", "haskell", "tex"],
     githubURL: "https://github.com/collatz-prefixes",
     paperURL: "https://arxiv.org/abs/1902.07312",
     content: (

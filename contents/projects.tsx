@@ -1,6 +1,50 @@
 import { Anchor, Code, Text } from "@mantine/core"
 import ProjectType from "../types/project"
 
+export const activeProjects: ProjectType[] = [
+  {
+    title: "HollowDB",
+    githubURL: "https://github.com/firstbatchxyz/hollowdb",
+    demoURL: "https://docs.hollowdb.xyz",
+    npm: "hollowdb",
+    content: <Text>A decentralized privacy-preserving key-value database, developed by FirstBatch.</Text>,
+    tech: ["typescript", "circom"],
+  },
+  {
+    title: "Warp Contracts Redis",
+    githubURL: "https://github.com/firstbatchxyz/warp-contracts-redis",
+    npm: "warp-contracts-redis",
+    content: <Text>A SortKeyCache implementation for Warp Contracts using Redis, developed by FirstBatch.</Text>,
+    tech: ["typescript", "redis"],
+  },
+  {
+    title: "Circomkit",
+    githubURL: "https://github.com/erhant/circomkit",
+    demoURL: "https://github.com/erhant/circomkit-examples",
+    npm: "circomkit",
+    content: (
+      <Text>
+        An opinionated Circom development & testing environment. An example repository demonstrates the usage of
+        Circomkit along with several circuits, such as a generic sudoku-solution circuit and{" "}
+      </Text>
+    ),
+    tech: ["typescript", "circom"],
+  },
+  {
+    title: "MoonMath Solutions",
+    githubURL: "https://github.com/erhant/moonmath",
+    content: <Text>Solutions to examples & code examples for MoontMath Manual to zkSNARKs.</Text>,
+    tech: ["markdown", "sage"],
+  },
+  {
+    title: "Cryptography Notes",
+    githubURL: "https://crypto.erhant.me",
+    demoURL: "https://crypto.erhant.me",
+    content: <Text>Various notes related to cryptography, number theory and zero-knowledge.</Text>,
+    tech: ["typescript", "markdown", "next"],
+  },
+]
+
 export const schoolProjects: ProjectType[] = [
   {
     title: "Hashgraph",
@@ -11,7 +55,7 @@ export const schoolProjects: ProjectType[] = [
         hashgraph live-display.
       </Text>
     ),
-    langs: ["go"],
+    tech: ["go"],
   },
   {
     title: "Profile Matching",
@@ -22,7 +66,7 @@ export const schoolProjects: ProjectType[] = [
         profiles did not necessarily have the same username!
       </Text>
     ),
-    langs: ["python"],
+    tech: ["python"],
   },
   {
     title: "EOPL Scheme",
@@ -34,13 +78,13 @@ export const schoolProjects: ProjectType[] = [
         <Anchor href="https://eopl3.com/">Essentials of Programming Languages</Anchor> book.
       </Text>
     ),
-    langs: ["racket"],
+    tech: ["racket"],
   },
   {
     title: "Enigma Machine",
     githubURL: "https://github.com/erhant/enigma-machine",
     content: <Text>An Enigma Machine, with custom rotor settings, eavesdropping simulation and chatting.</Text>,
-    langs: ["typescript"],
+    tech: ["typescript"],
   },
 ]
 
@@ -49,7 +93,7 @@ export const sideProjects: ProjectType[] = [
     title: "Blockchatting",
     githubURL: "https://github.com/erhant/blockchatting",
     demoURL: "https://blockchatting.vercel.app/",
-    langs: ["typescript", "next", "react", "solidity"],
+    tech: ["typescript", "next", "react", "solidity"],
     content: (
       <Text>
         A decentralized chatting application using smart contracts. Users address each other by their wallet addresses,
@@ -61,13 +105,19 @@ export const sideProjects: ProjectType[] = [
   {
     title: "Contract Playground",
     githubURL: "https://github.com/erhant/contract-playground",
-    langs: ["typescript", "solidity"],
+    tech: ["typescript", "solidity"],
     content: (
       <Text>
         A Hardhat template with TypeScript, includes several token implementations: ERC20, ERC721, ERC777, ERC1155 with
         their contracts and tests.
       </Text>
     ),
+  },
+  {
+    title: "Solidity CTFs",
+    githubURL: "https://github.com/erhant/solidity-ctfs",
+    tech: ["typescript", "solidity"],
+    content: <Text>Solutions to various solidity challenges such as Ethernaut, EVMPuzzles and QuillCFT.</Text>,
   },
   {
     title: "Flashy Sort",
@@ -80,7 +130,7 @@ export const sideProjects: ProjectType[] = [
         the other elements would be if the array were to be sorted.
       </Text>
     ),
-    langs: ["cpp"],
+    tech: ["cpp"],
   },
   {
     title: "NextJS + Web3 Starter",
@@ -93,13 +143,13 @@ export const sideProjects: ProjectType[] = [
         a simple counter contract and an ERC-20 token contract example in it.
       </Text>
     ),
-    langs: ["typescript", "next", "solidity"],
+    tech: ["typescript", "next", "solidity"],
   },
   {
     title: "SpotiStuff",
     githubURL: "https://github.com/erhant/spoti-stuff",
     demoURL: "https://spoti-stuff.vercel.app/",
-    langs: ["typescript", "react"],
+    tech: ["typescript", "react"],
     content: (
       <Text>
         A collection of mini-applications I made using Spotify Web API. You can see audio features of your currently
@@ -110,13 +160,12 @@ export const sideProjects: ProjectType[] = [
   {
     title: "Orca Livecoding",
     githubURL: "https://github.com/erhant/orca-livecoding",
-    langs: [],
+    tech: [],
     content: (
       <Text>
         Of the various music livecoding programs, I particularly developed an interest in{" "}
         <Anchor href="https://hundredrabbits.itch.io/orca">Orca</Anchor>, which is a 2-dimensional esoteric programming
         language. I had some fun with it, such as creating a fretboard and tab-reader, or musical scale player with it.
-        I am collecting such things in this repo!
       </Text>
     ),
   },
@@ -124,7 +173,7 @@ export const sideProjects: ProjectType[] = [
     title: "Burning Castle",
     githubURL: "https://github.com/erhant/burning_castle",
     demoURL: "https://oeis.org/A343275",
-    langs: ["python"],
+    tech: ["python"],
     content: (
       <Text>
         My submissions to <Anchor href="https://oeis.org/">Online Encyclopedia of Integer Sequences</Anchor>. One
@@ -135,7 +184,7 @@ export const sideProjects: ProjectType[] = [
   {
     title: "Musical Plots",
     githubURL: "https://github.com/erhant/musical-plots",
-    langs: ["python"],
+    tech: ["python"],
     content: (
       <Text>
         Using <Code>matplotlib</Code>, I have drawn a{" "}
@@ -159,7 +208,7 @@ export const thesisProjects: ProjectType[] = [
         were further extended to support multi-precision (both precisions are used per se, at different times).
       </Text>
     ),
-    langs: ["cpp", "python", "bash", "tex"],
+    tech: ["cpp", "python", "bash", "tex"],
   },
   {
     title: "Obtaining Mathematical Expressions of Numerical Algorithms",
@@ -174,6 +223,6 @@ export const thesisProjects: ProjectType[] = [
         <Anchor href="https://en.wikipedia.org/wiki/General_recursive_function">General Recursive Functions</Anchor>.
       </Text>
     ),
-    langs: ["javascript", "tex"],
+    tech: ["javascript", "tex"],
   },
 ]

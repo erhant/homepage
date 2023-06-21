@@ -1,7 +1,7 @@
 import { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import DefaultMantineTheme from "../themes/default"
-import { getCookie, setCookies } from "cookies-next"
+import { getCookie, setCookie } from "cookies-next"
 import { MantineProvider, ColorScheme, ColorSchemeProvider } from "@mantine/core"
 import "../styles/globals.scss"
 
@@ -12,7 +12,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const toggleColorScheme = (value?: ColorScheme) => {
     const nextColorScheme = value || (colorScheme === "dark" ? "light" : "dark")
     setColorScheme(nextColorScheme)
-    setCookies("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
+    setCookie("mantine-color-scheme", nextColorScheme, { maxAge: 60 * 60 * 24 * 30 })
   }
 
   // decide color scheme on mount

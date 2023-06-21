@@ -4,9 +4,10 @@ import Layout from "../components/layout"
 import { NextPage } from "next"
 import Publication from "../components/publication"
 import Project from "../components/project"
-import { schoolProjects, sideProjects, thesisProjects } from "../contents/projects"
+import { activeProjects, schoolProjects, sideProjects, thesisProjects } from "../contents/projects"
 import { publications } from "../contents/publications"
 import TechBadge from "../components/techbadge"
+import { TECH_BADGE_PARAMS } from "../contents/techbadge"
 
 const Index: NextPage = () => {
   return (
@@ -35,33 +36,33 @@ const Index: NextPage = () => {
             Stack
           </Title>
           <Text>
-            I'm maining the TypeScript hero most of the time, but I have occasionally worked with Solidity and Go. I'm
-            curious about using Rust and Huff at some point. I love & use Circom for zero-knowledge stuff; though at
-            some point after getting into Rust I would love to explore options there!
+            I'm maining the TypeScript hero most of the time with Express and React, and I have occasionally worked with
+            Solidity and Go. I'm curious about using Rust and Huff at some point. I love & use Circom for zero-knowledge
+            applications. If needed, I may use Python.
             <Group position="center" my="md">
-              <TechBadge type="typescript" />
-              <TechBadge type="circom" />
-              <TechBadge type="go" />
-              <TechBadge type="solidity" />
-              <TechBadge type="react" />
-              <TechBadge type="next" />
-              <TechBadge type="git" />
-              <TechBadge type="bash" />
+              {(
+                [
+                  "typescript",
+                  "circom",
+                  "go",
+                  "solidity",
+                  "react",
+                  "next",
+                  "git",
+                  "bash",
+                ] as (keyof typeof TECH_BADGE_PARAMS)[]
+              ).map((type) => (
+                <TechBadge type={type} />
+              ))}
             </Group>
           </Text>
 
           {/* projects */}
           <Title order={1} my="md">
-            Projects
+            Active Projects
           </Title>
           <Stack>
-            {sideProjects.map((p, i) => (
-              <Project p={p} key={i} />
-            ))}
-            {thesisProjects.map((p, i) => (
-              <Project p={p} key={i} />
-            ))}
-            {schoolProjects.map((p, i) => (
+            {activeProjects.map((p, i) => (
               <Project p={p} key={i} />
             ))}
           </Stack>

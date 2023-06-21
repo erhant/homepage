@@ -8,11 +8,9 @@ const Publication: FC<{ p: PublicationType }> = ({ p }) => {
   return (
     <Paper>
       <Text>{p.content}</Text>
-
       {p.githubURL && <LinkBadge type="repo" url={p.githubURL} />}
       {p.paperURL && <LinkBadge type="paper" url={p.paperURL} />}
-
-      {p.langs.map((type, i) => (
+      {p.tech.map((type, i) => (
         <TechBadge type={type} key={i} />
       ))}
     </Paper>
