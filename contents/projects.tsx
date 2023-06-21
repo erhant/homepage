@@ -38,7 +38,7 @@ export const activeProjects: ProjectType[] = [
   },
   {
     title: "Cryptography Notes",
-    githubURL: "https://crypto.erhant.me",
+    githubURL: "https://github.com/erhant/crypto-notes",
     demoURL: "https://crypto.erhant.me",
     content: <Text>Various notes related to cryptography, number theory and zero-knowledge.</Text>,
     tech: ["typescript", "markdown", "next"],
