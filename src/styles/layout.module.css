@@ -1,0 +1,9 @@
+.Layout {
+  background-color: #F8F8F8;
+}
+
+.Container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 30px;
+}

@@ -1,0 +1,9 @@
+.Image {
+  width: 300px;
+  border-radius: 150px;
+  float: left;
+}
+
+.Text {
+  font-size: 1.45em;
+}
