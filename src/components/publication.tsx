@@ -1,5 +1,5 @@
 import LinkBadge from "./linkbadge";
-import type PublicationType from "../types/publication";
+import type { PublicationType } from "../contents/publications";
 import { Component, For } from "solid-js";
 import TechBadge from "./techbadge";
 

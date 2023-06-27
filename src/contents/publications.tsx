@@ -1,4 +1,12 @@
-import type PublicationType from "../types/publication";
+import type { JSXElement } from "solid-js";
+import type { TECH_BADGE_PARAMS } from "../contents/techbadge";
+
+export type PublicationType = {
+  githubURL: string;
+  paperURL: string;
+  tech: (keyof typeof TECH_BADGE_PARAMS)[];
+  content: JSXElement;
+};
 
 export const publications: PublicationType[] = [
   {

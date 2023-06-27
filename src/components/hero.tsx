@@ -5,21 +5,21 @@ import TechBadge from "./techbadge";
 
 const Hero: Component = () => {
   return (
-    <div>
+    <div class={styles.Hero}>
       <img src="/src/assets/me.webp" alt="avatar" class={styles.Image} />
-      <p class={styles.Text}>
-        I'm a Full-stack Blockchain Developer from Istanbul, Turkey. I build
-        &amp; engineer computer software; driven by a thirst for knowledge and
-        with respect to style, standards, security and scalability.
-      </p>
-
-      <h1>Tech Stack</h1>
-      <p>
-        I'm maining the TypeScript hero most of the time with Express and React,
-        and I have occasionally worked with Solidity and Go. As for
-        zero-knowledge applications, I make use of the lovely Circom.
-      </p>
-      <For each={MAIN_TECH}>{(tech) => <TechBadge type={tech} />}</For>
+      <div class={styles.Text}>
+        <p>
+          I'm a <b>Full-Stack Blockchain Developer</b> from Istanbul, Turkey. I
+          build &amp; engineer computer software; driven by a thirst for
+          knowledge and with respect to <b>standards</b>, <b>security</b> and{" "}
+          <b>scalability</b>.
+          <br />
+          <br />I main TypeScript most of the time with Express and React, and I
+          have occasionally worked with Solidity and Go. As for zero-knowledge
+          applications, I make use of the lovely Circom.
+        </p>
+        <For each={MAIN_TECH}>{(tech) => <TechBadge type={tech} />}</For>
+      </div>
     </div>
   );
 };

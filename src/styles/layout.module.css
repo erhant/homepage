@@ -1,5 +1,7 @@
 .Layout {
-  background-color: #F8F8F8;
+  /* this is the background color of my image */
+  /* using the same color makes things blend in */
+  background-color: #f8f8f8;
 }
 
 .Container {

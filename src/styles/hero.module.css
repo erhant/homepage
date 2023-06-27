@@ -1,9 +1,36 @@
 .Image {
-  width: 300px;
-  border-radius: 150px;
-  float: left;
+  flex: 35%;
+  max-width: 300px;
+  min-width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
+
+@media (max-width: 720px) {
+  .Image {
+    flex: 100%;
+  }
+
+  .Text {
+    flex: 100%;
+  }
+
+  .Hero {
+    flex-direction: column;
+  }
 }
 
 .Text {
+  flex: 65%;
   font-size: 1.45em;
+}
+
+.Hero {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.Hero p:first-of-type {
+  font-size: 1.5rem;
 }

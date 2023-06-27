@@ -1,4 +1,14 @@
-import ProjectType from "../types/project";
+import type { JSXElement } from "solid-js";
+import type { TECH_BADGE_PARAMS } from "../contents/techbadge";
+
+export type ProjectType = {
+  title: string;
+  githubURL?: string;
+  demoURL?: string;
+  npm?: string;
+  tech: (keyof typeof TECH_BADGE_PARAMS)[];
+  content: JSXElement;
+};
 
 export const activeProjects: ProjectType[] = [
   {
@@ -35,7 +45,7 @@ export const activeProjects: ProjectType[] = [
       <p>
         An opinionated Circom development & testing environment. An example
         repository demonstrates the usage of Circomkit along with several
-        circuits, such as a generic sudoku-solution circuit and{" "}
+        circuits, such as a generic sudoku-solution circuit and SHA256.
       </p>
     ),
     tech: ["typescript", "circom"],
@@ -138,7 +148,7 @@ export const sideProjects: ProjectType[] = [
     content: (
       <p>
         A type-bending project where I try to implement finite-field arithmetic
-        within the TypeScript's type-system alone!
+        within the TypeScript's type-system.
       </p>
     ),
   },
@@ -193,13 +203,13 @@ export const sideProjects: ProjectType[] = [
     tech: ["cpp"],
   },
   {
-    title: "Diamond's with TypeScript",
+    title: "Diamonds with TypeScript",
     githubURL: "https://github.com/erhant/diamonds-with-typescript",
     tech: ["typescript", "solidity"],
     content: (
       <p>
-        A reference implementation of EIP-2535: The Diamond Standard uising
-        TypeScript and TypeChain.
+        A reference implementation of <i>EIP-2535: The Diamond Standard</i>{" "}
+        using TypeScript and TypeChain.
       </p>
     ),
   },
@@ -287,8 +297,8 @@ export const thesisProjects: ProjectType[] = [
         mixed-precision (32-bit and 64-bit in particular) to my advantage, such
         that the accuracy is not affected too much but we still gain benefits
         from the reduced precisions. The methods were further extended to
-        support multi-precision (both precisions are used per se, at different
-        times).
+        support multi-precision where both precisions are used per se, at
+        different times.
       </p>
     ),
     tech: ["cpp", "python", "bash", "tex"],

@@ -1,0 +1,9 @@
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 10px;
+}
+
+.OuterContainer h1 {
+  margin-bottom: -5px;
+}
