@@ -17,7 +17,7 @@ const Header: Component = () => {
         )}
       </For>
 
-      <span class={styles.Separator + " " + styles.Link} />
+      <span class={styles.Separator} />
 
       <For each={headerItemsRight}>
         {(item) => (

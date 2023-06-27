@@ -6,16 +6,19 @@ const LinkBadge: Component<{ url: string; type: string }> = (props) => {
     demo: "byte",
     repo: "github",
     paper: "googlescholar",
+    web: "googlechrome",
   }[props.type];
   const label = {
     demo: "demo",
     repo: "repo",
     paper: "paper",
+    web: "web",
   }[props.type];
   const labelColor = {
-    demo: "green",
-    repo: "gray",
-    paper: "blue",
+    demo: "4BA840",
+    repo: "181717",
+    paper: "4285F4",
+    web: "4285F4",
   }[props.type];
   return (
     <span class={styles.Linkbadge}>

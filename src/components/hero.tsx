@@ -6,7 +6,7 @@ import TechBadge from "./techbadge";
 const Hero: Component = () => {
   return (
     <div class={styles.Hero}>
-      <img src="/src/assets/me.webp" alt="avatar" class={styles.Image} />
+      <img src="/me.webp" alt="avatar" class={styles.Image} />
       <div class={styles.Text}>
         <p>
           I'm a <b>Full-Stack Blockchain Developer</b> from Istanbul, Turkey. I

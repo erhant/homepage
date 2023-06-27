@@ -5,6 +5,8 @@ export type ProjectType = {
   title: string;
   githubURL?: string;
   demoURL?: string;
+  paperURL?: string;
+  webURL?: string;
   npm?: string;
   tech: (keyof typeof TECH_BADGE_PARAMS)[];
   content: JSXElement;
@@ -14,7 +16,7 @@ export const activeProjects: ProjectType[] = [
   {
     title: "HollowDB",
     githubURL: "https://github.com/firstbatchxyz/hollowdb",
-    demoURL: "https://docs.hollowdb.xyz",
+    webURL: "https://docs.hollowdb.xyz",
     npm: "hollowdb",
     content: (
       <p>
@@ -49,28 +51,6 @@ export const activeProjects: ProjectType[] = [
       </p>
     ),
     tech: ["typescript", "circom"],
-  },
-  {
-    title: "MoonMath Solutions",
-    githubURL: "https://github.com/erhant/moonmath",
-    content: (
-      <p>
-        Solutions to a few exercises & code examples for MoontMath Manual to
-        zkSNARKs.
-      </p>
-    ),
-    tech: ["markdown", "sage"],
-  },
-  {
-    title: "Cryptography Notes",
-    githubURL: "https://crypto.erhant.me",
-    demoURL: "https://crypto.erhant.me",
-    content: (
-      <p>
-        Various notes related to cryptography, number theory and zero-knowledge.
-      </p>
-    ),
-    tech: ["typescript", "markdown", "next"],
   },
 ];
 
@@ -127,6 +107,28 @@ export const schoolProjects: ProjectType[] = [
 ];
 
 export const sideProjects: ProjectType[] = [
+  {
+    title: "MoonMath Solutions",
+    githubURL: "https://github.com/erhant/moonmath",
+    content: (
+      <p>
+        Solutions to a few exercises & code examples for MoontMath Manual to
+        zkSNARKs.
+      </p>
+    ),
+    tech: ["markdown", "sage"],
+  },
+  {
+    title: "Cryptography Notes",
+    githubURL: "https://crypto.erhant.me",
+    webURL: "https://crypto.erhant.me",
+    content: (
+      <p>
+        Various notes related to cryptography, number theory and zero-knowledge.
+      </p>
+    ),
+    tech: ["typescript", "markdown", "next"],
+  },
   {
     title: "Blockchatting",
     githubURL: "https://github.com/erhant/blockchatting",
@@ -257,7 +259,7 @@ export const sideProjects: ProjectType[] = [
   {
     title: "Burning Castle",
     githubURL: "https://github.com/erhant/burning_castle",
-    demoURL: "https://oeis.org/A343275",
+    webURL: "https://oeis.org/A343275",
     tech: ["python"],
     content: (
       <p>
@@ -289,7 +291,7 @@ export const thesisProjects: ProjectType[] = [
   {
     title: "Exploring Mixed and Multi-Precision SpMV for GPUs",
     githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
-    demoURL: "https://ieeexplore.ieee.org/document/9980904",
+    paperURL: "https://ieeexplore.ieee.org/document/9980904",
     content: (
       <p>
         As my M.Sc. thesis, I worked on the optimization of Sparse Matrix-Vector
@@ -322,5 +324,78 @@ export const thesisProjects: ProjectType[] = [
       </p>
     ),
     tech: ["javascript", "tex"],
+  },
+];
+
+export const publications: ProjectType[] = [
+  {
+    title:
+      "Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection",
+    tech: ["c", "cpp", "python", "tex"],
+    githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
+    paperURL: "https://ieeexplore.ieee.org/document/9980904",
+    content: (
+      <p>
+        <i>
+          Erhan Tezcan, Tugba Torun, Fahrican Koşar, Kamer Kaya, and Didem Unat
+        </i>
+        . IEEE 34th International Symposium on Computer Architecture and High
+        Performance Computing (SBAC-PAD'22), November 2-5, 2022, Bordeaux,
+        France. <b>Best Paper Award</b>.
+      </p>
+    ),
+  },
+  {
+    tech: ["python", "tex"],
+    githubURL: "https://github.com/ParCoreLab/ComScribe",
+    paperURL: "https://link.springer.com/chapter/10.1007/978-3-031-06156-1_4",
+    title: "Monitoring Collective Communication Among GPUs",
+    content: (
+      <p>
+        <i>
+          Muhammet Abdullah Soytürk, Palwisha Akhtar, Erhan Tezcan, and Didem
+          Unat
+        </i>
+        . European Conference on Parallel Processing (Workshop Paper), 2022
+      </p>
+    ),
+  },
+  {
+    tech: ["python", "tex"],
+    githubURL: "https://github.com/ParCoreLab/ComScribe",
+    paperURL: "https://link.springer.com/chapter/10.1007/978-3-030-71058-3_10",
+    title: "ComScribe: Identifying Intra-node GPU Communication",
+    content: (
+      <p>
+        <i>
+          Palwisha Akhtar, Erhan Tezcan, Fareed Mohammad Qararyah, Didem Unat
+        </i>
+        . BENCH'20, November 2020
+      </p>
+    ),
+  },
+  {
+    tech: ["python", "javascript", "tex"],
+    githubURL: "https://github.com/erhant/lighthouse-problem",
+    paperURL: "https://arxiv.org/abs/1903.09001",
+    webURL: "https://erhant.github.io/lighthouse-problem/",
+    title: "A Lighthouse Illumniation Problem",
+    content: (
+      <p>
+        <i>Erhan Tezcan</i>. arXiv e-prints, March 2019
+      </p>
+    ),
+  },
+  {
+    tech: ["python", "javascript", "cpp", "haskell", "tex"],
+    githubURL: "https://github.com/collatz-prefixes",
+    paperURL: "https://arxiv.org/abs/1902.07312",
+    webURL: "https://erhany96.gitbook.io/collatz-prefixes",
+    title: "On Collatz Conjecture",
+    content: (
+      <p>
+        <i>Erhan Tezcan</i>. arXiv e-prints, February 2019
+      </p>
+    ),
   },
 ];
