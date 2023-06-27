@@ -1,0 +1,20 @@
+.Link {
+  color: #f8f8f8;
+}
+
+.Header {
+  padding: 7px 10px;
+  background-color: #282c34;
+  min-height: 7.5vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.Separator {
+  margin-left: 30px;
+  margin-right: 30px;
+}
