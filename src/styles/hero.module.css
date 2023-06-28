@@ -1,7 +1,6 @@
 .Image {
   flex: 35%;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
   border-radius: 50%;
 }
 
