@@ -20,7 +20,7 @@ export const activeProjects: ProjectType[] = [
     npm: "hollowdb",
     content: (
       <p>
-        A decentralized privacy-preserving key-value database, developed by
+        A decentralized privacy-preserving key-value database, developed by{" "}
         <a href="https://www.firstbatch.xyz/">FirstBatch</a>.
       </p>
     ),
@@ -144,13 +144,13 @@ export const sideProjects: ProjectType[] = [
     ),
   },
   {
-    title: "FFType",
+    title: "fftype",
     githubURL: "https://github.com/erhant/fftype",
     tech: ["typescript"],
     content: (
       <p>
         A type-bending project where I try to implement finite-field arithmetic
-        within the TypeScript's type-system.
+        within the TypeScript's type-system using binary number-system.
       </p>
     ),
   },
@@ -179,13 +179,23 @@ export const sideProjects: ProjectType[] = [
     ),
   },
   {
+    title: "Cryptopals",
+    githubURL: "https://github.com/erhant/zk-crypto-ctfs/tree/main/cryptopals",
+    content: (
+      <p>
+        <i>Attempts</i> on solving Cryptopals puzzles using Go.
+      </p>
+    ),
+    tech: ["go"],
+  },
+  {
     title: "Solidity CTFs",
     githubURL: "https://github.com/erhant/solidity-ctfs",
     tech: ["typescript", "solidity"],
     content: (
       <p>
         Solutions to various Solidity &amp; EVM challenges such as Ethernaut,
-        EVMPuzzles and QuillCFT.
+        EVMPuzzles and QuillCFT using Hardhat.
       </p>
     ),
   },
@@ -195,7 +205,7 @@ export const sideProjects: ProjectType[] = [
     content: (
       <p>
         Flashy Sort is a sorting algorithm I had written around my sophomore
-        year, but turns out it is similar (and actually worse) than{" "}
+        year, similar to{" "}
         <a href="https://en.wikipedia.org/wiki/Flashsort">Flash Sort</a>. The
         idea is to find the minimum and maximum values in linear time, and then
         use interpolation to make a rough guess on where the other elements
@@ -302,7 +312,7 @@ export const thesisProjects: ProjectType[] = [
         different times.
       </p>
     ),
-    tech: ["cpp", "python", "bash", "tex"],
+    tech: ["cuda", "cpp", "python", "tex"],
   },
   {
     title: "Obtaining Mathematical Expressions of Numerical Algorithms",
@@ -330,7 +340,7 @@ export const publications: ProjectType[] = [
   {
     title:
       "Mixed and Multi-Precision SpMV for GPUs with Row-wise Precision Selection",
-    tech: ["c", "cpp", "python", "tex"],
+    tech: ["cuda", "cpp", "python", "tex"],
     githubURL: "https://github.com/ParCoreLab/mixed-and-multi-spmv",
     paperURL: "https://ieeexplore.ieee.org/document/9980904",
     content: (

@@ -116,7 +116,6 @@ export const MAIN_TECH: (keyof typeof TECH_BADGE_PARAMS)[] = [
   "go",
   "solidity",
   "react",
-  "next",
   "git",
-  "bash",
+  "vscode",
 ];
