@@ -1,10 +1,8 @@
 import { For, type Component } from "solid-js";
 import styles from "../styles/header.module.css";
 import { headerItemsLeft, headerItemsRight } from "../contents/header";
-import { TbDots } from "solid-icons/tb";
 
 const ICON_SIZE = 32;
-const SEP_SIZE = 24;
 
 const Header: Component = () => {
   return (

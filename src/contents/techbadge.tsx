@@ -61,6 +61,10 @@ export const TECH_BADGE_PARAMS = {
     alt: "Cuda",
   },
   racket: {
+    p: ".rkt-3E5BA9?logo=racket&logoColor=white",
+    alt: "Racket",
+  },
+  scheme: {
     p: ".scm-9F1D20?logo=racket&logoColor=white",
     alt: "Scheme",
   },

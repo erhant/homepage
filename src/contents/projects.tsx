@@ -21,7 +21,7 @@ export const activeProjects: ProjectType[] = [
     content: (
       <p>
         A decentralized privacy-preserving key-value database, developed by
-        FirstBatch.
+        <a href="https://www.firstbatch.xyz/">FirstBatch</a>.
       </p>
     ),
     tech: ["typescript", "circom"],
@@ -33,7 +33,7 @@ export const activeProjects: ProjectType[] = [
     content: (
       <p>
         A SortKeyCache implementation for Warp Contracts using Redis, developed
-        by FirstBatch.
+        by <a href="https://www.firstbatch.xyz/">FirstBatch</a>.
       </p>
     ),
     tech: ["typescript", "redis"],
@@ -91,15 +91,15 @@ export const schoolProjects: ProjectType[] = [
         book.
       </p>
     ),
-    tech: ["racket"],
+    tech: ["racket", "scheme"],
   },
   {
     title: "Enigma Machine",
     githubURL: "https://github.com/erhant/enigma-machine",
     content: (
       <p>
-        An Enigma Machine, with custom rotor settings, eavesdropping simulation
-        and chatting.
+        A console based Enigma Machine with custom rotor settings, eavesdropping
+        simulation and chatting simulation over a shared encrypted file.
       </p>
     ),
     tech: ["typescript"],
@@ -250,9 +250,8 @@ export const sideProjects: ProjectType[] = [
       <p>
         Of the various music livecoding programs, I particularly developed an
         interest in <a href="https://hundredrabbits.itch.io/orca">Orca</a>,
-        which is a 2-dimensional esoteric programming language. I had some fun
-        with it, such as creating a fretboard and tab-reader, or musical scale
-        player with it.
+        which is a 2-dimensional esoteric programming language. There I've
+        created a fretboard and tab-reader, or musical scale player with it.
       </p>
     ),
   },

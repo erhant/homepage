@@ -2,7 +2,6 @@
   flex: 35%;
   max-width: 300px;
   min-width: 300px;
-  height: auto;
   border-radius: 50%;
 }
 
@@ -22,7 +21,7 @@
 
 .Text {
   flex: 65%;
-  font-size: 1.45em;
+  font-size: 1.32em;
 }
 
 .Hero {
@@ -32,5 +31,5 @@
 }
 
 .Hero p:first-of-type {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
